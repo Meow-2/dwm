@@ -41,6 +41,7 @@ case $1 in
     Telegram) telegram-desktop ;;
     wemeet) wemeet ;;
     steam) steam ;;
+    obsidian) obsidian ;;
     set_vol) set_vol $2 ;;
     set_backlight) set_backlight $2 ;;
 esac

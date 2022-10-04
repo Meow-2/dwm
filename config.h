@@ -36,14 +36,15 @@ static const unsigned int alphas[][3]    = {
 
 /* 自定义tag名称 */
 /* 自定义特定实例的显示状态 */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "", "", "﬐", "ﬄ", "", "", ""};
+static const char *tags[] = { "", "", "", "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", ""};
+
 static const Rule rules[] = {
     /* class                 instance              title             tags mask     isfloating   noborder  monitor */
     {"float",                NULL,                 NULL,             0,              1,           0,        -1 },
     {"noborder",             NULL,                 NULL,             0,              1,           1,        -1 },
     {"utools",               NULL,                 NULL,             0,              1,           1,        -1 },
     {"Peek",                 NULL,                 NULL,             0,              1,           1,        -1 },
-    {"Mailspring",           NULL,                 NULL,             0,              1,           0,        -1 },
+    {"Mailspring",           NULL,                 NULL,             0,              1,           1,        -1 },
     {"dolphin",              NULL,                 NULL,             0,              1,           1,        -1 },
     {"Pcmanfm",              NULL,                 NULL,             0,              1,           1,        -1 },
     {"Blueman-manager",      NULL,                 NULL,             0,              1,           1,        -1 },
@@ -53,6 +54,10 @@ static const Rule rules[] = {
     {"Parcellite",           NULL,                 NULL,             0,              1,           1,        -1 },
     {"Alacritty",            NULL,                 "temp",           0,              1,           0,        -1 },
     {"Alacritty",            NULL,                 "ssh",            1 << 1,         0,           0,        -1 },
+    {"obsidian",             NULL,                 NULL,             1 << 6,         0,           1,        -1 },
+    {"wpsoffice",            "wpsoffice",          NULL,             1 << 7,         0,           1,        -1 },
+    {"baidunetdisk",         NULL,                 NULL,             1 << 8,         0,           1,        -1 },
+    {"transmission",         NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     {"Google-chrome",        NULL,                 NULL,             1 << 9,         0,           1,        -1 },
     { NULL,                  NULL,                 "图片查看",       0,              1,           0,        -1 },
     { NULL,                  NULL,                 "图片预览",       0,              1,           0,        -1 },
@@ -65,9 +70,6 @@ static const Rule rules[] = {
     {"lx-music-desktop",     NULL,                 NULL,             1 << 13,        0,           1,        -1 },
     {"wemeetapp",            NULL,                 NULL,             1 << 13,        1,           1,        -1 },
     {"Steam",                NULL,                 NULL,             1 << 14,        0,           1,        -1 },
-    {"wpsoffice",            "wpsoffice",          NULL,             1 << 7,         0,           1,        -1 },
-    {"baidunetdisk",         NULL,                 NULL,             1 << 8,         0,           1,        -1 },
-    {"transmission",         NULL,                 NULL,             1 << 8,         0,           1,        -1 },
 };
 static const char *overviewtag = "OVERVIEW";
 static const Layout overviewlayout = { "",  overview };
@@ -166,6 +168,7 @@ static Key keys[] = {
     TAGKEYS(XK_7, 6,  0,  0)
     TAGKEYS(XK_8, 7,  0,  0)
     TAGKEYS(XK_9, 8,  0,  0)
+    TAGKEYS(XK_o , 6  , "~/Programs/dwm/scripts/app-starter.sh obsidian"  , "~/Programs/dwm/scripts/app-starter.sh obsidian")
     TAGKEYS(XK_c , 9  , "~/Programs/dwm/scripts/app-starter.sh chrome"    , "~/Programs/dwm/scripts/app-starter.sh chrome")
     TAGKEYS(XK_w , 10 , "~/Programs/dwm/scripts/app-starter.sh wechat"    , "~/Programs/dwm/scripts/app-starter.sh wechat")
     TAGKEYS(XK_i , 11 , "~/Programs/dwm/scripts/app-starter.sh icalingua" , "~/Programs/dwm/scripts/app-starter.sh icalingua")
