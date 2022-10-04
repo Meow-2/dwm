@@ -12,14 +12,16 @@ settings() {
 daemons() {
     [ $1 ] && sleep $1
     redshift &
-    safeeyes &
-    fcitx5 &
-    mailspring -b &
-    utools &
-    parcellite &
-    dunst -conf ~/Programs/dwm/scripts/conf/dunst.conf &
+    dunst -conf ~/.config/dunst.conf &
     blueman-applet &
     nm-applet &
+    mailspring -b &
+    utools &
+    sleep 6
+    safeeyes &
+    fcitx5 &
+    sleep 2
+    parcellite &
     # xfce4-power-manager &
     # pactl info &
     # flameshot &
