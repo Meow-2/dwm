@@ -12,8 +12,10 @@ terminal() {
 set_vol() {
 
     case $1 in
-        up) /usr/bin/amixer -D pulse -qM set Master 5%+ umute ;;
-        down) /usr/bin/amixer -D pulse -qM set Master 5%- umute ;;
+        up) /usr/bin/amixer -D pulse -qM set Master 3%+ umute \
+            && cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga ;;
+        down) /usr/bin/amixer -D pulse -qM set Master 3%- umute \
+            && cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga ;;
         toggle) amixer -D pulse set Master 1+ toggle ;;
     esac
     ~/Programs/dwm/scripts/dwm-status.sh
@@ -39,7 +41,6 @@ case $1 in
     Telegram) telegram-desktop ;;
     wemeet) wemeet ;;
     steam) steam ;;
-    easyeffects) easyeffects --gapplication-service >>/dev/null 2>&1 & ;;
     set_vol) set_vol $2 ;;
     set_backlight) set_backlight $2 ;;
 esac

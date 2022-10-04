@@ -17,7 +17,6 @@ daemons() {
     dunst -conf ~/Programs/dwm/scripts/conf/dunst.conf &
     blueman-applet &
     nm-applet &
-    ~/scripts/app-starter.sh easyeffects &
     # xfce4-power-manager &
     # pactl info &
     # flameshot &
