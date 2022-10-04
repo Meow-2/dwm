@@ -48,7 +48,7 @@ static const Rule rules[] = {
     {"Peek",                 NULL,                 NULL,             0,              1,           1,        -1 },
     {"Mailspring",           NULL,                 NULL,             0,              1,           0,        -1 },
     {"dolphin",              NULL,                 NULL,             0,              1,           1,        -1 },
-    {"pcmanfm",              NULL,                 NULL,             0,              1,           1,        -1 },
+    {"Pcmanfm",              NULL,                 NULL,             0,              1,           1,        -1 },
     {"Blueman-manager",      NULL,                 NULL,             0,              1,           1,        -1 },
     {"Nm-applet",            NULL,                 NULL,             0,              1,           1,        -1 },
     // {"flameshot",            NULL,                 NULL,             0,              1,           1,        -1 },
@@ -91,7 +91,8 @@ static Key keys[] = {
     { MODKEY,              XK_s,            togglesystray,    {0} },                     /* super +            |  切换 托盘栏显示状态 */
     { MODKEY|ShiftMask,    XK_s,            togglebar,        {0} },                     /* super shift f      |  开启/关闭 状态栏 */
 
-    { MODKEY,              XK_Tab,          focusstack,       {.i = +1} },               /* super tab          |  本tag内切换聚焦窗口 */
+    { MODKEY,              XK_Tab,          view,             {0} },               /* super tab          |  本tag内切换聚焦窗口 */
+    // { Mod1Mask,            XK_Tab,          view,       {.i = +1} },               /* super tab          |  本tag内切换聚焦窗口 */
     { MODKEY,              XK_k,            focusstack,       {.i = -1} },               /* super k            |  本tag内切换聚焦窗口 */
     { MODKEY,              XK_j,            focusstack,       {.i = +1} },               /* super j            |  本tag内切换聚焦窗口 */
 
