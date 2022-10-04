@@ -1,5 +1,7 @@
-#! /bin/bash
+#! /bin/sh
 # dwm状态栏刷新脚本
+
+source ~/.profile
 
 s2d_reset="^d^"
 s2d_fg="^c"
@@ -16,17 +18,18 @@ color08="#553388^"
 color09="#EEEEEE^"
 
 others_color="$s2d_fg$color01$s2d_bg$color07"
-cpu_color="$s2d_fg$color09$s2d_bg$color06"
-mem_color="$s2d_fg$color09$s2d_bg$color07"
-time_color="$s2d_fg$color09$s2d_bg$color06"
-backlight_color="$s2d_fg$color09$s2d_bg$color07"
-vol_color="$s2d_fg$color09$s2d_bg$color06"
+net_color="$s2d_fg$color09$s2d_bg$color06"
+cpu_color="$s2d_fg$color09$s2d_bg$color07"
+mem_color="$s2d_fg$color09$s2d_bg$color06"
+time_color="$s2d_fg$color09$s2d_bg$color07"
+backlight_color="$s2d_fg$color09$s2d_bg$color06"
+vol_color="$s2d_fg$color09$s2d_bg$color07"
 bat_color="$s2d_fg$color09$s2d_bg$color02"
 
 print_others() {
     icons=()
     [ "$(pactl list sinks | awk 'BEGIN{RS=""};END{print NR}')" -gt 1 ] && icons=(${icons[@]} "")
-    [ "$(ps -aux | grep v2raya)" ] && icons=(${icons[@]} "")
+    [ "$(ps -aux | grep v2raya | sed 1d)" ] && icons=(${icons[@]} "")
     [ "$(ps -aux | grep 'baidunetdisk' | sed 1d)" ] && icons=(${icons[@]} "")
     [ "$(ps -aux | grep 'arch')" ] && icons=(${icons[@]} "")
     # [ "$AUTOSCREEN" = "OFF" ] && icons=(${icons[@]} "ﴸ")
@@ -37,6 +40,20 @@ print_others() {
         color=$others_color
         printf "%s%s%s" "$color" "$text" "$s2d_reset"
     fi
+}
+
+print_net() {
+    net_icon=""
+
+    if [ $(echo $net_speed | grep "K" || echo $net_speed | grep "M") ]; then
+        net_text=$(echo $net_speed | awk '{printf "%4s/s", $1}')
+    else
+        net_text=$(echo $net_speed | awk '{printf "%3sB/s", $1}')
+    fi
+
+    text=" $net_icon $net_text "
+    color=$net_color
+    printf "%s%s%s" "$color" "$text" "$s2d_reset"
 }
 
 print_cpu() {
@@ -152,4 +169,4 @@ print_bat() {
     printf "%s%s%s" "$color" "$text" "$s2d_reset"
 }
 
-xsetroot -name "$(print_others)$(print_cpu)$(print_mem)$(print_time)$(print_backlight)$(print_vol)$(print_bat)"
+xsetroot -name "$(print_others)$(print_net)$(print_cpu)$(print_mem)$(print_time)$(print_backlight)$(print_vol)$(print_bat)"

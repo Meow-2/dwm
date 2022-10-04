@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 # DWM自启动脚本
 
 settings() {
@@ -11,7 +11,7 @@ settings() {
 
 daemons() {
     [ $1 ] && sleep $1
-    fcitx5 -d &
+    fcitx5 &
     mailspring -b &
     utools &
     dunst -conf ~/Programs/dwm/scripts/conf/dunst.conf &
@@ -26,15 +26,15 @@ daemons() {
     # ~/scripts/app-starter.sh easyeffects &
 }
 
-every5s() {
+every1s() {
     [ $1 ] && sleep $1
     while true; do
-        # ~/scripts/set-screen.sh check &
+        ~/Programs/dwm/scripts/cal-netspeed.sh
         ~/Programs/dwm/scripts/dwm-status.sh &
-        sleep 5
+        sleep 1
     done
 }
 
 settings 1 &
 daemons 3 &
-every5s 5 &
+every1s 1 &

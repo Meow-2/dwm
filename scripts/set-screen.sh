@@ -1,5 +1,5 @@
-#! /bin/bash
-:<<!
+#! /bin/sh
+: <<!
   设置屏幕分辨率的脚本
   one: INNER
   two: OUT - INNER
@@ -18,23 +18,23 @@ _post() {
     ~/scripts/set-wallpaper.sh
 }
 two() {
-    [ ! "$CONNECT_SCREEN" ] && one && return;
-    xrandr --output $INNER_SCREEN   --mode 1440x900  --pos 1920x325 --scale 1x1 \
-           --output $CONNECT_SCREEN --mode 1920x1080 --pos 0x0      --scale 1x1 --primary \
-           --output $DISCONNECT_SCREEN --off
+    [ ! "$CONNECT_SCREEN" ] && one && return
+    xrandr --output $INNER_SCREEN --mode 1440x900 --pos 1920x325 --scale 1x1 \
+        --output $CONNECT_SCREEN --mode 1920x1080 --pos 0x0 --scale 1x1 --primary \
+        --output $DISCONNECT_SCREEN --off
     _post TWO
 }
 one() {
-    xrandr --output $INNER_SCREEN --mode 1440x900 --pos 0x0 --scale 1x1  --primary  \
-           --output $OUT1_SCREEN --off \
-           --output $OUt2_SCREEN --off
+    xrandr --output $INNER_SCREEN --mode 1440x900 --pos 0x0 --scale 1x1 --primary \
+        --output $OUT1_SCREEN --off \
+        --output $OUt2_SCREEN --off
     _post ONE
 }
 check() {
     source ~/.profile
-    [ "$SCREEN_CHECK" = "off" ] && return;
-    [ "$CONNECT_SCREEN" ] && [ "$SCREEN_MODE" == "ONE" ] && two;
-    [ ! "$CONNECT_SCREEN" ] && [ "$SCREEN_MODE" != "ONE" ] && two;
+    [ "$SCREEN_CHECK" = "off" ] && return
+    [ "$CONNECT_SCREEN" ] && [ "$SCREEN_MODE" == "ONE" ] && two
+    [ ! "$CONNECT_SCREEN" ] && [ "$SCREEN_MODE" != "ONE" ] && two
 }
 toggle_auto() {
     source ~/.profile
