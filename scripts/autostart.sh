@@ -12,6 +12,7 @@ settings() {
 daemons() {
     [ $1 ] && sleep $1
     redshift &
+    safeeyes &
     fcitx5 &
     mailspring -b &
     utools &
