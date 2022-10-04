@@ -25,14 +25,12 @@ bat_color="$s2d_fg$color09$s2d_bg$color02"
 
 print_others() {
     icons=()
-    [ "$(ps -aux | grep v2raya)" ] && icons=(${icons[@]} "")
+    [ "$(pactl list sinks | awk 'BEGIN{RS=""};END{print NR}')" -gt 1 ] && icons=(${icons[@]} "")
+    [ "$(ps -aux | grep v2raya)" ] && icons=(${icons[@]} "")
+    [ "$(ps -aux | grep 'baidunetdisk' | sed 1d)" ] && icons=(${icons[@]} "")
     [ "$(ps -aux | grep 'arch')" ] && icons=(${icons[@]} "")
-    [ "$(bluetoothctl info 64:03:7F:7C:81:15 | grep 'Connected: yes')" ] && icons=(${icons[@]} "")
-    [ "$(bluetoothctl info 8C:DE:F9:E6:E5:6B | grep 'Connected: yes')" ] && icons=(${icons[@]} "")
-    [ "$(bluetoothctl info 88:C9:E8:14:2A:72 | grep 'Connected: yes')" ] && icons=(${icons[@]} "")
-    [ "$(ps -aux | grep 'danmu_sender' | sed 1d)" ] && icons=(${icons[@]} "ﳲ")
-    [ "$(ps -aux | grep 'aria2c' | sed 1d)" ] && icons=(${icons[@]} "")
-    [ "$AUTOSCREEN" = "OFF" ] && icons=(${icons[@]} "ﴸ")
+    # [ "$AUTOSCREEN" = "OFF" ] && icons=(${icons[@]} "ﴸ")
+    # [ "$(ps -aux | grep 'danmu_sender' | sed 1d)" ] && icons=(${icons[@]} "ﳲ")
 
     if [ "$icons" ]; then
         text=" ${icons[@]} "
@@ -43,7 +41,7 @@ print_others() {
 
 print_cpu() {
     cpu_icon="閭"
-    cpu_text=$(top -n 1 -b | sed -n '3p' | awk '{printf "%02d%", 100 - $8}')
+    cpu_text=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{printf "%02d%", 100 - $1}')
 
     text=" $cpu_icon $cpu_text "
     color=$cpu_color
@@ -98,8 +96,10 @@ print_backlight() {
 print_vol() {
     vol_muted=$(amixer get Master | tail -n1 | grep '\[off\]')
     vol_text=$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')
-    if [ "$vol_text" -eq 0 ] || [ "$vol_muted" ]; then
+    if [ "$vol_muted" ]; then
         vol_text="--"
+        vol_icon="婢"
+    elif [ "$vol_text" -eq 0 ]; then
         vol_icon="婢"
     elif [ "$vol_text" -lt 10 ]; then
         vol_icon="奄"
@@ -120,7 +120,9 @@ print_vol() {
 print_bat() {
     bat_text=$(acpi -b | sed 2d | awk '{print $4}' | grep -Eo "[0-9]+")
     [ ! "$bat_text" ] && bat_text=$(acpi -b | sed 2d | awk '{print $5}' | grep -Eo "[0-9]+")
+    bat_text=$bat_text%
     [ ! "$(acpi -b | grep 'Battery 0' | grep Discharging)" ] && charge_icon=""
+    [ "$(acpi -b | grep 'Battery 0' | grep remaining)" ] && bat_text="$bat_text $(acpi -b | sed 2d | awk '{print $5}')"
     if [ "$bat_text" -ge 95 ]; then
         charge_icon=""
         bat_icon=""
@@ -144,9 +146,7 @@ print_bat() {
         bat_icon=""
     else bat_icon=""; fi
 
-    bat_text=$bat_text%
     bat_icon=$charge_icon$bat_icon
-
     text=" $bat_icon $bat_text "
     color=$bat_color
     printf "%s%s%s" "$color" "$text" "$s2d_reset"

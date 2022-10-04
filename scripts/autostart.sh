@@ -3,39 +3,38 @@
 
 settings() {
     [ $1 ] && sleep $1
-    xset r rate 180 30
-    setxkbmap -option caps:swapescape
-    feh --bg-scale ~/Pictures/wallpapers/01.jpg
-    ~/Programs/dwm/scripts/set-touchpad.sh
-    xss-lock -- ~/scripts/app-starter.sh blurlock &
-    # syndaemon -i 1 -t -K -R -d
+    xset r rate 180 30 &
+    setxkbmap -option caps:swapescape &
+    ~/Programs/dwm/scripts/set-touchpad.sh &
+    feh --bg-scale ~/Pictures/wallpapers/01.jpg &
 }
 
 daemons() {
     [ $1 ] && sleep $1
-    fcitx5 &
+    fcitx5 -d &
+    mailspring -b &
     utools &
-    # mailspring &
-    # sleep 10 &
-    # nm-applet &
+    dunst -conf ~/Programs/dwm/scripts/conf/dunst.conf &
+    blueman-applet &
+    nm-applet &
+    ~/scripts/app-starter.sh easyeffects &
+    # xfce4-power-manager &
     # pactl info &
     # flameshot &
-    # xfce4-power-manager &
-    # dunst -conf ~/scripts/config/dunst.conf &
     # lemonade server &
     # ~/scripts/app-starter.sh picom &
     # ~/scripts/app-starter.sh easyeffects &
 }
 
-every10s() {
+every5s() {
     [ $1 ] && sleep $1
     while true; do
         # ~/scripts/set-screen.sh check &
         ~/Programs/dwm/scripts/dwm-status.sh &
-        sleep 10
+        sleep 5
     done
 }
 
 settings 1 &
 daemons 3 &
-every10s 5 &
+every5s 5 &
