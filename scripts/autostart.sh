@@ -16,6 +16,7 @@ daemons() {
     fcitx5 &
     mailspring -b &
     utools &
+    parcellite &
     dunst -conf ~/Programs/dwm/scripts/conf/dunst.conf &
     blueman-applet &
     nm-applet &

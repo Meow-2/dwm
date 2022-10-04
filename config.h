@@ -52,6 +52,8 @@ static const Rule rules[] = {
     {"Blueman-manager",      NULL,                 NULL,             0,              1,           1,        -1 },
     {"Nm-applet",            NULL,                 NULL,             0,              1,           1,        -1 },
     {"fcitx5-config-qt",     NULL,                 NULL,             0,              1,           1,        -1 },
+    {"Safeeyes",             NULL,                 NULL,             0,              1,           1,        -1 },
+    {"Parcellite",           NULL,                 NULL,             0,              1,           1,        -1 },
     // {"flameshot",            NULL,                 NULL,             0,              1,           1,        -1 },
     {"Alacritty",            NULL,                 "temp",           0,              1,           0,        -1 },
     {"Alacritty",            NULL,                 "ssh",            1 << 1,         0,           0,        -1 },
