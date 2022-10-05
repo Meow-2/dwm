@@ -3,10 +3,13 @@
 
 settings() {
     [ $1 ] && sleep $1
+    feh --bg-scale ~/Pictures/wallpapers/01.jpg &
     xset r rate 180 30 &
     setxkbmap -option caps:swapescape &
     ~/Programs/dwm/scripts/set-touchpad.sh &
-    feh --bg-scale ~/Pictures/wallpapers/01.jpg &
+    xset s 300 300 &
+    xset dpms 300 300 300 &
+    xss-lock -- betterlockscreen -l dim
 }
 
 daemons() {
@@ -39,6 +42,6 @@ every1s() {
     done
 }
 
-settings 1 &
-daemons 3 &
+settings &
+daemons 1 &
 every1s 1 &
