@@ -37,7 +37,7 @@ case $1 in
     chrome) google-chrome-stable --password-store=gnome ;;
     wechat) /opt/apps/com.qq.weixin.deepin/files/run.sh ;;
     icalingua) icalingua ;;
-    flameshot) flameshot gui ;;
+    flameshot) flameshot gui -p ~/Pictures/screenshots ;;
     Telegram) telegram-desktop ;;
     wemeet) wemeet ;;
     steam) steam ;;
