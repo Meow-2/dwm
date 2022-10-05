@@ -36,7 +36,8 @@ case $1 in
     blurlock) betterlockscreen --lock dim ;;
     chrome) google-chrome-stable --password-store=gnome ;;
     wechat) /opt/apps/com.qq.weixin.deepin/files/run.sh ;;
-    icalingua) icalingua ;;
+    qq) /opt/apps/com.qq.tim.spark/files/run.sh ;;
+    # qq) icalingua ;;
     flameshot) flameshot gui -p ~/Pictures/screenshots ;;
     Telegram) telegram-desktop ;;
     wemeet) wemeet ;;

@@ -171,7 +171,7 @@ static Key keys[] = {
     TAGKEYS(XK_o , 6  , "~/Programs/dwm/scripts/app-starter.sh obsidian"  , "~/Programs/dwm/scripts/app-starter.sh obsidian")
     TAGKEYS(XK_c , 9  , "~/Programs/dwm/scripts/app-starter.sh chrome"    , "~/Programs/dwm/scripts/app-starter.sh chrome")
     TAGKEYS(XK_w , 10 , "~/Programs/dwm/scripts/app-starter.sh wechat"    , "~/Programs/dwm/scripts/app-starter.sh wechat")
-    TAGKEYS(XK_i , 11 , "~/Programs/dwm/scripts/app-starter.sh icalingua" , "~/Programs/dwm/scripts/app-starter.sh icalingua")
+    TAGKEYS(XK_i , 11 , "~/Programs/dwm/scripts/app-starter.sh qq"        , "~/Programs/dwm/scripts/app-starter.sh qq")
     TAGKEYS(XK_t , 12 , "~/Programs/dwm/scripts/app-starter.sh Telegram"  , "~/Programs/dwm/scripts/app-starter.sh Telegram")
     TAGKEYS(XK_m , 13 , "~/Programs/dwm/scripts/app-starter.sh wemeet"    , "~/Programs/dwm/scripts/app-starter.sh wemeet")
     TAGKEYS(XK_g , 14 , "~/Programs/dwm/scripts/app-starter.sh steam"     , "~/Programs/dwm/scripts/app-starter.sh steam")
