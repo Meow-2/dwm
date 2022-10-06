@@ -25,8 +25,8 @@ static const char *colors[][3]           = {
     [SchemeSel]       = { "#ffffff", "#37474F", "#42A5F5" },
     // [SchemeHid]    = { "#dddddd", NULL, NULL },
     [SchemeHid]       = { "#dddddd", "#222222", "#42A5F5" },
-    [SchemeSystray]   = { "#7799AA", "#7799AA", "#7799AA" },
-    [SchemeUnderline] = { "#7799AA", "#7799AA", "#7799AA" }
+    [SchemeSystray]   = { "#16213E", "#16213E", "#16213E" },
+    [SchemeUnderline] = { "#37474F", "#37474F", "#37474F" }
 };
 static const unsigned int alphas[][3]    = { 
     [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
