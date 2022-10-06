@@ -38,7 +38,7 @@ case $1 in
     wechat) /opt/apps/com.qq.weixin.deepin/files/run.sh ;;
     qq) /opt/apps/com.qq.tim.spark/files/run.sh ;;
     # qq) icalingua ;;
-    flameshot) flameshot gui -p ~/Pictures/screenshots ;;
+    flameshot) flameshot gui ;;
     Telegram) telegram-desktop ;;
     wemeet) wemeet ;;
     steam) steam ;;
