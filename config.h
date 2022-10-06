@@ -121,7 +121,8 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_n,        tagmon,           {.i = +1} },               /* super shift n      |  将聚焦窗口移动到另一个显示器 */
 
     { MODKEY,               XK_q,        killclient,       {0} },                     /* super q            |  关闭窗口 */
-    { MODKEY|ControlMask,   XK_q,        quit,             {0} },                     /* super ctrl q       |  退出dwm */
+    { MODKEY|ControlMask,   XK_F12,      quit,             {0} },                     /* super ctrl f12     |  退出dwm */
+
 
 	{ MODKEY,               XK_space,    selectlayout,     {.v = &layouts[1]} },      /* super space        |  切换到网格布局 */
 
