@@ -25,12 +25,7 @@ daemons() {
     fcitx5 &
     sleep 2
     parcellite &
-    # xfce4-power-manager &
-    # pactl info &
-    # flameshot &
-    # lemonade server &
     # ~/scripts/app-starter.sh picom &
-    # ~/scripts/app-starter.sh easyeffects &
 }
 
 every1s() {
