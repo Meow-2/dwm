@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 wifi_interface="wlp4s0"
 eth_interfaces="eno1"

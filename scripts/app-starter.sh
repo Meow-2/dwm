@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # 命令调用脚本
 
 terminal() {

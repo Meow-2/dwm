@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # dwm状态栏刷新脚本
 
 source ~/.profile

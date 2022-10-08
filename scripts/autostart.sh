@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # DWM自启动脚本
 
 settings() {

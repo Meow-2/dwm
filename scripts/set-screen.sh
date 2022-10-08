@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 : <<!
   设置屏幕分辨率的脚本
   one: INNER

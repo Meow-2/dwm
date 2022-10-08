@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # 更改环境变量脚本
 
 if [ -s ~/.profile ]; then
