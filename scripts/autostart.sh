@@ -3,7 +3,7 @@
 
 settings() {
     [ $1 ] && sleep $1
-    feh --bg-scale ~/Pictures/wallpapers/01.jpg &
+    feh --bg-scale ~/Pictures/wallpapers/wall0.jpg &
     xset r rate 180 30 &
     setxkbmap -option caps:swapescape &
     ~/Programs/dwm/scripts/set-touchpad.sh &

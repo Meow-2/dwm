@@ -147,6 +147,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal ssh"} }, \
 
     { MODKEY,               XK_e,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh filemanager") },
+    { MODKEY,               XK_z,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh changewallpaper") },
     { Mod1Mask|ControlMask, XK_a,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh flameshot") },
     { Mod1Mask|ControlMask, XK_l,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh blurlock") },
 

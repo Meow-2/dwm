@@ -43,6 +43,7 @@ case $1 in
     wemeet) wemeet ;;
     steam) steam ;;
     obsidian) obsidian ;;
+    changewallpaper) feh --randomize --bg-fill ~/Pictures/wallpapers/* ;;
     set_vol) set_vol $2 ;;
     set_backlight) set_backlight $2 ;;
 esac
