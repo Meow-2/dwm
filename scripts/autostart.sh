@@ -1,5 +1,6 @@
 #!/bin/sh
 # DWM自启动脚本
+
 source ~/.profile
 video_wallpaper="xwinwrap -fs -nf -ov -- \
 mpv -wid WID --loop --no-osc --no-osd-bar \
