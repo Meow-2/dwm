@@ -1,9 +1,10 @@
 #!/bin/sh
 # DWM自启动脚本
+source ~/.profile
 
 settings() {
     [ $1 ] && sleep $1
-    feh --bg-scale ~/Pictures/wallpapers/wall0.jpg &
+    [ $WALLPAPER_MODE != "VIDEO" ] && (~/.fehbg &) || (~/.xwinwrap &)
     xset r rate 180 30 &
     setxkbmap -option caps:swapescape &
     ~/Programs/dwm/scripts/set-touchpad.sh &
