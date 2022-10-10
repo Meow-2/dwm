@@ -9,7 +9,7 @@ mpv -wid WID --loop --no-osc --no-osd-bar \
 
 settings() {
     [ $1 ] && sleep $1
-    if [ $WALLPAPER_MODE != "VIDEO" ]; then
+    if [ "$WALLPAPER_MODE" != "VIDEO" ]; then
         [ -x ~/.fehbg ] && (~/.fehbg &) || (feh --bg-scale ~/Pictures/wallpapers/color.jpg &)
     else
         [ -x ~/.xwinwrap ] && (~/.xwinwrap &) || (eval $video_wallpaper)
