@@ -1,10 +1,19 @@
 #!/bin/sh
 # DWM自启动脚本
 source ~/.profile
+video_wallpaper="xwinwrap -fs -nf -ov -- \
+mpv -wid WID --loop --no-osc --no-osd-bar \
+--input-vo-keyboard=no --really-quiet \
+--no-stop-screensaver --panscan=1.0 ~/Pictures/wallpapers/video/2_day.webm \
+>>/dev/null 2>&1 &"
 
 settings() {
     [ $1 ] && sleep $1
-    [ $WALLPAPER_MODE != "VIDEO" ] && (~/.fehbg &) || (~/.xwinwrap &)
+    if [ $WALLPAPER_MODE != "VIDEO" ]; then
+        [ -x ~/.fehbg ] && (~/.fehbg &) || (feh --bg-scale ~/Pictures/wallpapers/color.jpg &)
+    else
+        [ -x ~/.xwinwrap ] && (~/.xwinwrap &) || (eval $video_wallpaper)
+    fi
     xset r rate 180 30 &
     setxkbmap -option caps:swapescape &
     ~/Programs/dwm/scripts/set-touchpad.sh &
