@@ -36,7 +36,7 @@ static const unsigned int alphas[][3]    = {
 
 /* 自定义tag名称 */
 /* 自定义特定实例的显示状态 */
-static const char *tags[] = { "", "", "", "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", ""};
+static const char *tags[] = { "", "", "", "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "", ""};
 
 static const Rule rules[] = {
     /* class                 instance              title             tags mask     isfloating   noborder  monitor */
@@ -70,6 +70,7 @@ static const Rule rules[] = {
     {"lx-music-desktop",     NULL,                 NULL,             1 << 13,        0,           1,        -1 },
     {"wemeetapp",            NULL,                 NULL,             1 << 13,        1,           1,        -1 },
     {"Steam",                NULL,                 NULL,             1 << 14,        0,           1,        -1 },
+    {"Vmplayer",             "vmplayer",           NULL,             1 << 15,        1,           1,        -1 },
 };
 static const char *overviewtag = "OVERVIEW";
 static const Layout overviewlayout = { "",  overview };
