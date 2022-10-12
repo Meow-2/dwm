@@ -42,6 +42,9 @@ daemons() {
 every1s() {
     [ $1 ] && sleep $1
     while true; do
+        if [ "$(xdotool search --name 'wemeetapp')" != "" ]; then
+            xset s reset
+        fi
         ~/Programs/dwm/scripts/cal-netspeed.sh
         ~/Programs/dwm/scripts/dwm-status.sh &
         sleep 1
