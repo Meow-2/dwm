@@ -13,7 +13,7 @@ settings() {
     if [ "$WALLPAPER_MODE" != "VIDEO" ]; then
         [ -x ~/.fehbg ] && (~/.fehbg &) || (feh --bg-scale ~/Pictures/wallpapers/color.jpg &)
     else
-        [ -x ~/.xwinwrap ] && (~/.xwinwrap &) || (eval $video_wallpaper)
+        [ -f ~/.xwinwrap ] && (sh ~/.xwinwrap &) || (eval $video_wallpaper)
     fi
     xset r rate 180 30 &
     setxkbmap -option caps:swapescape &
