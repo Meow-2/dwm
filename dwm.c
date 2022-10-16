@@ -3089,37 +3089,40 @@ viewtoright(const Arg *arg) {
 void
 tile(Monitor *m)
 {
-    unsigned int i, n, h, r, mw, my, ty;
+    unsigned int i, n, h, r, mw, my, ty, oe = 1, ie = 1;
     Client *c;
 
     for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
     if (n == 0) return;
+	if (smartgaps == n) {
+		oe = 0; // outer gaps disabled
+	}
 
     if (n > m->nmaster)
-        mw = m->nmaster ? (m->ww + gappi) * m->mfact : 0;
+        mw = m->nmaster ? (m->ww + gappi*ie) * m->mfact : 0;
     else
-        mw = m->ww - 2 * gappo + gappi;
-    for (i = 0, my = ty = gappo, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+        mw = m->ww - 2 * gappo*oe + gappi*ie;
+    for (i = 0, my = ty = gappo*oe, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
         if (i < m->nmaster) {
             r = MIN(n, m->nmaster) - i;
-            h = (m->wh - my - gappo - gappi * (r - 1)) / r;
+            h = (m->wh - my - gappo*oe - gappi* ie * (r - 1)) / r;
             resize(c,
-                   m->wx + gappo,
+                   m->wx + gappo*oe,
                    m->wy + my,
-                   mw - 2 * c->bw - gappi,
+                   mw - 2 * c->bw - gappi*ie,
                    h - 2 * c->bw,
                    0);
-            my += HEIGHT(c) + gappi;
+            my += HEIGHT(c) + gappi*ie;
         } else {
             r = n - i;
-            h = (m->wh - ty - gappo - gappi * (r - 1)) / r;
+            h = (m->wh - ty - gappo*oe - gappi*ie * (r - 1)) / r;
             resize(c,
-                   m->wx + mw + gappo,
+                   m->wx + mw + gappo*oe,
                    m->wy + ty,
-                   m->ww - mw - 2 * c->bw - 2 * gappo,
+                   m->ww - mw - 2 * c->bw - 2 * gappo*oe,
                    h - 2* c->bw,
                    0);
-            ty += HEIGHT(c) + gappi;
+            ty += HEIGHT(c) + gappi*ie;
         }
 }
 
