@@ -1525,11 +1525,11 @@ killclient(const Arg *arg)
         XSetErrorHandler(xerror);
         XUngrabServer(dpy);
     }
-    for (c = selmon->clients; c; c = c->next)
-        if (ISVISIBLE(c) && !HIDDEN(c))
-            n++;
-    if (n <= 1)
-        focusstack(NULL);
+    // for (c = selmon->clients; c; c = c->next)
+    //     if (ISVISIBLE(c) && !HIDDEN(c))
+    //         n++;
+    // if (n <= 1)
+    //     focusstack(NULL);
 }
 
 void
