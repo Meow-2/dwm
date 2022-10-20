@@ -37,7 +37,7 @@ static const unsigned int alphas[][3]    = {
 
 /* 自定义tag名称 */
 /* 自定义特定实例的显示状态 */
-static const char *tags[] = { "", "", "", "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "", ""};
+static const char *tags[] = { "", "", "", "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "", ""};
 
 static const Rule rules[] = {
     /* class                 instance              title             tags mask     isfloating   noborder  monitor */
@@ -55,6 +55,7 @@ static const Rule rules[] = {
     {"Parcellite",           NULL,                 NULL,             0,              1,           1,        -1 },
     {"Alacritty",            NULL,                 "temp",           0,              1,           0,        -1 },
     {"Alacritty",            NULL,                 "ssh",            1 << 1,         0,           0,        -1 },
+    {"Code",                 "code",               NULL,             1 << 2,         0,           0,        -1 },
     {"obsidian",             NULL,                 NULL,             1 << 6,         0,           1,        -1 },
     {"wpsoffice",            "wpsoffice",          NULL,             1 << 7,         0,           1,        -1 },
     {"baidunetdisk",         NULL,                 NULL,             1 << 8,         0,           1,        -1 },
