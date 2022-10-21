@@ -15,6 +15,9 @@ settings() {
     else
         [ -f ~/.xwinwrap ] && (sh ~/.xwinwrap &) || (eval $video_wallpaper)
     fi
+    if [ ! -f ~/.cache/betterlockscreen/current/lock_blur.png ]; then
+        betterlockscreen -u ~/Pictures/wallpapers/lock.jpg &
+    fi
     xset r rate 180 30 &
     setxkbmap -option caps:swapescape &
     ~/Programs/dwm/scripts/set-touchpad.sh &
