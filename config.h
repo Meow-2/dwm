@@ -72,6 +72,7 @@ static const Rule rules[] = {
     { NULL,                  "tim.exe",            NULL,             1 << 11,        0,           1,        -1 },
     {"TelegramDesktop",      NULL,                 NULL,             1 << 12,        0,           1,        -1 },
     {"lx-music-desktop",     NULL,                 NULL,             1 << 13,        0,           1,        -1 },
+    {"listen1",              NULL,                 NULL,             1 << 13,        0,           1,        -1 },
     {"wemeetapp",            NULL,                 NULL,             1 << 13,        1,           1,        -1 },
     {"Steam",                NULL,                 NULL,             1 << 14,        0,           1,        -1 },
     {"Vmplayer",             "vmplayer",           NULL,             1 << 15,        1,           1,        -1 },
