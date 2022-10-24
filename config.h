@@ -75,8 +75,8 @@ static const Rule rules[] = {
     {"listen1",              NULL,                 NULL,             1 << 13,        0,           1,        -1 },
     {"wemeetapp",            NULL,                 NULL,             1 << 13,        1,           1,        -1 },
     {"Steam",                NULL,                 NULL,             1 << 14,        0,           1,        -1 },
-    {"Vmplayer",             "vmplayer",           NULL,             1 << 15,        1,           1,        -1 },
-    {"Vmware",               "vmware",             NULL,             1 << 15,        1,           1,        -1 },
+    {"Vmplayer",             "vmplayer",           NULL,             1 << 15,        0,           1,        -1 },
+    {"Vmware",               "vmware",             NULL,             1 << 15,        0,           1,        -1 },
 };
 static const char *overviewtag = "OVERVIEW";
 static const Layout overviewlayout = { "",  overview };
