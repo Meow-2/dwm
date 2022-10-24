@@ -61,6 +61,7 @@ static const Rule rules[] = {
     {"wpsoffice",            "wpsoffice",          NULL,             1 << 7,         0,           1,        -1 },
     {"baidunetdisk",         NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     {"transmission",         NULL,                 NULL,             1 << 8,         0,           1,        -1 },
+    {"com.xunlei.download",  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     {"Google-chrome",        NULL,                 NULL,             1 << 9,         0,           1,        -1 },
     { "icalingua",           "icalingua",          "图片查看",       0,              1,           0,        -1 },
     { NULL,                  NULL,                 "图片预览",       0,              1,           0,        -1 },
