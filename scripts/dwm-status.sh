@@ -41,7 +41,7 @@ color06="#FFD371^"
 color07="#FEB139^"
 color08="#E94560^"
 
-others_color="$s2d_fg$color01$s2d_bg$color00"
+others_color="$s2d_fg$color05$s2d_bg$color00"
 net_color="$s2d_fg$color02$s2d_bg$color00"
 cpu_color="$s2d_fg$color03$s2d_bg$color00"
 mem_color="$s2d_fg$color04$s2d_bg$color00"
