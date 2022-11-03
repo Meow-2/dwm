@@ -6,6 +6,7 @@ terminal() {
         new) alacritty ;;
         temp) alacritty -t temp ;;
         ssh) alacritty -t ssh -e ~/Programs/dwm/scripts/set-lemonade.sh ;;
+        btop) alacritty -t temp -e btop ;;
     esac
 }
 
