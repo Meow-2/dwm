@@ -46,6 +46,7 @@ static const Rule rules[] = {
     {"utools",               NULL,                 NULL,             0,              1,           1,        -1 },
     {"Peek",                 NULL,                 NULL,             0,              1,           1,        -1 },
     {"Mailspring",           NULL,                 NULL,             0,              1,           1,        -1 },
+    {"Lxappearance",         NULL,                 NULL,             0,              1,           1,        -1 },
     {"dolphin",              NULL,                 NULL,             0,              1,           1,        -1 },
     {"Pcmanfm",              NULL,                 NULL,             0,              1,           1,        -1 },
     {"Blueman-manager",      NULL,                 NULL,             0,              1,           1,        -1 },
