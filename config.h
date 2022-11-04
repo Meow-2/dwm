@@ -37,7 +37,7 @@ static const unsigned int alphas[][3]    = {
 
 /* 自定义tag名称 */
 /* 自定义特定实例的显示状态 */
-static const char *tags[] = { "", "", "", "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "", ""};
+static const char *tags[] = { "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "", ""};
 
 static const Rule rules[] = {
     /* class                 instance              title             tags mask     isfloating   noborder  monitor */
@@ -55,29 +55,28 @@ static const Rule rules[] = {
     {"Safeeyes",             NULL,                 NULL,             0,              1,           1,        -1 },
     {"Parcellite",           NULL,                 NULL,             0,              1,           1,        -1 },
     {"Alacritty",            NULL,                 "temp",           0,              1,           0,        -1 },
-    {"Alacritty",            NULL,                 "ssh",            1 << 1,         0,           0,        -1 },
-    {"Code",                 "code",               NULL,             1 << 2,         0,           0,        -1 },
-    {"obsidian",             NULL,                 NULL,             1 << 6,         0,           1,        -1 },
-    {"wpsoffice",            "wpsoffice",          NULL,             1 << 7,         0,           1,        -1 },
-    {"Zotero",               NULL,                 NULL,             1 << 7,         1,           1,        -1 },
-    {"baidunetdisk",         NULL,                 NULL,             1 << 8,         0,           1,        -1 },
-    {"transmission",         NULL,                 NULL,             1 << 8,         0,           1,        -1 },
-    {"com.xunlei.download",  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
-    {"Google-chrome",        NULL,                 NULL,             1 << 9,         0,           1,        -1 },
+    {"Google-chrome",        NULL,                 NULL,             1 << 2,         0,           1,        -1 },
+    {"obsidian",             NULL,                 NULL,             1 << 3,         0,           1,        -1 },
+    {"Code",                 "code",               NULL,             1 << 4,         0,           0,        -1 },
+    {"wpsoffice",            "wpsoffice",          NULL,             1 << 5,         0,           1,        -1 },
+    {"Zotero",               NULL,                 NULL,             1 << 5,         1,           1,        -1 },
+    {"baidunetdisk",         NULL,                 NULL,             1 << 6,         0,           1,        -1 },
+    {"transmission",         NULL,                 NULL,             1 << 6,         0,           1,        -1 },
+    {"com.xunlei.download",  NULL,                 NULL,             1 << 6,         0,           1,        -1 },
     { "icalingua",           "icalingua",          "图片查看",       0,              1,           0,        -1 },
     { NULL,                  NULL,                 "图片预览",       0,              1,           0,        -1 },
     { NULL,                  NULL,                 "crx_",           0,              1,           0,        -1 },
-    { NULL,                  "wechat.exe",         NULL,             1 << 10,        0,           1,        -1 },
-    { NULL,                  "wxwork.exe",         NULL,             1 << 10,        0,           1,        -1 },
-    {"icalingua",            NULL,                 NULL,             1 << 11,        0,           1,        -1 },
-    { NULL,                  "tim.exe",            NULL,             1 << 11,        0,           1,        -1 },
-    {"TelegramDesktop",      NULL,                 NULL,             1 << 12,        0,           1,        -1 },
-    {"lx-music-desktop",     NULL,                 NULL,             1 << 13,        0,           1,        -1 },
-    {"listen1",              NULL,                 NULL,             1 << 13,        0,           1,        -1 },
-    {"wemeetapp",            NULL,                 NULL,             1 << 13,        1,           1,        -1 },
-    {"Steam",                NULL,                 NULL,             1 << 14,        0,           1,        -1 },
-    {"Vmplayer",             "vmplayer",           NULL,             1 << 15,        0,           1,        -1 },
-    {"Vmware",               "vmware",             NULL,             1 << 15,        0,           1,        -1 },
+    { NULL,                  "wechat.exe",         NULL,             1 << 7,         0,           1,        -1 },
+    { NULL,                  "wxwork.exe",         NULL,             1 << 7,         0,           1,        -1 },
+    {"icalingua",            NULL,                 NULL,             1 << 8,         0,           1,        -1 },
+    { NULL,                  "tim.exe",            NULL,             1 << 8,         0,           1,        -1 },
+    {"TelegramDesktop",      NULL,                 NULL,             1 << 9,         0,           1,        -1 },
+    {"lx-music-desktop",     NULL,                 NULL,             1 << 10,        0,           1,        -1 },
+    {"listen1",              NULL,                 NULL,             1 << 10,        0,           1,        -1 },
+    {"wemeetapp",            NULL,                 NULL,             1 << 10,        1,           1,        -1 },
+    {"Steam",                NULL,                 NULL,             1 << 11,        0,           1,        -1 },
+    {"Vmplayer",             "vmplayer",           NULL,             1 << 12,        0,           1,        -1 },
+    {"Vmware",               "vmware",             NULL,             1 << 12,        0,           1,        -1 },
 };
 static const char *overviewtag = "OVERVIEW";
 static const Layout overviewlayout = { "",  overview };
@@ -150,7 +149,7 @@ static Key keys[] = {
 
     /* spawn + SHCMD 执行对 应命令 */
     { MODKEY|ShiftMask,     XK_q,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh killw") },
-    { MODKEY,               XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal new") },
+    { MODKEY,               XK_Return,   view,             {.ui = 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal new" }},
     { MODKEY|ControlMask,   XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal temp") },
     { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal ssh"} }, \
 
