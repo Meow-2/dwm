@@ -230,6 +230,7 @@ static void hide(Client *c);
 static void show(Client *c);
 static void showtag(Client *c);
 static void hidewin(const Arg *arg);
+static void togglehide(const Arg *arg);
 static void hideotherwins(const Arg *arg);
 static void showonlyorall(const Arg *arg);
 static int issinglewin(const Arg *arg);
@@ -2527,6 +2528,14 @@ hidewin(const Arg *arg) {
         return;
     Client *c = (Client *)selmon->sel;
     hide(c);
+}
+
+void 
+togglehide(const Arg *arg){
+    if (hiddenWinStackTop > -1 )
+        restorewin(arg);
+    else
+        hidewin(arg);
 }
 
 int

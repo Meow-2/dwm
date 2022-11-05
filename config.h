@@ -113,8 +113,7 @@ static Key keys[] = {
     { MODKEY,               XK_comma,    setmfact,         {.f = -0.05} },            /* super ,            |  缩小主工作区 */
     { MODKEY,               XK_period,   setmfact,         {.f = +0.05} },            /* super .            |  放大主工作区 */
 
-    { MODKEY,               XK_d,        hidewin,          {0} },                     /* super d            |  隐藏 窗口 */
-    { MODKEY|ShiftMask,     XK_d,        restorewin,       {0} },                     /* super shift d      |  取消隐藏 窗口 */
+    { MODKEY,               XK_z,        togglehide,          {0} },                     /* super d         |  切换隐藏 窗口 */
 
     { MODKEY,               XK_u,        zoom,             {0} },                     /* super shift u      |  将当前聚焦窗口置为主窗口 */
 
