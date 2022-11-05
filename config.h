@@ -66,6 +66,7 @@ static const Rule rules[] = {
     {"com.xunlei.download",  NULL,                 NULL,             1 << 6,         0,           1,        -1 },
     { "icalingua",           "icalingua",          "图片查看",       0,              1,           0,        -1 },
     { NULL,                  NULL,                 "图片预览",       0,              1,           0,        -1 },
+    { NULL,                  NULL,                 "broken",         0,              1,           0,        -1 },
     { NULL,                  NULL,                 "crx_",           0,              1,           0,        -1 },
     { NULL,                  "wechat.exe",         NULL,             1 << 7,         0,           1,        -1 },
     { NULL,                  "wxwork.exe",         NULL,             1 << 7,         0,           1,        -1 },
