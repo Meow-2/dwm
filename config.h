@@ -117,8 +117,8 @@ static Key keys[] = {
 
     { MODKEY,               XK_u,        zoom,             {0} },                     /* super shift u      |  将当前聚焦窗口置为主窗口 */
 
-    { MODKEY,               XK_r,        togglefloating,   {0} },                     /* super r            |  开启/关闭 聚焦目标的float模式 */
-    { MODKEY|ShiftMask,     XK_r,        toggleallfloating,{0} },                     /* super shift r      |  开启/关闭 全部目标的float模式 */
+    { MODKEY,               XK_d,        togglefloating,   {0} },                     /* super d            |  开启/关闭 聚焦目标的float模式 */
+    { MODKEY|ShiftMask,     XK_d,        toggleallfloating,{0} },                     /* super shift d      |  开启/关闭 全部目标的float模式 */
 	{ MODKEY,               XK_f,        showonlyorall,    {0} },                     /* super f            |  切换 只显示一个窗口 / 全部显示 */
     { MODKEY|ShiftMask,     XK_f,        fullscreen,       {0} },                     /* super f            |  开启/关闭 全屏 */
     { MODKEY,               XK_p,        incnmaster,       {.i = +1} },               /* super p            |  改变主工作区窗口数量 (1 2中切换) */
