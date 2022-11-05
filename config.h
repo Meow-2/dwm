@@ -56,6 +56,7 @@ static const Rule rules[] = {
     {"Parcellite",           NULL,                 NULL,             0,              1,           1,        -1 },
     {"Alacritty",            NULL,                 "temp",           0,              1,           0,        -1 },
     {"Google-chrome",        NULL,                 NULL,             1 << 2,         0,           1,        -1 },
+    {"Microsoft-edge",       NULL,                 NULL,             1 << 2,         0,           1,        -1 },
     {"obsidian",             NULL,                 NULL,             1 << 3,         0,           1,        -1 },
     {"Code",                 "code",               NULL,             1 << 4,         0,           0,        -1 },
     {"wpsoffice",            "wpsoffice",          NULL,             1 << 5,         0,           1,        -1 },
@@ -177,7 +178,7 @@ static Key keys[] = {
     TAGKEYS(XK_7, 6,  0,  0)
     TAGKEYS(XK_8, 7,  0,  0)
     TAGKEYS(XK_9, 8,  0,  0)
-    TAGKEYS(XK_c , 2  , "~/Programs/dwm/scripts/app-starter.sh chrome"    , "~/Programs/dwm/scripts/app-starter.sh chrome")
+    TAGKEYS(XK_c , 2  , "~/Programs/dwm/scripts/app-starter.sh browser"    , "~/Programs/dwm/scripts/app-starter.sh browser")
     TAGKEYS(XK_o , 3  , "~/Programs/dwm/scripts/app-starter.sh obsidian"  , "~/Programs/dwm/scripts/app-starter.sh obsidian")
     TAGKEYS(XK_w , 7 , "~/Programs/dwm/scripts/app-starter.sh wechat"    , "~/Programs/dwm/scripts/app-starter.sh wechat")
     TAGKEYS(XK_i , 8 , "~/Programs/dwm/scripts/app-starter.sh qq"        , "~/Programs/dwm/scripts/app-starter.sh qq")

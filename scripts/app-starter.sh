@@ -37,7 +37,7 @@ case $1 in
     killw) kill -9 $(xprop | grep "_NET_WM_PID(CARDINAL)" | awk '{print $3}') ;;
     filemanager) pcmanfm ;;
     blurlock) betterlockscreen --lock dim ;;
-    chrome) google-chrome-stable --password-store=gnome ;;
+    browser) microsoft-edge-stable --password-store=gnome ;;
     wechat) /opt/apps/com.qq.weixin.deepin/files/run.sh ;;
     qq) /opt/apps/com.qq.tim.spark/files/run.sh ;;
     # qq) icalingua ;;
