@@ -149,6 +149,7 @@ static Key keys[] = {
 
     /* spawn + SHCMD 执行对 应命令 */
     { MODKEY|ShiftMask,     XK_q,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh killw") },
+    { MODKEY,               XK_x,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh getinfo") },
     { MODKEY,               XK_Return,   view,             {.ui = 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal new" }},
     { MODKEY|ControlMask,   XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal temp") },
     { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal ssh"} }, \

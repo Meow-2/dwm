@@ -35,6 +35,8 @@ set_backlight() {
 case $1 in
     terminal) terminal $2 ;;
     killw) kill -9 $(xprop | grep "_NET_WM_PID(CARDINAL)" | awk '{print $3}') ;;
+    getinfo) dunstify $(xprop | awk '/^WM_CLASS/{sub(/.* =/, "instance:"); sub(/,/,"\nclass:"); print}/^WM_NAME/{sub(/
+.* =/, "title:"); print}') ;;
     filemanager) pcmanfm ;;
     blurlock) betterlockscreen --lock dim ;;
     browser) microsoft-edge-stable --password-store=gnome ;;
