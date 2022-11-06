@@ -1,14 +1,21 @@
 #!/bin/sh
 # 命令调用脚本
 
+# terminal() {
+#     case $1 in
+#         new) alacritty -e ~/Programs/dwm/scripts/set-tmux.sh ;;
+#         temp) alacritty -t temp ;;
+#         ssh) alacritty -e ~/Programs/dwm/scripts/set-lemonade.sh ;;
+#         btop) alacritty -t temp -e btop ;;
+#     esac
+# }
+
 terminal() {
     case $1 in
-        new)
-            alacritty -e ~/Programs/dwm/scripts/set-tmux.sh
-            ;;
-        temp) alacritty -t temp ;;
-        ssh) alacritty -t ssh -e ~/Programs/dwm/scripts/set-lemonade.sh ;;
-        btop) alacritty -t temp -e btop ;;
+        new) wezterm start ;;
+        temp) wezterm start --class wezterm ;;
+        ssh) wezterm --config-file ~/.config/wezterm/wezterm_tmux.lua start -- ~/Programs/dwm/scripts/set-lemonade.sh ;;
+        btop) wezterm start --class weztemp -- btop ;;
     esac
 }
 
