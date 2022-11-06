@@ -13,7 +13,7 @@
 terminal() {
     case $1 in
         new) wezterm start ;;
-        temp) wezterm start --class wezterm ;;
+        temp) wezterm start --class weztemp ;;
         ssh) wezterm --config-file ~/.config/wezterm/wezterm_tmux.lua start -- ~/Programs/dwm/scripts/set-lemonade.sh ;;
         btop) wezterm start --class weztemp -- btop ;;
     esac
