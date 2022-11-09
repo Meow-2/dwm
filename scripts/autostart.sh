@@ -33,7 +33,7 @@ daemons() {
     mailspring -b &
     utools &
     sleep 6
-    xset r rate 180 30 &
+    xset r rate 210 40 &
     setxkbmap -option caps:swapescape &
     safeeyes &
     fcitx5 &
