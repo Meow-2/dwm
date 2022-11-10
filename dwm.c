@@ -1015,11 +1015,18 @@ drawbar(Monitor *m)
         drw_setscheme(drw, scheme[scm]);
 
         // 绘制TASK
-        w = MIN(TEXTW(c->name), TEXTW("              "));
+        w = TEXTW(c->name);
         empty_w = m->ww - x - status_w - system_w;
         if (w > empty_w) { // 如果当前TASK绘制后长度超过最大宽度
             w = empty_w;
-            x = drw_text(drw, x, 0, w, bh, lrpad / 2, "...", 0);
+            char temp[256];
+            memset(temp, '\0', sizeof(temp));
+            strcpy(temp, c->name);
+            unsigned int temp_length = strlen(temp);
+            temp[temp_length - 1] = '.';
+            temp[temp_length - 2] = '.';
+            temp[temp_length - 3] = '.';
+            x = drw_text(drw, x, 0, w, bh, lrpad / 2, temp, 0);
             c->taskw = w;
             tasks_w += w;
             break;
