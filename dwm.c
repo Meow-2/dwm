@@ -2842,7 +2842,7 @@ updatestatus(void)
 {
     Monitor *m;
     if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
-        strcpy(stext, " ");
+        strcpy(stext, "   ");
     for (m = mons; m; m = m->next)
         drawbar(m);
     updatesystray();
