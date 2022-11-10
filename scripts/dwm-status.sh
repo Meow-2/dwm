@@ -54,7 +54,7 @@ print_others() {
     icons=()
     [ "$(pactl list sinks | awk 'BEGIN{RS=""};END{print NR}')" -gt 1 ] && icons=(${icons[@]} "")
     [ "$(ps -aux | grep v2raya | sed 1d)" ] && icons=(${icons[@]} "")
-    [ "$(ps -aux | grep 'arch')" ] && icons=(${icons[@]} "")
+    # [ "$(ps -aux | grep 'arch')" ] && icons=(${icons[@]} "")
     # [ "$AUTOSCREEN" = "OFF" ] && icons=(${icons[@]} "ﴸ")
     # [ "$(ps -aux | grep 'danmu_sender' | sed 1d)" ] && icons=(${icons[@]} "ﳲ")
 
