@@ -60,6 +60,7 @@ static const Rule rules[] = {
     {"Microsoft-edge",       NULL,                 NULL,             1 << 2,         0,           1,        -1 },
     {"obsidian",             NULL,                 NULL,             1 << 3,         0,           1,        -1 },
     {"Code",                 "code",               NULL,             1 << 4,         0,           0,        -1 },
+    {"wpp",                  "wpp",                NULL,             1 << 5,         1,           1,        -1 },
     {"wpsoffice",            "wpsoffice",          NULL,             1 << 5,         0,           1,        -1 },
     {"Zotero",               NULL,                 NULL,             1 << 5,         1,           1,        -1 },
     {"baidunetdisk",         NULL,                 NULL,             1 << 6,         0,           1,        -1 },
