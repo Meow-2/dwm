@@ -45,6 +45,7 @@ static const Rule rules[] = {
     {"noborder",             NULL,                 NULL,             0,              1,           1,        -1 },
     {"utools",               NULL,                 NULL,             0,              1,           1,        -1 },
     {"uTools",               NULL,                 NULL,             0,              1,           1,        -1 },
+    {"PeaZip",               NULL,                 NULL,             0,              1,           0,        -1 },
     {"Peek",                 NULL,                 NULL,             0,              1,           1,        -1 },
     {"Mailspring",           NULL,                 NULL,             0,              1,           0,        -1 },
     {"Lxappearance",         NULL,                 NULL,             0,              1,           0,        -1 },
