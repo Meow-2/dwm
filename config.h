@@ -37,7 +37,7 @@ static const unsigned int alphas[][3]    = {
 
 /* 自定义tag名称 */
 /* 自定义特定实例的显示状态 */
-static const char *tags[] = { "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "", ""};
+static const char *tags[] = { "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "ﴼ", ""};
 
 static const Rule rules[] = {
     /* class                 instance              title             tags mask     isfloating   noborder  monitor */
@@ -61,7 +61,7 @@ static const Rule rules[] = {
     {"weztemp",              NULL,                 NULL,             0,              1,           0,        -1 },
     {"Google-chrome",        NULL,                 NULL,             1 << 2,         0,           1,        -1 },
     {"Microsoft-edge",       NULL,                 NULL,             1 << 2,         0,           1,        -1 },
-    {"obsidian",             NULL,                 NULL,             1 << 3,         0,           1,        -1 },
+    {"obsidian",             "obsidian",           NULL,             1 << 3,         0,           1,        -1 },
     {"Code",                 "code",               NULL,             1 << 4,         0,           0,        -1 },
     {"wpp",                  "wpp",                NULL,             1 << 5,         1,           1,        -1 },
     {"wpsoffice",            "wpsoffice",          NULL,             1 << 5,         0,           1,        -1 },
@@ -83,6 +83,7 @@ static const Rule rules[] = {
     {"listen1",              NULL,                 NULL,             1 << 10,        0,           1,        -1 },
     {"wemeetapp",            NULL,                 NULL,             1 << 10,        1,           1,        -1 },
     {"Steam",                NULL,                 NULL,             1 << 11,        0,           1,        -1 },
+    {"obs",                  "obs",                "OBS",            1 << 11,        0,           1,        -1 },
     {"Vmplayer",             "vmplayer",           NULL,             1 << 12,        0,           1,        -1 },
     {"Vmware",               "vmware",             NULL,             1 << 12,        0,           1,        -1 },
 };
