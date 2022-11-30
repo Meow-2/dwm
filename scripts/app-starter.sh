@@ -49,7 +49,8 @@ case $1 in
         ;;
     filemanager) pcmanfm ;;
     blurlock) betterlockscreen --lock dim ;;
-    browser) microsoft-edge-stable --password-store=gnome ;;
+    # browser) microsoft-edge-stable --password-store=gnome ;;
+    browser) google-chrome-stable --password-store=gnome ;;
     wechat) /opt/apps/com.qq.weixin.deepin/files/run.sh ;;
     qq) /opt/apps/com.qq.tim.spark/files/run.sh ;;
     # qq) icalingua ;;
