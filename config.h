@@ -59,6 +59,7 @@ static const Rule rules[] = {
     {"Parcellite",           NULL,                 NULL,             0,              1,           1,        -1 },
     {"Alacritty",            NULL,                 "temp",           0,              1,           0,        -1 },
     {"weztemp",              NULL,                 NULL,             0,              1,           0,        -1 },
+    {"wezcurrent",           NULL,                 NULL,             0,              0,           0,        -1 },
     {"Google-chrome",        NULL,                 NULL,             1 << 2,         0,           1,        -1 },
     {"Microsoft-edge",       NULL,                 NULL,             1 << 2,         0,           1,        -1 },
     {"obsidian",             "obsidian",           NULL,             1 << 3,         0,           1,        -1 },
@@ -161,6 +162,7 @@ static Key keys[] = {
     { MODKEY,               XK_x,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh getinfo") },
     { MODKEY,               XK_Return,   view,             {.ui = 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal new" }},
     { MODKEY|ControlMask,   XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal temp") },
+    { MODKEY|Mod1Mask,      XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal current") },
     { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal ssh"} }, \
 
     { MODKEY,               XK_e,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh filemanager") },
