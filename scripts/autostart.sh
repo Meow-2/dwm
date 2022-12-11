@@ -19,6 +19,8 @@ settings() {
     if [ ! -f ~/.cache/betterlockscreen/current/lock_blur.png ]; then
         betterlockscreen -u ~/Pictures/wallpapers/lock.jpg &
     fi
+    xset r rate 210 40 &
+    setxkbmap -option caps:swapescape &
     ~/Programs/dwm/scripts/set-touchpad.sh &
     xset s 300 300 &
     xset dpms 300 300 300 &
@@ -35,8 +37,6 @@ daemons() {
     mailspring -b &
     utools &
     sleep 6
-    xset r rate 210 40 &
-    setxkbmap -option caps:swapescape &
     safeeyes &
     fcitx5 &
     sleep 2
