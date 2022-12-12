@@ -9,7 +9,7 @@ mpv -wid WID --loop --no-osc --no-osd-bar \
 >>/dev/null 2>&1 &"
 
 settings() {
-    [ $1 ] && sleep $1
+    # [ $1 ] && sleep $1
     /usr/bin/xbacklight = 85 &
     if [ "$WALLPAPER_MODE" != "VIDEO" ]; then
         [ -x ~/.fehbg ] && (~/.fehbg &) || (feh --bg-scale ~/Pictures/wallpapers/color.jpg &)
