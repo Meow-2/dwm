@@ -21,7 +21,6 @@ terminal() {
 }
 
 set_vol() {
-
     case $1 in
         up) /usr/bin/amixer -D pulse -qM set Master 3%+ umute \
             && mpv --no-video ~/Programs/dwm/scripts/resources/audio-volume-change.oga ;;
