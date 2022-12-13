@@ -1,7 +1,15 @@
 #!/bin/sh
 
-wifi_interface="wlp4s0"
-eth_interfaces="eno1"
+# wifi_interface="wlp4s0"
+# eth_interfaces="eno1"
+
+if [ "$(cat /etc/hostname)" = "Legion" ]; then
+    wifi_interface="wlp4s0"
+    eth_interfaces="eno1"
+elif [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
+    wifi_interface="wlo1"
+    eth_interfaces="enp4s0"
+fi
 
 speed=$(numfmt --to=iec 0)
 wifi_rx1=$(numfmt --to=iec 0)
