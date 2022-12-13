@@ -29,7 +29,7 @@ settings() {
 
 daemons() {
     [ $1 ] && sleep $1
-    picom --experimental-backends >>/dev/null 2>&1 &
+    # picom --experimental-backends >>/dev/null 2>&1 &
     redshift &
     dunst -conf ~/.config/dunst.conf &
     blueman-applet &
