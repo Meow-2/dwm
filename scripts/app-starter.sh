@@ -12,16 +12,17 @@
 
 browser_command="google-chrome-stable"
 browser_flags="--password-store=gnome"
-[ "$(cat /etc/hostname)" = "Noatomusk" ] && browser_flags=$browser_flags" --force-device-scale-factor=1.2"
+# [ "$(cat /etc/hostname)" = "Noatomusk" ] && browser_flags=$browser_flags" --force-device-scale-factor=1.2"
 
-terminal_temp_command="wezterm start --class weztemp"
+# terminal_temp_command="wezterm start --class weztemp"
 # dwm wezterm浮动窗口的字体会莫名其妙放大，这可能和主机的显示器dpi设置有关
-[ "$(cat /etc/hostname)" = "Noatomusk" ] && terminal_temp_command="wezterm --config font_size=12 start --class weztemp"
+# [ "$(cat /etc/hostname)" = "Noatomusk" ] && terminal_temp_command="wezterm --config font_size=12 start --class weztemp"
 
 terminal() {
     case $1 in
         new) wezterm start ;;
-        temp) $terminal_temp_command ;;
+        # temp) $terminal_temp_command ;;
+        temp) wezterm start --class weztemp ;;
         current) wezterm start --class wezcurrent ;;
         ssh) wezterm --config-file ~/.config/wezterm/wezterm_tmux.lua start -- ~/Programs/dwm/scripts/set-lemonade.sh ;;
         btop) wezterm start --class weztemp -- btop ;;
