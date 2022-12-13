@@ -10,6 +10,10 @@
 #     esac
 # }
 
+browser_command="google-chrome-stable"
+browser_flags="--password-store=gnome"
+[ "$(cat /etc/hostname)" = "Noatomusk" ] && browser_flags=$browser_flags" --force-device-scale-factor=1.2"
+
 terminal() {
     case $1 in
         new) wezterm start ;;
@@ -50,7 +54,7 @@ case $1 in
     filemanager) pcmanfm ;;
     blurlock) betterlockscreen --lock dim ;;
     # browser) microsoft-edge-stable --password-store=gnome ;;
-    browser) google-chrome-stable --password-store=gnome ;;
+    browser) $browser_command $browser_flags ;;
     wechat) /opt/apps/com.qq.weixin.deepin/files/run.sh ;;
     qq) /opt/apps/com.qq.tim.spark/files/run.sh ;;
     # qq) icalingua ;;
