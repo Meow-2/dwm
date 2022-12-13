@@ -186,6 +186,12 @@ print_bat() {
         bat_icon=""
     else bat_icon=""; fi
 
+    if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
+        charge_icon=""
+        bat_icon=""
+        bat_text=100%
+    fi
+
     bat_icon=$charge_icon$bat_icon
     text=" $bat_icon $bat_text "
     color=$bat_color
