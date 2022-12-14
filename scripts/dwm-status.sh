@@ -53,7 +53,7 @@ bat_color="$s2d_fg$color08$s2d_bg$color00"
 print_others() {
     icons=()
     # [ "$(pactl list sinks | awk 'BEGIN{RS=""};END{print NR}')" -gt 1 ] && icons=(${icons[@]} "")
-    [ "$(pactl list sinks | grep Headphones)" ] && icons=(${icons[@]} "")
+    [ "$(pactl list sinks | grep Headphones | grep availability)" ] && icons=(${icons[@]} "")
     [ "$(ps -aux | grep v2raya | sed 1d)" ] && icons=(${icons[@]} "")
     [ "$(ps -aux | grep 'arch')" ] && icons=(${icons[@]} "")
     # [ "$AUTOSCREEN" = "OFF" ] && icons=(${icons[@]} "ﴸ")
