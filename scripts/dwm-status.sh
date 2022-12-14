@@ -52,7 +52,8 @@ bat_color="$s2d_fg$color08$s2d_bg$color00"
 
 print_others() {
     icons=()
-    [ "$(pactl list sinks | awk 'BEGIN{RS=""};END{print NR}')" -gt 1 ] && icons=(${icons[@]} "")
+    # [ "$(pactl list sinks | awk 'BEGIN{RS=""};END{print NR}')" -gt 1 ] && icons=(${icons[@]} "")
+    [ "$(pactl list sinks | grep Headphones)" ] && icons=(${icons[@]} "")
     [ "$(ps -aux | grep v2raya | sed 1d)" ] && icons=(${icons[@]} "")
     [ "$(ps -aux | grep 'arch')" ] && icons=(${icons[@]} "")
     # [ "$AUTOSCREEN" = "OFF" ] && icons=(${icons[@]} "ﴸ")
@@ -127,6 +128,8 @@ print_backlight() {
     backlight_text=$(xbacklight | awk '{printf "%02d%", $1}')
     backlight_icon="盛"
     backlight_text=$backlight_text
+
+    [ "$(cat /etc/hostname)" = "Noatomusk" ] && backlight_text=90%
 
     text=" $backlight_icon $backlight_text "
     color=$backlight_color
