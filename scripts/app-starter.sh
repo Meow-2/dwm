@@ -41,10 +41,22 @@ set_vol() {
 }
 
 set_backlight() {
-    case $1 in
-        up) /usr/bin/xbacklight +5 ;;
-        down) /usr/bin/xbacklight -5 ;;
-    esac
+    if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
+        current_backlight=$(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//')
+        case $1 in
+            up)
+                /usr/bin/ddcutil setvcp 10 $((current_backlight + 20))
+                ;;
+            down)
+                /usr/bin/ddcutil setvcp 10 $((current_backlight - 20))
+                ;;
+        esac
+    else
+        case $1 in
+            up) /usr/bin/xbacklight +5 ;;
+            down) /usr/bin/xbacklight -5 ;;
+        esac
+    fi
     ~/Programs/dwm/scripts/dwm-status.sh
 }
 
