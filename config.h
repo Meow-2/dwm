@@ -48,6 +48,7 @@ static const Rule rules[] = {
     {"PeaZip",               NULL,                 NULL,             0,              1,           0,        -1 },
     {"Peek",                 NULL,                 NULL,             0,              1,           1,        -1 },
     {"Mailspring",           NULL,                 NULL,             0,              1,           1,        -1 },
+    {"EasyConnect",          NULL,                 NULL,             0,              1,           1,        -1 },
     {"Lxappearance",         NULL,                 NULL,             0,              1,           0,        -1 },
     {"dolphin",              NULL,                 NULL,             0,              1,           0,        -1 },
     {"Pcmanfm",              NULL,                 NULL,             0,              1,           0,        -1 },
