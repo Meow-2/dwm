@@ -66,6 +66,7 @@ static const Rule rules[] = {
     {"obsidian",             "obsidian",           NULL,             1 << 3,         0,           1,        -1 },
     {"Code",                 "code",               NULL,             1 << 4,         0,           0,        -1 },
     {"wpp",                  NULL,                 NULL,             1 << 5,         0,           1,        -1 },
+    {"et",                   NULL,                 NULL,             1 << 5,         0,           1,        -1 },
     {"pdf",                  NULL,                 NULL,             1 << 5,         0,           1,        -1 },
     {"wpsoffice",            NULL,                 NULL,             1 << 5,         0,           1,        -1 },
     {"wps",                  NULL,                 NULL,             1 << 5,         0,           1,        -1 },
