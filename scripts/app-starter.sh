@@ -73,8 +73,9 @@ case $1 in
     # browser) microsoft-edge-stable --password-store=gnome ;;
     browser) $browser_command $browser_flags ;;
     wechat) /opt/apps/com.qq.weixin.deepin/files/run.sh ;;
-    qq) /opt/apps/com.qq.tim.spark/files/run.sh ;;
+    # qq) /opt/apps/com.qq.tim.spark/files/run.sh ;;
     # qq) icalingua ;;
+    qq) tencent-qq ;;
     flameshot) flameshot gui ;;
     Telegram) telegram-desktop ;;
     wemeet) wemeet ;;
