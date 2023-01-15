@@ -37,7 +37,7 @@ static const unsigned int alphas[][3]    = {
 
 /* 自定义tag名称 */
 /* 自定义特定实例的显示状态 */
-static const char *tags[] = { "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "ﴼ", ""};
+static const char *tags[] = { "","", "", "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "ﴼ", ""};
 
 static const Rule rules[] = {
     /* class                 instance              title             tags mask     isfloating   noborder  monitor */
@@ -61,36 +61,36 @@ static const Rule rules[] = {
     {"Alacritty",            NULL,                 "temp",           0,              1,           0,        -1 },
     {"weztemp",              NULL,                 NULL,             0,              1,           0,        -1 },
     {"wezcurrent",           NULL,                 NULL,             0,              0,           0,        -1 },
-    {"Google-chrome",        NULL,                 NULL,             1 << 2,         0,           1,        -1 },
-    {"Microsoft-edge",       NULL,                 NULL,             1 << 2,         0,           1,        -1 },
-    {"obsidian",             "obsidian",           NULL,             1 << 3,         0,           1,        -1 },
-    {"Code",                 "code",               NULL,             1 << 4,         0,           0,        -1 },
-    {"wpp",                  NULL,                 NULL,             1 << 5,         0,           1,        -1 },
-    {"pdf",                  NULL,                 NULL,             1 << 5,         0,           1,        -1 },
-    {"wpsoffice",            NULL,                 NULL,             1 << 5,         0,           1,        -1 },
-    {"wps",                  NULL,                 NULL,             1 << 5,         0,           1,        -1 },
-    {"Zotero",               NULL,                 NULL,             1 << 5,         1,           0,        -1 },
-    {"baidunetdisk",         NULL,                 NULL,             1 << 6,         0,           1,        -1 },
-    {"transmission",         NULL,                 NULL,             1 << 6,         0,           1,        -1 },
-    {"com.xunlei.download",  NULL,                 NULL,             1 << 6,         0,           1,        -1 },
+    {"Google-chrome",        NULL,                 NULL,             1 << 5,         0,           1,        -1 },
+    {"Microsoft-edge",       NULL,                 NULL,             1 << 5,         0,           1,        -1 },
+    {"obsidian",             "obsidian",           NULL,             1 << 6,         0,           1,        -1 },
+    {"Code",                 "code",               NULL,             1 << 7,         0,           0,        -1 },
+    {"wpp",                  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
+    {"pdf",                  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
+    {"wpsoffice",            NULL,                 NULL,             1 << 8,         0,           1,        -1 },
+    {"wps",                  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
+    {"Zotero",               NULL,                 NULL,             1 << 8,         1,           0,        -1 },
+    {"baidunetdisk",         NULL,                 NULL,             1 << 9,         0,           1,        -1 },
+    {"transmission",         NULL,                 NULL,             1 << 9,         0,           1,        -1 },
+    {"com.xunlei.download",  NULL,                 NULL,             1 << 9,         0,           1,        -1 },
     {"icalingua",            "icalingua",          "图片查看",       0,              1,           0,        -1 },
     { NULL,                  NULL,                 "图片预览",       0,              1,           0,        -1 },
     { NULL,                  NULL,                 "broken",         0,              1,           0,        -1 },
     { NULL,                  NULL,                 "crx_",           0,              1,           0,        -1 },
-    { NULL,                  "wechat.exe",         NULL,             1 << 7,         0,           1,        -1 },
-    { NULL,                  "wxwork.exe",         NULL,             1 << 7,         0,           1,        -1 },
-    {"icalingua",            NULL,                 NULL,             1 << 8,         0,           0,        -1 },
-    {"QQ",                   NULL,                 NULL,             1 << 8,         0,           1,        -1 },
-    { NULL,                  "tim.exe",            NULL,             1 << 8,         0,           1,        -1 },
-    {"TelegramDesktop",      NULL,                 NULL,             1 << 9,         0,           1,        -1 },
-    {"Feishu",               NULL,                 NULL,             1 << 9,         0,           1,        -1 },
-    {"lx-music-desktop",     NULL,                 NULL,             1 << 10,        0,           1,        -1 },
-    {"listen1",              NULL,                 NULL,             1 << 10,        0,           1,        -1 },
-    {"wemeetapp",            NULL,                 NULL,             1 << 10,        1,           1,        -1 },
-    {"Steam",                NULL,                 NULL,             1 << 11,        0,           1,        -1 },
-    {"obs",                  "obs",                "OBS",            1 << 11,        0,           1,        -1 },
-    {"Vmplayer",             "vmplayer",           NULL,             1 << 12,        0,           1,        -1 },
-    {"Vmware",               "vmware",             NULL,             1 << 12,        0,           1,        -1 },
+    { NULL,                  "wechat.exe",         NULL,             1 << 10,        0,           1,        -1 },
+    { NULL,                  "wxwork.exe",         NULL,             1 << 10,        0,           1,        -1 },
+    {"icalingua",            NULL,                 NULL,             1 << 11,        0,           0,        -1 },
+    {"QQ",                   NULL,                 NULL,             1 << 11,        0,           1,        -1 },
+    { NULL,                  "tim.exe",            NULL,             1 << 11,        0,           1,        -1 },
+    {"TelegramDesktop",      NULL,                 NULL,             1 << 12,        0,           1,        -1 },
+    {"Feishu",               NULL,                 NULL,             1 << 12,        0,           1,        -1 },
+    {"lx-music-desktop",     NULL,                 NULL,             1 << 13,        0,           1,        -1 },
+    {"listen1",              NULL,                 NULL,             1 << 13,        0,           1,        -1 },
+    {"wemeetapp",            NULL,                 NULL,             1 << 13,        1,           1,        -1 },
+    {"Steam",                NULL,                 NULL,             1 << 14,        0,           1,        -1 },
+    {"obs",                  "obs",                "OBS",            1 << 14,        0,           1,        -1 },
+    {"Vmplayer",             "vmplayer",           NULL,             1 << 15,        0,           1,        -1 },
+    {"Vmware",               "vmware",             NULL,             1 << 15,        0,           1,        -1 },
 };
 static const char *overviewtag = "OVERVIEW";
 static const Layout overviewlayout = { "",  overview };
@@ -163,10 +163,11 @@ static Key keys[] = {
     /* spawn + SHCMD 执行对 应命令 */
     { MODKEY|ShiftMask,     XK_q,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh killw") },
     { MODKEY,               XK_x,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh getinfo") },
-    { MODKEY,               XK_Return,   view,             {.ui = 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal new" }},
+    // { MODKEY,               XK_Return,   view,             {.ui = 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal new" }},
+    { MODKEY,               XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal current") },
+    // { MODKEY|Mod1Mask,      XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal current") },
     { MODKEY|ControlMask,   XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal temp") },
-    { MODKEY|Mod1Mask,      XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal current") },
-    { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 1, .v = "~/Programs/dwm/scripts/app-starter.sh terminal ssh"} }, \
+    { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 4, .v = "~/Programs/dwm/scripts/app-starter.sh terminal ssh"} }, \
 
     { MODKEY,               XK_e,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh filemanager") },
     { MODKEY,               XK_b,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh changewallpaper") },
@@ -193,13 +194,13 @@ static Key keys[] = {
     TAGKEYS(XK_7, 6,  0,  0)
     TAGKEYS(XK_8, 7,  0,  0)
     TAGKEYS(XK_9, 8,  0,  0)
-    TAGKEYS(XK_c , 2  , "~/Programs/dwm/scripts/app-starter.sh browser"    , "~/Programs/dwm/scripts/app-starter.sh browser")
-    TAGKEYS(XK_o , 3  , "~/Programs/dwm/scripts/app-starter.sh obsidian"  , "~/Programs/dwm/scripts/app-starter.sh obsidian")
-    TAGKEYS(XK_w , 7 , "~/Programs/dwm/scripts/app-starter.sh wechat"    , "~/Programs/dwm/scripts/app-starter.sh wechat")
-    TAGKEYS(XK_i , 8 , "~/Programs/dwm/scripts/app-starter.sh qq"        , "~/Programs/dwm/scripts/app-starter.sh qq")
-    TAGKEYS(XK_t , 9 , "~/Programs/dwm/scripts/app-starter.sh Telegram"  , "~/Programs/dwm/scripts/app-starter.sh Telegram")
-    TAGKEYS(XK_m , 10 , "~/Programs/dwm/scripts/app-starter.sh wemeet"    , "~/Programs/dwm/scripts/app-starter.sh wemeet")
-    TAGKEYS(XK_p , 11 , "~/Programs/dwm/scripts/app-starter.sh steam"     , "~/Programs/dwm/scripts/app-starter.sh steam")
+    TAGKEYS(XK_c , 5  , "~/Programs/dwm/scripts/app-starter.sh browser"    , "~/Programs/dwm/scripts/app-starter.sh browser")
+    TAGKEYS(XK_o , 6  , "~/Programs/dwm/scripts/app-starter.sh obsidian"  , "~/Programs/dwm/scripts/app-starter.sh obsidian")
+    TAGKEYS(XK_w , 10 , "~/Programs/dwm/scripts/app-starter.sh wechat"    , "~/Programs/dwm/scripts/app-starter.sh wechat")
+    TAGKEYS(XK_i , 11 , "~/Programs/dwm/scripts/app-starter.sh qq"        , "~/Programs/dwm/scripts/app-starter.sh qq")
+    TAGKEYS(XK_t , 12 , "~/Programs/dwm/scripts/app-starter.sh Telegram"  , "~/Programs/dwm/scripts/app-starter.sh Telegram")
+    TAGKEYS(XK_m , 13 , "~/Programs/dwm/scripts/app-starter.sh wemeet"    , "~/Programs/dwm/scripts/app-starter.sh wemeet")
+    TAGKEYS(XK_p , 14 , "~/Programs/dwm/scripts/app-starter.sh steam"     , "~/Programs/dwm/scripts/app-starter.sh steam")
 };
 static Button buttons[] = {
     /* click               event mask       button            function       argument  */
