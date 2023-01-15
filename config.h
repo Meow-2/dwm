@@ -80,7 +80,7 @@ static const Rule rules[] = {
     { NULL,                  "wechat.exe",         NULL,             1 << 7,         0,           1,        -1 },
     { NULL,                  "wxwork.exe",         NULL,             1 << 7,         0,           1,        -1 },
     {"icalingua",            NULL,                 NULL,             1 << 8,         0,           0,        -1 },
-    {"QQ",                   NULL,                 NULL,             1 << 8,         0,           0,        -1 },
+    {"QQ",                   NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     { NULL,                  "tim.exe",            NULL,             1 << 8,         0,           1,        -1 },
     {"TelegramDesktop",      NULL,                 NULL,             1 << 9,         0,           1,        -1 },
     {"lx-music-desktop",     NULL,                 NULL,             1 << 10,        0,           1,        -1 },
