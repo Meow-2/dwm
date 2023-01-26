@@ -37,7 +37,7 @@ daemons() {
     mailspring -b &
     utools &
     sleep 6
-    safeeyes &
+    # safeeyes &
     fcitx5 &
     sleep 2
     parcellite &
