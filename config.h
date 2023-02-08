@@ -69,7 +69,7 @@ static const Rule rules[] = {
     {"pdf",                  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     {"wpsoffice",            NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     {"wps",                  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
-    {"Zotero",               NULL,                 NULL,             1 << 8,         1,           0,        -1 },
+    {"Zotero",               NULL,                 NULL,             1 << 8,         0,           0,        -1 },
     {"baidunetdisk",         NULL,                 NULL,             1 << 9,         0,           1,        -1 },
     {"transmission",         NULL,                 NULL,             1 << 9,         0,           1,        -1 },
     {"com.xunlei.download",  NULL,                 NULL,             1 << 9,         0,           1,        -1 },
