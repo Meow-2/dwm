@@ -75,7 +75,7 @@ case $1 in
     wechat) /opt/apps/com.qq.weixin.deepin/files/run.sh ;;
     # qq) /opt/apps/com.qq.tim.spark/files/run.sh ;;
     # qq) icalingua ;;
-    qq) tencent-qq ;;
+    qq) linuxqq ;;
     flameshot) flameshot gui ;;
     Telegram) telegram-desktop ;;
     wemeet) wemeet ;;
