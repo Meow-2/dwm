@@ -8,7 +8,7 @@ if [ "$(cat /etc/hostname)" = "Legion" ]; then
     eth_interfaces="eno1"
 elif [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
     wifi_interface="wlo1"
-    eth_interfaces="enp4s0"
+    eth_interfaces="enp5s0"
 fi
 
 speed=$(numfmt --to=iec 0)

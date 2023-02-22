@@ -27,6 +27,10 @@ settings() {
     xss-lock -- betterlockscreen -l dim &
     if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
         ~/Programs/dwm/scripts/set-profile.sh backlight $(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//') &
+        # 转发到服务器
+        # autossh -M 4396 -NR 43970:localhost:43968 zk@119.29.90.39 -p 43968 &
+        # 转发到宿舍
+        autossh -M 4396 -NR 43970:localhost:43968 zk@10.133.83.36 -p 43968 &
     fi
 }
 
