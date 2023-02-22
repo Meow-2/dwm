@@ -24,7 +24,10 @@ settings() {
     setxkbmap -option caps:swapescape &
     xset s 300 300 &
     xset dpms 300 300 300 &
-    xss-lock -- betterlockscreen -l dim
+    xss-lock -- betterlockscreen -l dim &
+    if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
+        ~/Programs/dwm/scripts/set-profile.sh backlight $(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//') &
+    fi
 }
 
 daemons() {

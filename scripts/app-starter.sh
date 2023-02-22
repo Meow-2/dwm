@@ -51,6 +51,7 @@ set_backlight() {
                 /usr/bin/ddcutil setvcp 10 $((current_backlight - 20))
                 ;;
         esac
+        ~/Programs/dwm/scripts/set-profile.sh backlight $(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//')
     else
         case $1 in
             up) /usr/bin/xbacklight +5 ;;

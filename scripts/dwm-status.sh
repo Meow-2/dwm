@@ -130,7 +130,8 @@ print_time() {
 print_backlight() {
 
     if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
-        backlight_text=$(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//')'%'
+        # backlight_text=$(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//')'%'
+        backlight_text=${backlight}%
     else
         backlight_text=$(xbacklight | awk '{printf "%02d%", $1}')
     fi
