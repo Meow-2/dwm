@@ -31,7 +31,8 @@ static const char *colors[][3]           = {
 };
 static const unsigned int alphas[][3]    = { 
     [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-    [SchemeSel]  = { OPAQUE, baralpha, borderalpha }
+    [SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+    [SchemeUnderline]  = { OPAQUE, baralpha, borderalpha }
 };
 
 
