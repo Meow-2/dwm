@@ -204,7 +204,7 @@ static Key keys[] = {
     TAGKEYS(XK_i , 11 , "~/Programs/dwm/scripts/app-starter.sh qq"        , "~/Programs/dwm/scripts/app-starter.sh qq")
     TAGKEYS(XK_t , 12 , "~/Programs/dwm/scripts/app-starter.sh Telegram"  , "~/Programs/dwm/scripts/app-starter.sh Telegram")
     TAGKEYS(XK_m , 13 , "~/Programs/dwm/scripts/app-starter.sh wemeet"    , "~/Programs/dwm/scripts/app-starter.sh wemeet")
-    TAGKEYS(XK_p , 14 , "~/Programs/dwm/scripts/app-starter.sh steam"     , "~/Programs/dwm/scripts/app-starter.sh steam")
+    // TAGKEYS(XK_p , 14 , "~/Programs/dwm/scripts/app-starter.sh steam"     , "~/Programs/dwm/scripts/app-starter.sh steam")
 };
 static Button buttons[] = {
     /* click               event mask       button            function       argument  */
