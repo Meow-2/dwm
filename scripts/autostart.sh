@@ -5,7 +5,7 @@ source ~/.profile
 video_wallpaper="xwinwrap -fs -nf -ov -- \
 mpv -wid WID --loop --no-osc --no-osd-bar \
 --input-vo-keyboard=no --really-quiet \
---no-stop-screensaver --panscan=1.0 ~/Pictures/wallpapers/video/day.webm \
+--stop-screensaver=no --panscan=1.0 ~/Pictures/wallpapers/video/1.mp4 \
 >>/dev/null 2>&1 &"
 
 settings() {
