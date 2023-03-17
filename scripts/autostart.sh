@@ -30,7 +30,7 @@ settings() {
         # 转发到服务器
         # autossh -M 4396 -NR 43970:localhost:43968 zk@119.29.90.39 -p 43968 &
         # 转发到宿舍
-        autossh -M 4396 -NR 43970:localhost:43968 zk@10.133.83.36 -p 43968 &
+        autossh -M 4396 -NR 43970:localhost:43968 zk@10.133.97.185 -p 43968 &
     fi
 }
 
