@@ -171,7 +171,7 @@ static Key keys[] = {
     { MODKEY,               XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal current") },
     // { MODKEY|Mod1Mask,      XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal current") },
     { MODKEY|ControlMask,   XK_Return,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal temp") },
-    { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 4, .v = "~/Programs/dwm/scripts/app-starter.sh terminal ssh"} }, \
+    { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 4, .v = "~/Programs/dwm/scripts/app-starter.sh terminal ssh"} },
 
     { MODKEY,               XK_e,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh filemanager") },
     { MODKEY,               XK_b,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh changewallpaper") },
