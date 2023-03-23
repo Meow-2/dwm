@@ -95,6 +95,7 @@ static const Rule rules[] = {
     {"obs",                  "obs",                "OBS",            1 << 14,        0,           1,        -1 },
     {"Vmplayer",             "vmplayer",           NULL,             1 << 15,        0,           1,        -1 },
     {"Vmware",               "vmware",             NULL,             1 << 15,        0,           1,        -1 },
+    {"et",                   "et",                 NULL,             1 << 8,         0,           1,        -1 },
 };
 static const char *overviewtag = "OVERVIEW";
 static const Layout overviewlayout = { "",  overview };
