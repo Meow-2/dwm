@@ -1,8 +1,9 @@
 #!/bin/sh
+source ~/.config/zsh/env.zsh
 
 if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
     lemonade server -allow 127.0.0.1 --log-level=4 &
-    ssh -L 43969:127.0.0.1:43969 -R 2489:127.0.0.1:2489 -p 43968 zk@10.133.97.185
+    ssh -L 43969:127.0.0.1:43969 -R 2489:127.0.0.1:2489 -p 43968 zk@${HOME_IP}
 else
     lemonade server -allow 127.0.0.1 --log-level=4 &
     ssh -L 43969:127.0.0.1:43969 -R 2489:127.0.0.1:2489 -p 43970 zk@127.0.0.1
