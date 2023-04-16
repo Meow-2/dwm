@@ -10,7 +10,8 @@
 #     esac
 # }
 
-browser_command="google-chrome-stable"
+# browser_command="google-chrome-stable"
+browser_command="microsoft-edge-stable"
 browser_flags="--password-store=gnome"
 # [ "$(cat /etc/hostname)" = "Noatomusk" ] && browser_flags=$browser_flags" --force-device-scale-factor=1.2"
 
