@@ -90,6 +90,7 @@ static const Rule rules[] = {
     {"Feishu",               NULL,                 NULL,             1 << 12,        0,           1,        -1 },
     {"lx-music-desktop",     NULL,                 NULL,             1 << 13,        0,           1,        -1 },
     {"listen1",              NULL,                 NULL,             1 << 13,        0,           1,        -1 },
+    {"yesplaymusic",         NULL,                 NULL,             1 << 13,        0,           1,        -1 },
     {"wemeetapp",            NULL,                 NULL,             1 << 13,        1,           1,        -1 },
     {"Steam",                NULL,                 NULL,             1 << 14,        0,           1,        -1 },
     {"obs",                  "obs",                "OBS",            1 << 14,        0,           1,        -1 },
