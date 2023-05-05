@@ -53,11 +53,11 @@ bat_color="$s2d_fg$color08$s2d_bg$color00"
 print_others() {
     icons=()
     if [ "$(cat /etc/hostname)" = "Noatomusk" ];then 
-        [ "$(pactl list sinks | grep Headphones)" ] && icons=(${icons[@]} "")
+        [ "$(pactl list sinks | grep Headphones)" ] && icons=(${icons[@]} "󰋋")
     else
-        [ "$(pactl list sinks | awk 'BEGIN{RS=""};END{print NR}')" -gt 1 ] && icons=(${icons[@]} "")
+        [ "$(pactl list sinks | awk 'BEGIN{RS=""};END{print NR}')" -gt 1 ] && icons=(${icons[@]} "󰋋")
     fi
-    [ "$(ps -aux | grep v2raya | sed 1d)" ] && icons=(${icons[@]} "")
+    [ "$(ps -aux | grep v2raya | sed 1d)" ] && icons=(${icons[@]} "󰊤")
     [ "$(ps -aux | grep 'arch')" ] && icons=(${icons[@]} "")
     # [ "$AUTOSCREEN" = "OFF" ] && icons=(${icons[@]} "ﴸ")
     # [ "$(ps -aux | grep 'danmu_sender' | sed 1d)" ] && icons=(${icons[@]} "ﳲ")
@@ -84,7 +84,7 @@ print_net() {
 }
 
 print_cpu() {
-    cpu_icon="閭"
+    cpu_icon="󰒇"
     cpu_text=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{printf "%02d%", 100 - $1}')
 
     text=" $cpu_icon $cpu_text "
@@ -98,7 +98,7 @@ print_mem() {
     mem_buffers=$(cat /proc/meminfo | grep "Buffers:" | awk '{print $2}')
     mem_cached=$(cat /proc/meminfo | grep -w "Cached:" | awk '{print $2}')
     men_usage_rate=$(((mem_total - mem_free - mem_buffers - mem_cached) * 100 / mem_total))
-    mem_icon=""
+    mem_icon="󰍛"
     mem_text=$(echo $men_usage_rate | awk '{printf "%02d%", $1}')
     text=" $mem_icon $mem_text "
     color=$mem_color
@@ -135,7 +135,7 @@ print_backlight() {
     else
         backlight_text=$(xbacklight | awk '{printf "%02d%", $1}')
     fi
-    backlight_icon="盛"
+    backlight_icon="󰖨"
     backlight_text=$backlight_text
 
     text=" $backlight_icon $backlight_text "
@@ -148,17 +148,17 @@ print_vol() {
     vol_text=$(amixer -D pulse get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')
     if [ "$vol_muted" ]; then
         vol_text="--"
-        vol_icon="婢"
+        vol_icon="󰖁"
     elif [ "$vol_text" -eq 0 ]; then
-        vol_icon="婢"
+        vol_icon="󰖁"
     elif [ "$vol_text" -lt 10 ]; then
-        vol_icon="奄"
+        vol_icon="󰕿"
         vol_text=0$vol_text
     elif [ "$vol_text" -le 20 ]; then
-        vol_icon="奄"
+        vol_icon="󰕿"
     elif [ "$vol_text" -le 60 ]; then
-        vol_icon="奔"
-    else vol_icon="墳"; fi
+        vol_icon="󰖀"
+    else vol_icon="󰕾"; fi
 
     vol_text=$vol_text%
 
@@ -175,30 +175,30 @@ print_bat() {
     [ "$(acpi -b | grep 'Battery 0' | grep remaining)" ] && bat_text="$bat_text $(acpi -b | sed 2d | awk '{print $5}')"
     if [ "$bat_text" -ge 95 ]; then
         charge_icon=""
-        bat_icon=""
+        bat_icon="󰁹"
     elif [ "$bat_text" -ge 90 ]; then
-        bat_icon=""
+        bat_icon="󰂂"
     elif [ "$bat_text" -ge 80 ]; then
-        bat_icon=""
+        bat_icon="󰂁"
     elif [ "$bat_text" -ge 70 ]; then
-        bat_icon=""
+        bat_icon="󰂀"
     elif [ "$bat_text" -ge 60 ]; then
-        bat_icon=""
+        bat_icon="󰁿"
     elif [ "$bat_text" -ge 50 ]; then
-        bat_icon=""
+        bat_icon="󰁾"
     elif [ "$bat_text" -ge 40 ]; then
-        bat_icon=""
+        bat_icon="󰁽"
     elif [ "$bat_text" -ge 30 ]; then
-        bat_icon=""
+        bat_icon="󰁼"
     elif [ "$bat_text" -ge 20 ]; then
-        bat_icon=""
+        bat_icon="󰁻"
     elif [ "$bat_text" -ge 10 ]; then
-        bat_icon=""
-    else bat_icon=""; fi
+        bat_icon="󰁺"
+    else bat_icon="󰂃"; fi
 
     if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
         charge_icon=""
-        bat_icon=""
+        bat_icon="󰂄"
         bat_text=100%
     fi
 

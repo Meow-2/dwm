@@ -38,7 +38,8 @@ static const unsigned int alphas[][3]    = {
 
 /* 自定义tag名称 */
 /* 自定义特定实例的显示状态 */
-static const char *tags[] = { "","", "", "", "", "", "ﱅ", "", "", "", "﬐", "ﬄ", "", "", "ﴼ", ""};
+// static const char *tags[] = { "","󰎧", "󰎪", "󰎭", "", "󰇩", "󰝇", "󰨞", "󰏆", "󰅢", "﬐", "ﬄ", "", "", "ﴼ", ""};
+static const char *tags[] = { "","󰎧", "󰎪", "󰎭", "", "󰇩", "󰝇", "󰨞", "󰏆", "", "󰘑", "󰘅", "", "󰎄", "󰠾", "󰖳"};
 
 static const Rule rules[] = {
     /* class                 instance              title             tags mask     isfloating   noborder  monitor */
@@ -103,8 +104,8 @@ static const Layout overviewlayout = { "",  overview };
 
 /* 自定义布局 */
 static const Layout layouts[] = {
-    { "﬿",  tile },         /* 主次栈 */
-    { "﩯",  magicgrid },    /* 网格 */
+    { "󰙀",  tile },         /* 主次栈 */
+    { "󰕰",  magicgrid },    /* 网格 */
 };
 
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
