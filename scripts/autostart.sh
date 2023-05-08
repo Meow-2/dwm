@@ -46,9 +46,8 @@ daemons() {
     utools &
     sleep 6
     # safeeyes &
-    fcitx5 &
-    sleep 2
     parcellite &
+    fcitx5 &
     # ~/scripts/app-starter.sh picom &
 }
 
