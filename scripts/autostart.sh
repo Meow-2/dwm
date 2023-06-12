@@ -9,6 +9,9 @@ mpv -wid WID --loop --no-osc --no-osd-bar \
 >>/dev/null 2>&1 &"
 
 settings() {
+    if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
+        xrandr --output DP-1 --mode 2560x1440 --rate 144.01
+    fi
     [ $1 ] && sleep $1
     /usr/bin/xbacklight = 85 &
     if [ "$WALLPAPER_MODE" != "VIDEO" ]; then
