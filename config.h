@@ -118,7 +118,8 @@ static const Layout layouts[] = {
 static Key keys[] = {
     /* modifier             key          function          argument */
     { MODKEY,               XK_s,        togglesystray,    {0} },                     /* super s            |  切换 托盘栏显示状态 */
-    { MODKEY|ShiftMask,     XK_s,        togglebar,        {0} },                     /* super shift s      |  开启/关闭 状态栏 */
+    { MODKEY|ShiftMask,     XK_s,        togglesticky,     {0} },                     /* super shift s      |  窗口置顶到所有tag */
+    { MODKEY|ShiftMask,     XK_space,    togglebar,        {0} },                     /* super shift space  |  开启/关闭 状态栏 */
 
     { MODKEY,               XK_Tab,      view,             {0} },                     /* super tab          |  本tag内切换聚焦窗口 */
     { MODKEY,               XK_k,        focusstack,       {.i = -1} },               /* super k            |  本tag内切换聚焦窗口 */
