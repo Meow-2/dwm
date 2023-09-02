@@ -48,6 +48,7 @@ static const Rule rules[] = {
     {"feh",                  NULL,                 NULL,             0,              1,           0,        -1 },
     {"mpv",                  NULL,                 NULL,             0,              1,           0,        -1 },
     {"utools",               NULL,                 NULL,             0,              1,           1,        -1 },
+    {"FileZilla",            NULL,                 NULL,             0,              1,           1,        -1 },
     {"uTools",               NULL,                 NULL,             0,              1,           1,        -1 },
     {"PeaZip",               NULL,                 NULL,             0,              1,           0,        -1 },
     {"Peek",                 NULL,                 NULL,             0,              1,           1,        -1 },
