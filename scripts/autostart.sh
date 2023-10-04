@@ -45,10 +45,11 @@ daemons() {
     utools &
     sleep 1
     bluemail &
-    sleep 6
+    sleep 3
+    fcitx5 &
+    sleep 3
     # safeeyes &
     parcellite &
-    fcitx5 &
     # ~/scripts/app-starter.sh picom &
 }
 
