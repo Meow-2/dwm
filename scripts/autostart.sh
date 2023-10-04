@@ -42,8 +42,9 @@ daemons() {
     dunst -conf ~/.config/dunst.conf &
     blueman-applet &
     nm-applet &
-    mailspring -b &
     utools &
+    sleep 1
+    bluemail &
     sleep 6
     # safeeyes &
     parcellite &

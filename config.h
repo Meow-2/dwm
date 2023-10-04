@@ -74,6 +74,7 @@ static const Rule rules[] = {
     {"jetbrains-clion",      NULL,                 NULL,             1 << 7,         1,           1,        -1 },
     {"wpp",                  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     {"pdf",                  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
+    {"BlueMail",             NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     {"wpsoffice",            NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     {"wps",                  NULL,                 NULL,             1 << 8,         0,           1,        -1 },
     {"Zotero",               NULL,                 NULL,             1 << 8,         0,           0,        -1 },
