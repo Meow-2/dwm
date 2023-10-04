@@ -53,6 +53,11 @@ set_backlight() {
                 ;;
         esac
         ~/Programs/dwm/scripts/set-profile.sh backlight $(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//')
+    elif [ "$(cat /etc/hostname)" = "ThinkBook" ]; then
+        case $1 in
+            up) /usr/bin/light -A 5 ;;
+            down) /usr/bin/light -U 5 ;;
+        esac
     else
         case $1 in
             up) /usr/bin/xbacklight +5 ;;

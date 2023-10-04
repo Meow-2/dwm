@@ -9,6 +9,9 @@ if [ "$(cat /etc/hostname)" = "Legion" ]; then
 elif [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
     wifi_interface="wlo1"
     eth_interfaces="enp5s0"
+elif [ "$(cat /etc/hostname)" = "ThinkBook" ]; then
+    wifi_interface="wlo1"
+    eth_interfaces="enp2s0"
 fi
 
 speed=$(numfmt --to=iec 0)
