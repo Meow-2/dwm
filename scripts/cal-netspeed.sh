@@ -12,6 +12,9 @@ elif [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
 elif [ "$(cat /etc/hostname)" = "ThinkBook" ]; then
     wifi_interface="wlo1"
     eth_interfaces="enp2s0"
+elif [ "$(cat /etc/hostname)" = "ArchLinuxVM" ]; then
+    wifi_interface="lo"
+    eth_interfaces="ens33"
 fi
 
 speed=$(numfmt --to=iec 0)

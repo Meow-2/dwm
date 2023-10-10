@@ -32,11 +32,11 @@ terminal() {
 
 set_vol() {
     case $1 in
-        up) /usr/bin/amixer -D pulse -qM set Master 3%+ umute \
+        up) pulsemixer --change-volume +3 \
             && mpv --no-video ~/Programs/dwm/scripts/resources/audio-volume-change.oga ;;
-        down) /usr/bin/amixer -D pulse -qM set Master 3%- umute \
+        down) pulsemixer --change-volume -3 \
             && mpv --no-video ~/Programs/dwm/scripts/resources/audio-volume-change.oga ;;
-        toggle) amixer -D pulse set Master 1+ toggle ;;
+        toggle) pulsemixer --toggle-mute ;;
     esac
     ~/Programs/dwm/scripts/dwm-status.sh
 }

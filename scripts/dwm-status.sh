@@ -146,8 +146,8 @@ print_backlight() {
 }
 
 print_vol() {
-    vol_muted=$(amixer -D pulse get Master | tail -n1 | grep '\[off\]')
-    vol_text=$(amixer -D pulse get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')
+    vol_muted=$(pulsemixer --get-mute | grep '1')
+    vol_text=$(pulsemixer --get-volume | awk '{print $1}')
     if [ "$vol_muted" ]; then
         vol_text="--"
         vol_icon="󰖁"
