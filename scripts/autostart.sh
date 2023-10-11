@@ -47,10 +47,13 @@ daemons() {
     blueman-applet &
     nm-applet &
     utools &
-    sleep 1
-    bluemail &
+    # sleep 1
+    # bluemail &
     sleep 6
     # safeeyes &
+    if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
+        todesk &
+    fi
     parcellite &
     fcitx5 &
     # ~/scripts/app-starter.sh picom &
