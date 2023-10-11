@@ -45,6 +45,7 @@ static const Rule rules[] = {
     /* class                 instance              title             tags mask     isfloating   noborder  monitor */
     {"float",                NULL,                 NULL,             0,              1,           0,        -1 },
     {"noborder",             NULL,                 NULL,             0,              1,           1,        -1 },
+    {"ToDesk",               NULL,                 NULL,             1 << 15,        1,           1,        -1 },
     {"feh",                  NULL,                 NULL,             0,              1,           0,        -1 },
     {"mpv",                  NULL,                 NULL,             0,              1,           0,        -1 },
     {"utools",               NULL,                 NULL,             0,              1,           1,        -1 },
