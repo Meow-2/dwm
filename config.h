@@ -58,6 +58,8 @@ static const Rule rules[] = {
     {"Lxappearance",         NULL,                 NULL,             0,              1,           0,        -1 },
     {"dolphin",              NULL,                 NULL,             0,              1,           0,        -1 },
     {"Pcmanfm",              NULL,                 NULL,             0,              1,           0,        -1 },
+    {"Sigma file manager",   NULL,                 NULL,             0,              1,           0,        -1 },
+    {"stacer",               NULL,                 NULL,             0,              1,           1,        -1 },
     {"Blueman-manager",      NULL,                 NULL,             0,              1,           0,        -1 },
     {"Nm-applet",            NULL,                 NULL,             0,              1,           0,        -1 },
     {"Nm-connection-editor", NULL,                 NULL,             0,              1,           0,        -1 },
@@ -205,7 +207,7 @@ static Key keys[] = {
     TAGKEYS(XK_7, 6,  0,  0)
     TAGKEYS(XK_8, 7,  0,  0)
     TAGKEYS(XK_9, 8,  0,  0)
-    TAGKEYS(XK_c , 5  , "~/Programs/dwm/scripts/app-starter.sh browser"    , "~/Programs/dwm/scripts/app-starter.sh browser")
+    TAGKEYS(XK_c , 5  , "~/Programs/dwm/scripts/app-starter.sh browser"   , "~/Programs/dwm/scripts/app-starter.sh browser")
     TAGKEYS(XK_o , 6  , "~/Programs/dwm/scripts/app-starter.sh obsidian"  , "~/Programs/dwm/scripts/app-starter.sh obsidian")
     TAGKEYS(XK_w , 10 , "~/Programs/dwm/scripts/app-starter.sh wechat"    , "~/Programs/dwm/scripts/app-starter.sh wechat")
     TAGKEYS(XK_i , 11 , "~/Programs/dwm/scripts/app-starter.sh qq"        , "~/Programs/dwm/scripts/app-starter.sh qq")
