@@ -43,7 +43,7 @@ daemons() {
     [ $1 ] && sleep $1
     # picom --experimental-backends >>/dev/null 2>&1 &
     redshift &
-    dunst -conf ~/.config/dunst.conf &
+    dunst -conf ~/.config/dunst/dwm.conf &
     blueman-applet &
     nm-applet &
     utools &
