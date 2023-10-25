@@ -22,13 +22,7 @@ settings() {
     ~/Programs/dwm/scripts/set-touchpad.sh &
     xset r rate 210 40 &
     setxkbmap -option caps:swapescape &
-    # 锁屏并关闭屏幕
-    xset s 300 300 &
-    xset dpms 300 300 300 &
-    xss-lock -- betterlockscreen -l dim &
 
-    # 锁屏但不关闭屏幕
-    # ~/Programs/dwm/scripts/lock_with_screen_on.sh &
     if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
         ~/Programs/dwm/scripts/set-profile.sh backlight $(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//') &
         # 转发到服务器
@@ -36,6 +30,14 @@ settings() {
         # 转发到宿舍
         source ~/.config/zsh/env.zsh
         autossh -M 4396 -fCNR 43970:localhost:43968 zk@${HOME_IP} -p 43968 &
+
+        # 锁屏但不关闭屏幕
+        ~/Programs/dwm/scripts/lock_with_screen_on.sh &
+    else
+        # 锁屏并关闭屏幕
+        xset s 300 300 &
+        xset dpms 300 300 300 &
+        xss-lock -- betterlockscreen -l dim &
     fi
 }
 
