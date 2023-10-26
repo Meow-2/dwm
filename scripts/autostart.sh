@@ -43,6 +43,9 @@ settings() {
 
 daemons() {
     [ $1 ] && sleep $1
+    if [ "$(cat /etc/hostname)" = "ThinkBook" ]; then
+        picom --experimental-backends >>/dev/null 2>&1 &
+    fi
     redshift &
     dunst -conf ~/.config/dunst/dwm.conf &
     blueman-applet &
@@ -54,8 +57,6 @@ daemons() {
     # safeeyes &
     if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
         todesk &
-    else
-        picom --experimental-backends >>/dev/null 2>&1 &
     fi
     parcellite &
     fcitx5 &
