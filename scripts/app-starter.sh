@@ -75,7 +75,7 @@ case $1 in
         echo $winfo | xclip -selection c
         dunstify "$winfo"
         ;;
-    filemanager) pcmanfm ;;
+    filemanager) nautilus -w ;;
     blurlock) betterlockscreen --lock dim ;;
     # browser) microsoft-edge-stable --password-store=gnome ;;
     browser) $browser_command $browser_flags ;;

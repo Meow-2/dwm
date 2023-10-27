@@ -58,6 +58,7 @@ static const Rule rules[] = {
     {"Lxappearance",         NULL,                 NULL,             0,              1,           0,        -1 },
     {"dolphin",              NULL,                 NULL,             0,              1,           0,        -1 },
     {"Pcmanfm",              NULL,                 NULL,             0,              1,           0,        -1 },
+    {"org.gnome.Nautilus",   NULL,                 NULL,             0,              1,           0,        -1 },
     {"Sigma file manager",   NULL,                 NULL,             0,              1,           0,        -1 },
     {"stacer",               NULL,                 NULL,             0,              1,           1,        -1 },
     {"Blueman-manager",      NULL,                 NULL,             0,              1,           0,        -1 },
