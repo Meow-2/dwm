@@ -187,7 +187,7 @@ static Key keys[] = {
     { MODKEY,               XK_b,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh changewallpaper") },
     { MODKEY|ShiftMask,     XK_b,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh changevideo") },
     { Mod1Mask|ControlMask, XK_a,        spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh flameshot") },
-    { ControlMask,          XK_Escape,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal btop") },
+    { ControlMask|ShiftMask,XK_Escape,   spawn,            SHCMD("~/Programs/dwm/scripts/app-starter.sh terminal btop") },
 
     { 0,                    XF86XK_MonBrightnessUp,        spawn,    SHCMD("~/Programs/dwm/scripts/app-starter.sh set_backlight up &") },
     { 0,                    XF86XK_MonBrightnessDown,      spawn,    SHCMD("~/Programs/dwm/scripts/app-starter.sh set_backlight down &") },
