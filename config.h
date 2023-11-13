@@ -48,6 +48,7 @@ static const Rule rules[] = {
     {"ToDesk",               NULL,                 NULL,             1 << 15,        1,           1,        -1 },
     {"feh",                  NULL,                 NULL,             0,              1,           0,        -1 },
     {"mpv",                  NULL,                 NULL,             0,              1,           0,        -1 },
+    {"Onedriver-launcher",   NULL,                 NULL,             0,              1,           0,        -1 },
     {"utools",               NULL,                 NULL,             0,              1,           1,        -1 },
     {"FileZilla",            NULL,                 NULL,             0,              1,           1,        -1 },
     {"uTools",               NULL,                 NULL,             0,              1,           1,        -1 },
