@@ -31,8 +31,12 @@ settings() {
         source ~/.config/zsh/env.zsh
         autossh -M 4396 -fCNR 43970:localhost:43968 zk@${SSHD_PORT_FORWARDING_IP} -p 43968 &
 
-        # 锁屏但不关闭屏幕
-        ~/Programs/dwm/scripts/lock_with_screen_on.sh &
+        # # 锁屏但不关闭屏幕
+        # ~/Programs/dwm/scripts/lock_with_screen_on.sh &
+        # 锁屏并关闭屏幕
+        xset s 300 300 &
+        xset dpms 300 300 300 &
+        xss-lock -- betterlockscreen -l dim &
     else
         # 锁屏并关闭屏幕
         xset s 300 300 &
