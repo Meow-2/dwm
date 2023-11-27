@@ -29,7 +29,7 @@ settings() {
         # autossh -M 4396 -NR 43970:localhost:43968 zk@119.29.90.39 -p 43968 &
         # 转发到宿舍
         source ~/.config/zsh/env.zsh
-        autossh -M 4396 -fCNR 43970:localhost:43968 zk@${HOME_IP} -p 43968 &
+        autossh -M 4396 -fCNR 43970:localhost:43968 zk@${SSHD_PORT_FORWARDING_IP} -p 43968 &
 
         # 锁屏但不关闭屏幕
         ~/Programs/dwm/scripts/lock_with_screen_on.sh &
