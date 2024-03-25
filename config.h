@@ -91,6 +91,8 @@ static const Rule rules[] = {
     { NULL,                  "wxwork.exe",         NULL,             1 << 10,        0,           1,        -1 },
     { "Wine",                "wechat.exe",         "微信",           1 << 10,        0,           1,        -1 },
     { "Wine",                "wechat.exe",         "图片查看",       1 << 10,        1,           1,        -1 },
+    { "wechat",              "wechat",             "微信",           1 << 10,        0,           1,        -1 },
+    { "wechat",              "wechat",             "图片查看",       1 << 10,        0,           1,        -1 },
     {"QQ",                   "qq",                 "图片查看器",     1 << 11,        1,           1,        -1 },
     {"QQ",                   "qq",                 "QQ",             1 << 11,        0,           1,        -1 },
     { NULL,                  "tim.exe",            NULL,             1 << 11,        0,           1,        -1 },
