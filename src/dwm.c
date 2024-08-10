@@ -678,6 +678,7 @@ buttonpress(XEvent *e)
 
             if (c) {
                 click = ClkWinTitle;
+                arg.ui = 1;
                 arg.v = c;
             }
         }
@@ -2692,7 +2693,15 @@ togglefloating(const Arg *arg)
         if (selmon->sel->isfloating)
             return;
     }
-
+    if (arg && arg->ui){
+        Client *c = (Client*)arg->v;
+        if (c != selmon->sel){
+            if (HIDDEN(c))
+                show(c);
+            focus(c);
+            restack(selmon);
+        }
+    }
     selmon->sel->isfloating = !selmon->sel->isfloating || selmon->sel->isfixed;
 
     if (selmon->sel->isfloating) {
@@ -2703,7 +2712,7 @@ togglefloating(const Arg *arg)
     }
 
     arrange(selmon);
-    if (!arg) pointerfocuswin(selmon->sel);
+    if (!arg || !arg->ui) pointerfocuswin(selmon->sel);
 }
 
 void

@@ -272,17 +272,19 @@ static Button buttons[] = {
     { ClkWinTitle,         0,          Button1,        togglewin,       {0} },       // 左键       |  点击标题  | 切换窗口显示状态
     { ClkWinTitle,         0,          Button2,        killclient,      {0} },       // 中键       |  点击标题  | 关闭窗口
     { ClkWinTitle,         0,          25,             killclient,      {0} },       // 中键bug    |  点击标题  | 关闭窗口
-    { ClkWinTitle,         0,          Button3,        togglefloating,  {.i = 1} },  // 右键       |  点击标题  | 切换是否浮动
+    { ClkWinTitle,         0,          Button3,        togglefloating,  {0} },  // 右键       |  点击标题  | 切换是否浮动
+    { ClkWinTitle,         0,          Button4,        focusstack,      {.i = -1}},  // 鼠标滚轮上 |  点击标题  | 切换聚焦窗口
+    { ClkWinTitle,         0,          Button5,        focusstack,      {.i = +1}},  // 鼠标滚轮下 |  点击标题  | 切换聚焦窗口
 
     /* 点击窗口操作 */
     { ClkClientWin,        MODKEY,     Button1,        movemouse,       {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
     { ClkClientWin,        MODKEY,     Button3,        resizemouse,     {0} },       // super+右键 |  拖拽窗口  | 改变窗口大小
 
-    { ClkClientWin,        0,          Button9,        viewtoleft,      {0} },       // 鼠标滚轮上 |  tag       | 向前切换tag
-	{ ClkClientWin,        0,          Button8,        viewtoright,     {0} },       // 鼠标滚轮下 |  tag       | 向后切换tag
+    { ClkClientWin,        0,          Button9,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
+	{ ClkClientWin,        0,          Button8,        viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
 	//
-    { ClkRootWin,          0,          Button9,        viewtoleft,      {0} },       // 鼠标滚轮上 |  tag       | 向前切换tag
-	{ ClkRootWin,          0,          Button8,        viewtoright,     {0} },       // 鼠标滚轮下 |  tag       | 向后切换tag
+    { ClkRootWin,          0,          Button9,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
+	{ ClkRootWin,          0,          Button8,        viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
 
     /* 点击tag操作 */
     { ClkTagBar,           0,          Button1,        view,            {0} },       // 左键       |  点击tag   | 切换tag
