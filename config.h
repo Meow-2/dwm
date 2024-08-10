@@ -234,11 +234,11 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_b,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh changevideo") },
     { ControlMask|ShiftMask,XK_Escape,   spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh terminal btop") },
 
-    { 0,                    XF86XK_MonBrightnessUp,        spawn,    SHCMD("~/.config/dwm/scripts/app-starter.sh set_backlight up &") },
-    { 0,                    XF86XK_MonBrightnessDown,      spawn,    SHCMD("~/.config/dwm/scripts/app-starter.sh set_backlight down &") },
-    { 0,                    XF86XK_AudioRaiseVolume,       spawn,    SHCMD("~/.config/dwm/scripts/app-starter.sh set_vol up &") },
-    { 0,                    XF86XK_AudioLowerVolume,       spawn,    SHCMD("~/.config/dwm/scripts/app-starter.sh set_vol down &") },
-    { 0,                    XF86XK_AudioMute,              spawn,    SHCMD("~/.config/dwm/scripts/app-starter.sh set_vol toggle &") },
+    { 0,                    XF86XK_MonBrightnessUp,        sigstatusbar,    {.i = 4,.ui = 5} }, // i 代表按键，ui 代表对应按钮的信号量
+    { 0,                    XF86XK_MonBrightnessDown,      sigstatusbar,    {.i = 5,.ui = 5} },
+    { 0,                    XF86XK_AudioRaiseVolume,       sigstatusbar,    {.i = 4,.ui = 6} },
+    { 0,                    XF86XK_AudioLowerVolume,       sigstatusbar,    {.i = 5,.ui = 6} },
+    { 0,                    XF86XK_AudioMute,              sigstatusbar,    {.i = 1,.ui = 6} },
 
     /* super key : 跳转到对应tag */
     /* super shift key : 将聚焦窗口移动到对应tag */

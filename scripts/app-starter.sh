@@ -11,67 +11,6 @@ terminal() {
     esac
 }
 
-# </dev/null >/dev/null 2>&1 &
-# 丢弃所有的标准输入输出以及错误输出
-set_vol() {
-    step=${2:-10}
-    case $1 in
-        up)
-            current_volume=$(pactl get-sink-volume @DEFAULT_SINK@ | rg -o ' [0-9]+% ' | sed 's/%[[:space:]]//g' | head -n1)
-            if [ $((current_volume + step)) -gt 100 ]; then
-                pactl set-sink-volume @DEFAULT_SINK@ 100% </dev/null >/dev/null 2>&1
-            else
-                pactl set-sink-volume @DEFAULT_SINK@ +${step}% </dev/null >/dev/null 2>&1
-            fi
-            kill -40 "$(pidof dwmblocks)" </dev/null >/dev/null 2>&1
-            mpv --no-video ~/.config/dwm/assets/audio-volume-change.oga </dev/null >/dev/null 2>&1 &
-            ;;
-        down)
-            pactl set-sink-volume @DEFAULT_SINK@ -${step}% </dev/null >/dev/null 2>&1
-            kill -40 "$(pidof dwmblocks)" </dev/null >/dev/null 2>&1
-            # kill -40 "$(pidof dwmblocks)" </dev/null >/dev/null 2>&1
-            mpv --no-video ~/.config/dwm/assets/audio-volume-change.oga </dev/null >/dev/null 2>&1 &
-            ;;
-        toggle)
-            pactl set-sink-mute @DEFAULT_SINK@ toggle </dev/null >/dev/null 2>&1
-            kill -40 "$(pidof dwmblocks)" </dev/null >/dev/null 2>&1
-            ;;
-    esac
-}
-
-set_backlight() {
-    step=${2:-10}
-    # if [ "$(cat /etc/hostname)" = "ThinkBook" ]; then
-    case $1 in
-        up)
-            /usr/bin/light -A "${step}" </dev/null >/dev/null 2>&1
-            kill -39 "$(pidof dwmblocks)" </dev/null >/dev/null 2>&1
-            ;;
-        down)
-            /usr/bin/light -U "${step}" >/dev/null
-            kill -39 "$(pidof dwmblocks)" </dev/null >/dev/null 2>&1
-            ;;
-    esac
-    # elif [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
-    #     current_backlight=$(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//')
-    #     case $1 in
-    #         up)
-    #             /usr/bin/ddcutil setvcp 10 $((current_backlight + "${step}")) && kill -39 "$(pidof dwmblocks)"
-    #             ;;
-    #         down)
-    #             /usr/bin/ddcutil setvcp 10 $((current_backlight - "${step}")) && kill -39 "$(pidof dwmblocks)"
-    #             ;;
-    #     esac
-    #     ~/Programs/dwm/scripts/set-profile.sh backlight $(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//')
-    # else
-    #     case $1 in
-    #         up) /usr/bin/xbacklight "+${step}" && kill -39 "$(pidof dwmblocks)" ;;
-    #         down) /usr/bin/xbacklight "-${step}" && kill -39 "$(pidof dwmblocks)" ;;
-    #     esac
-    # fi
-    # ~/Programs/dwm/scripts/dwm-status.sh
-}
-
 get_window_info() {
     window_info=$(xprop | awk -F'[=,]' '
         /^WM_NAME/ {
@@ -107,8 +46,6 @@ get_window_info() {
 }
 
 case $1 in
-    set_vol) set_vol $2 $3 && kill -40 "$(pidof dwmblocks)" </dev/null >/dev/null 2>&1 && exit 0 ;;
-    set_backlight) set_backlight $2 $3 && kill -39 "$(pidof dwmblocks)" </dev/null >/dev/null 2>&1 && exit 0 ;;
     terminal) terminal $2 ;;
     killw) kill -9 $(xprop | grep "_NET_WM_PID(CARDINAL)" | awk '{print $3}') ;;
     getinfo) get_window_info ;;

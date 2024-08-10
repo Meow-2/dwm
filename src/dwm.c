@@ -2597,13 +2597,16 @@ sigstatusbar(const Arg *arg)
 {
 	union sigval sv;
 
-	if (!statussig)
+	if (!statussig && !arg->ui)
 		return;
 	sv.sival_int = arg->i;
 	if ((statuspid = getstatusbarpid()) <= 0)
 		return;
 
-	sigqueue(statuspid, SIGRTMIN+statussig, sv);
+    if (arg->ui)
+        sigqueue(statuspid, SIGRTMIN+arg->ui, sv);
+    else
+        sigqueue(statuspid, SIGRTMIN+statussig, sv);
 }
 
 void
