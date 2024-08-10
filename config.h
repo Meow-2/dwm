@@ -293,6 +293,8 @@ static Button buttons[] = {
     { ClkTagBar,           ShiftMask,  Button1,        tag,             {0} },       // super+左键 |  点击tag   | 将窗口移动到对应tag
     { ClkTagBar,           0,          Button4,        viewtoleft,      {0} },       // 鼠标滚轮上 |  tag       | 向前切换tag
 	{ ClkTagBar,           0,          Button5,        viewtoright,     {0} },       // 鼠标滚轮下 |  tag       | 向后切换tag
+    { ClkTagBar,           0,          Button9,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
+	{ ClkTagBar,           0,          Button8,        viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
 
     /* 点击状态栏操作 */
 	{ ClkStatusText,       0,         Button1,         sigstatusbar,    {.i = 1} },  // 左键       |  状态栏    | 根据blocks发送信号
@@ -302,6 +304,6 @@ static Button buttons[] = {
 	{ ClkStatusText,       0,         Button5,         sigstatusbar,    {.i = 5} },  // 鼠标滚轮下 |  状态栏    | 根据blocks发送信号
 
     /* 点击bar空白处 */
-    // { ClkBarEmpty,         0,               Button1,          spawn, SHCMD("$XDG_CONFIG_HOME/dwm/scripts/call_rofi.sh window") },        // 左键        |  bar空白处    |  rofi 执行 window
-    // { ClkBarEmpty,         0,               Button3,          spawn, SHCMD("$XDG_CONFIG_HOME/dwm/scripts/call_rofi.sh drun") },          // 右键        |  bar空白处    |  rofi 执行 drun
+    { ClkBarEmpty,         0,         Button9,         viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
+	{ ClkBarEmpty,         0,         Button8,         viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
 };
