@@ -1,0 +1,3 @@
+[submodule "dwmblocks-async"]
+	path = dwmblocks-async
+	url = git@github.com:Meow-2/dwmblocks-async.git
