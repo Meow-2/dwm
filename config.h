@@ -229,7 +229,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 4, .v = "~/.config/dwm/scripts/app-starter.sh terminal ssh"} },
 
     { MODKEY,               XK_e,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh filemanager") },
-    { MODKEY,               XK_v,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh filemanager") },
+    { MODKEY,               XK_v,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh clipboard") },
     { MODKEY,               XK_b,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh changewallpaper") },
     { MODKEY|ShiftMask,     XK_b,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh changevideo") },
     { ControlMask|ShiftMask,XK_Escape,   spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh terminal btop") },
