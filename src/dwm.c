@@ -1366,7 +1366,10 @@ focusstack(const Arg *arg)
             hideotherwins(&(Arg) { .v = c });
     } else {
         if (c) {
-            pointerfocuswin(c);
+            if (!arg || !arg->ui)
+                pointerfocuswin(c);
+            else
+                focus(c);
             restack(selmon);
         }
     }
