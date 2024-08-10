@@ -278,6 +278,7 @@ static Button buttons[] = {
 
     /* 点击窗口操作 */
     { ClkClientWin,        MODKEY,     Button1,        movemouse,       {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
+    { ClkClientWin,        0,          Button2,        togglefloating,  {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
     { ClkClientWin,        MODKEY,     Button3,        resizemouse,     {0} },       // super+右键 |  拖拽窗口  | 改变窗口大小
 
     { ClkClientWin,        0,          Button9,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
