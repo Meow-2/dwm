@@ -275,6 +275,8 @@ static Button buttons[] = {
     { ClkWinTitle,         0,          Button3,        togglefloating,  {0} },  // 右键       |  点击标题  | 切换是否浮动
     { ClkWinTitle,         0,          Button4,        focusstack,      {.i = -1, .ui = 1}},  // 鼠标滚轮上 |  点击标题  | 切换聚焦窗口
     { ClkWinTitle,         0,          Button5,        focusstack,      {.i = +1, .ui = 1}},  // 鼠标滚轮下 |  点击标题  | 切换聚焦窗口
+    { ClkWinTitle,         0,          Button9,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
+	{ ClkWinTitle,         0,          Button8,        viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
 
     /* 点击窗口操作 */
     { ClkClientWin,        MODKEY,     Button1,        movemouse,       {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
