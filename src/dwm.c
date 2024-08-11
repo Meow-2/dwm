@@ -1635,6 +1635,15 @@ killclient(const Arg *arg)
 
     if (!selmon->sel)
         return;
+    if (arg && arg->ui){
+        Client *c = (Client*)arg->v;
+        if (c != selmon->sel){
+            if (HIDDEN(c))
+                show(c);
+            focus(c);
+            restack(selmon);
+        }
+    }
     if (!sendevent(selmon->sel->win, wmatom[WMDelete], NoEventMask, wmatom[WMDelete], CurrentTime, 0 , 0, 0)) {
         XGrabServer(dpy);
         XSetErrorHandler(xerrordummy);
