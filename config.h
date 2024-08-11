@@ -117,6 +117,8 @@ static const Rule rules[] = {
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder monitor floatposition */
     {"baidunetdisk",           NULL,                 NULL,          1 << 9,     0,        0,        0,        -1,        0 },
     {"qqmusic",               "qqmusic",             NULL,          1 << 9,     0,        0,        0,        -1,        0 },
+    {"listen1",               "listen1",            "Listen1",      0,          1,        1,        1,        -1,        8 },
+    {"listen1",               "listen1",             NULL,          1 << 9,     0,        0,        0,        -1,        0 },
     {"Steam",                  NULL,                 NULL,          1 << 9,     1,        0,        1,        -1,        0 },
     {"obs",                   "obs",                "OBS",          1 << 9,     1,        0,        0,        -1,        0 },
     {"Vmplayer",              "vmplayer",            NULL,          1 << 9,     0,        0,        0,        -1,        0 },
