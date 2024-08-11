@@ -310,6 +310,10 @@ static Button buttons[] = {
     { ClkStatusText,       0,         Button4,         sigstatusbar,    {.i = 4} },  // 鼠标滚轮上 |  状态栏    | 根据blocks发送信号
     { ClkStatusText,       0,         Button5,         sigstatusbar,    {.i = 5} },  // 鼠标滚轮下 |  状态栏    | 根据blocks发送信号
 
+    /* 点击layout符号 */
+    { ClkLtSymbol,         0,         Button1,         selectlayout,     {.v = &layouts[1]} },
+	{ ClkLtSymbol,         0,         Button3,         selectlayout,     {.v = &layouts[1]} },
+
     /* 点击bar空白处 */
     // { ClkBarEmpty,         0,         Button6,         viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
 
