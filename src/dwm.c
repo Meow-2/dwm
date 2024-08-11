@@ -1289,7 +1289,8 @@ void
 focus(Client *c)
 {
     if (!c || !ISVISIBLE(c) || HIDDEN(c))
-        for (c = selmon->stack; c && (!ISVISIBLE(c) || HIDDEN(c)); c = c->snext);
+        // NOTE: 新切换到一个桌面时，不要优先聚焦这些窗口
+        for (c = selmon->stack; c && (!ISVISIBLE(c) || HIDDEN(c) || c->nofocustk); c = c->snext);
     if (selmon->sel && selmon->sel != c)
         unfocus(selmon->sel, 0);
     if (c) {
