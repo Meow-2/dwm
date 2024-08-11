@@ -116,6 +116,7 @@ static const Rule rules[] = {
                                                                              
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder monitor floatposition */
     {"baidunetdisk",           NULL,                 NULL,          1 << 9,     0,        0,        0,        -1,        0 },
+    {"qqmusic",               "qqmusic",            "歌词",         0,          1,        1,        1,        -1,        8 },
     {"qqmusic",               "qqmusic",             NULL,          1 << 9,     0,        0,        0,        -1,        0 },
     {"listen1",               "listen1",            "Listen1",      0,          1,        1,        1,        -1,        8 },
     {"listen1",               "listen1",             NULL,          1 << 9,     0,        0,        0,        -1,        0 },
@@ -146,7 +147,7 @@ static const Rule rules[] = {
     {"wpp",                   "wpp",                "WPS 演示",     1 << 8,     0,        0,        0,        -1,        0 },
     {"wpp",                    NULL,                 NULL,          1 << 8,     1,        0,        0,        -1,        0 },
     {"pdf",                   "wpspdf",             "WPS PDF",      1 << 8,     0,        0,        0,        -1,        0 },
-    {"pdf",                   "wpspdf",              NULL,          1 << 8,     1,        0,        0,        -1,        0 },
+    {"pdf",                   "wpspdf",              NULL,          1 << 8,     1,        0,        1,        -1,        0 },
     {"qing",                  "wpscloudsvr",         NULL,          1 << 8,     1,        0,        0,        -1,        0 },
                                                                              
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder monitor floatposition */
