@@ -281,9 +281,8 @@ static Button buttons[] = {
 
     /* 点击窗口标题栏*/
     { ClkWinTitle,         0,          Button1,        togglewin,       {0} },       // 左键       |  点击标题  | 切换窗口显示状态
-    { ClkWinTitle,         0,          Button2,        killclient,      {0} },       // 中键       |  点击标题  | 关闭窗口
-    { ClkWinTitle,         0,          25,             killclient,      {0} },       // 中键bug    |  点击标题  | 关闭窗口
-    { ClkWinTitle,         0,          Button3,        togglefloating,  {0} },       // 右键       |  点击标题  | 切换是否浮动
+    { ClkWinTitle,         0,          Button2,        togglefloating,  {0} },       // 中键       |  点击标题  | 切换是否浮动
+    { ClkWinTitle,         0,          Button3,        killclient,      {0} },       // 右键       |  点击标题  | 关闭窗口
     { ClkWinTitle,         0,          Button4,        focusstack,      {.i = -1, .ui = 1}},  // 鼠标滚轮上 |  点击标题  | 切换聚焦窗口
     { ClkWinTitle,         0,          Button5,        focusstack,      {.i = +1, .ui = 1}},  // 鼠标滚轮下 |  点击标题  | 切换聚焦窗口
 
