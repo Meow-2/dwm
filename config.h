@@ -183,7 +183,7 @@ static Key keys[] = {
     { MODKEY,               XK_r,        togglefloating,   {0} },                        /* super d            |  开启/关闭 聚焦目标的float模式 */
     { MODKEY|ShiftMask,     XK_r,        toggleallfloating,{0} },                        /* super shift d      |  开启/关闭 全部目标的float模式 */
     { MODKEY,               XK_f,        zoom,             {0} },                        /* super d            |  将当前聚焦窗口置为主窗口 */
-	{ MODKEY,               XK_m,        showonlyorall,    {0} },                        /* super m            |  切换 只显示一个窗口 / 全部显示 */
+    { MODKEY,               XK_m,        showonlyorall,    {0} },                        /* super m            |  切换 只显示一个窗口 / 全部显示 */
     { MODKEY,               XK_p,        toggleglobal,     {0} },                        /* super p            |  pin 窗口置顶到所有tag */
     { MODKEY,               XK_g,        incnmaster,       {.i = +1} },                  /* super g            |  改变主工作区窗口数量 (1 2中切换) */
 
@@ -268,6 +268,14 @@ static Key keys[] = {
 #define Button8 8
 #define Button9 9
 
+/* 此处不包括ClkClientWin的操作*/
+#define CLICK_BUTTONS(EVENT_MASK,BUTTON,FUNCTION,ARG) \
+    { ClkWinTitle,   EVENT_MASK,   BUTTON,   FUNCTION,   ARG }, \
+    { ClkRootWin,     EVENT_MASK,   BUTTON,   FUNCTION,   ARG }, \
+    { ClkTagBar,      EVENT_MASK,   BUTTON,   FUNCTION,   ARG }, \
+    { ClkStatusText,  EVENT_MASK,   BUTTON,   FUNCTION,   ARG }, \
+    { ClkBarEmpty,    EVENT_MASK,   BUTTON,   FUNCTION,   ARG }, \
+
 static Button buttons[] = {
     /* click               event mask  button          function       argument  */
 
@@ -275,40 +283,42 @@ static Button buttons[] = {
     { ClkWinTitle,         0,          Button1,        togglewin,       {0} },       // 左键       |  点击标题  | 切换窗口显示状态
     { ClkWinTitle,         0,          Button2,        killclient,      {0} },       // 中键       |  点击标题  | 关闭窗口
     { ClkWinTitle,         0,          25,             killclient,      {0} },       // 中键bug    |  点击标题  | 关闭窗口
-    { ClkWinTitle,         0,          Button3,        togglefloating,  {0} },  // 右键       |  点击标题  | 切换是否浮动
+    { ClkWinTitle,         0,          Button3,        togglefloating,  {0} },       // 右键       |  点击标题  | 切换是否浮动
     { ClkWinTitle,         0,          Button4,        focusstack,      {.i = -1, .ui = 1}},  // 鼠标滚轮上 |  点击标题  | 切换聚焦窗口
     { ClkWinTitle,         0,          Button5,        focusstack,      {.i = +1, .ui = 1}},  // 鼠标滚轮下 |  点击标题  | 切换聚焦窗口
-    { ClkWinTitle,         0,          Button9,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
-	{ ClkWinTitle,         0,          Button8,        viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
 
     /* 点击窗口操作 */
     { ClkClientWin,        MODKEY,     Button1,        movemouse,       {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
     { ClkClientWin,        0,          Button2,        togglefloating,  {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
     { ClkClientWin,        MODKEY,     Button3,        resizemouse,     {0} },       // super+右键 |  拖拽窗口  | 改变窗口大小
 
+ //    { ClkClientWin,        0,          Button6,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
+    // { ClkClientWin,        0,          Button7,        viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
     { ClkClientWin,        0,          Button9,        movemouse,       {0} },       // 鼠标侧键前 |  拖拽窗口  | 拖拽窗口    
-	{ ClkClientWin,        0,          Button8,        resizemouse,     {0} },       // 鼠标侧键后 |  拖拽窗口  | 改变窗口大小
-	//
-    { ClkRootWin,          0,          Button9,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
-	{ ClkRootWin,          0,          Button8,        viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
+    { ClkClientWin,        0,          Button8,        resizemouse,     {0} },       // 鼠标侧键后 |  拖拽窗口  | 改变窗口大小
 
     /* 点击tag操作 */
     { ClkTagBar,           0,          Button1,        view,            {0} },       // 左键       |  点击tag   | 切换tag
-	{ ClkTagBar,           0,          Button3,        toggleview,      {0} },       // 右键       |  点击tag   | 切换是否显示tag
+    { ClkTagBar,           0,          Button3,        toggleview,      {0} },       // 右键       |  点击tag   | 切换是否显示tag
     { ClkTagBar,           ShiftMask,  Button1,        tag,             {0} },       // super+左键 |  点击tag   | 将窗口移动到对应tag
     { ClkTagBar,           0,          Button4,        viewtoleft,      {0} },       // 鼠标滚轮上 |  tag       | 向前切换tag
-	{ ClkTagBar,           0,          Button5,        viewtoright,     {0} },       // 鼠标滚轮下 |  tag       | 向后切换tag
-    { ClkTagBar,           0,          Button9,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
-	{ ClkTagBar,           0,          Button8,        viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
+    { ClkTagBar,           0,          Button5,        viewtoright,     {0} },       // 鼠标滚轮下 |  tag       | 向后切换tag
 
     /* 点击状态栏操作 */
-	{ ClkStatusText,       0,         Button1,         sigstatusbar,    {.i = 1} },  // 左键       |  状态栏    | 根据blocks发送信号
-	{ ClkStatusText,       0,         Button2,         sigstatusbar,    {.i = 2} },  // 中键       |  状态栏    | 根据blocks发送信号
-	{ ClkStatusText,       0,         Button3,         sigstatusbar,    {.i = 3} },  // 右键       |  状态栏    | 根据blocks发送信号
-	{ ClkStatusText,       0,         Button4,         sigstatusbar,    {.i = 4} },  // 鼠标滚轮上 |  状态栏    | 根据blocks发送信号
-	{ ClkStatusText,       0,         Button5,         sigstatusbar,    {.i = 5} },  // 鼠标滚轮下 |  状态栏    | 根据blocks发送信号
+    { ClkStatusText,       0,         Button1,         sigstatusbar,    {.i = 1} },  // 左键       |  状态栏    | 根据blocks发送信号
+    { ClkStatusText,       0,         Button2,         sigstatusbar,    {.i = 2} },  // 中键       |  状态栏    | 根据blocks发送信号
+    { ClkStatusText,       0,         Button3,         sigstatusbar,    {.i = 3} },  // 右键       |  状态栏    | 根据blocks发送信号
+    { ClkStatusText,       0,         Button4,         sigstatusbar,    {.i = 4} },  // 鼠标滚轮上 |  状态栏    | 根据blocks发送信号
+    { ClkStatusText,       0,         Button5,         sigstatusbar,    {.i = 5} },  // 鼠标滚轮下 |  状态栏    | 根据blocks发送信号
 
     /* 点击bar空白处 */
-    { ClkBarEmpty,         0,         Button9,         viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
-	{ ClkBarEmpty,         0,         Button8,         viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
+    // { ClkBarEmpty,         0,         Button6,         viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
+
+    /* 点击根窗口操作*/
+    // { ClkRootWin,          0,          Button6,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
+
+    // CLICK_BUTTONS(0,Button6, viewtoleft,  {0})
+    // CLICK_BUTTONS(0,Button7, viewtoright, {0})
+    CLICK_BUTTONS(0,Button9, viewtoleft,  {0})
+    CLICK_BUTTONS(0,Button8, viewtoright, {0})
 };
