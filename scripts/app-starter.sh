@@ -24,14 +24,14 @@ get_window_info() {
             instance=$2
         }
         END {
-            printf("{%s,  %s,  %s,  0,  1,  0,  0,  -1,  0 },", class, instance, title)
+            printf("{%s,                 %s,               NULL,          0,          1,        0,        0,        0,       -1,       0 },", class, instance, title)
         }')
-    echo -n $window_info | xclip -selection c
+    echo -n "$window_info" | xclip -selection c
     # 这里class要从$2开始赋值
     # 使用-F指定了分隔符，是为了保证空格不会被分隔，并且按'{'和','分隔
     # 又因为'{'在最前面，所以$1被赋值成了'{'之前的内容，'{'之前没有内容，$1就变成了空格
     display_info=$(
-        echo -n $window_info | awk -F'[{,]' '
+        echo -n "$window_info" | awk -F'[{,]' '
         {
             gsub(/^ */, "", $3)
             gsub(/^ */, "", $4)
