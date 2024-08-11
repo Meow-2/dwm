@@ -54,7 +54,7 @@ static const unsigned int alphas[][3] = {          /* 透明度设置 ColFg, Col
 static const char *autostartscript = "~/.config/dwm/scripts/autostart.sh";
 
 /* 自定义tag名称 */
-static const char *tags[] = { "","󰎧","","󰝇","󰇩","","","󰖳","","","󰘑","󰘅"};
+static const char *tags[] = { "","󰬚","󰝇","󰇩","󰆼","","","󰖳","","","󰘑","󰘅"};
 
 /* 自定义窗口显示规则 */
 /* class instance title 主要用于定位窗口适合哪个规则, 全部匹配则生效, 匹配采用的是子字符串形式匹配*/
@@ -102,10 +102,12 @@ static const Rule rules[] = {
     {"kitty",                 "kitty",               NULL,          0,          0,        0,        0,        0,       -1,       0 },
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"obsidian",              "obsidian",            NULL,          1 << 3,     0,        0,        0,        0,       -1,       0 },
-    {"Microsoft-edge-dev",    "microsoft-edge-dev",  NULL,          1 << 4,     0,        0,        0,        0,       -1,       0 },
+    {"obsidian",              "obsidian",            NULL,          1 << 2,     0,        0,        0,        0,       -1,       0 },
+    {"Microsoft-edge-dev",    "microsoft-edge-dev",  NULL,          1 << 3,     0,        0,        0,        0,       -1,       0 },
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"DBeaver",               "DBeaver",             NULL,          1 << 4,     0,        0,        0,        0,       -1,       0 },
+
     {"jetbrains-idea",        "jetbrains-idea",      NULL,          1 << 5,     0,        0,        0,        0,       -1,       0 },
     {"jetbrains-webstorm",    "jetbrains-webstorm",  NULL,          1 << 6,     0,        0,        0,        0,       -1,       0 },
 
@@ -257,8 +259,8 @@ static Key keys[] = {
     TAGKEYS(XK_8, 7,  0)
     TAGKEYS(XK_9, 8,  0)
     TAGKEYS(XK_0, 9,  0)
-    TAGKEYS(XK_c , 4  , "~/.config/dwm/scripts/app-starter.sh browser")
-    TAGKEYS(XK_o , 3  , "~/.config/dwm/scripts/app-starter.sh obsidian")
+    TAGKEYS(XK_o , 2  , "~/.config/dwm/scripts/app-starter.sh obsidian")
+    TAGKEYS(XK_c , 3  , "~/.config/dwm/scripts/app-starter.sh browser")
     TAGKEYS(XK_w , 10 , "~/.config/dwm/scripts/app-starter.sh wechat")
     TAGKEYS(XK_i , 11 , "~/.config/dwm/scripts/app-starter.sh qq")
 };
