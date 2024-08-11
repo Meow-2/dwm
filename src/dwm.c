@@ -128,7 +128,7 @@ struct Client {
     int bw, oldbw;
     int taskw;
     unsigned int tags;
-    int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, isglobal, isnoborder;
+    int isfixed, isfloating, nofocustk,isurgent, neverfocus, oldstate, isfullscreen, isglobal, isnoborder;
     Client *next;
     Client *snext;
     Monitor *mon;
@@ -180,6 +180,7 @@ typedef struct {
     int isfloating;
     int isglobal;
     int isnoborder;
+    int nofocustk;
     int monitor;
     uint floatposition;
 } Rule;
@@ -433,6 +434,7 @@ applyrules(Client *c)
     c->isfloating = 0;
     c->isglobal = 0;
     c->isnoborder = 0;
+    c->nofocustk = 0;
     c->tags = 0;
     XGetClassHint(dpy, c->win, &ch);
     class    = ch.res_class ? ch.res_class : broken;
@@ -449,6 +451,7 @@ applyrules(Client *c)
             c->isfloating = r->isfloating;
             c->isglobal = r->isglobal;
             c->isnoborder = r->isnoborder;
+            c->nofocustk = r->nofocustk;
             c->tags |= r->tags;
             c->bw = c->isnoborder ? 0 : borderpx;
             for (m = mons; m && m->num != r->monitor; m = m->next);
@@ -1345,7 +1348,7 @@ focusstack(const Arg *arg)
         return;
 
     for (c = selmon->clients; c; c = c->next) {
-        if (ISVISIBLE(c) && (issingle || !HIDDEN(c))) {
+        if (ISVISIBLE(c) && (issingle || !HIDDEN(c)) && !c->nofocustk) {
             last ++;
             tempClients[last] = c;
             if (c == tc) cur = last;
