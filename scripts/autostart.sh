@@ -43,6 +43,13 @@ else
         # eval "xbacklight = 5" &
         ~/.config/dwm/scripts/set-touchpad.sh &
         xset r rate 210 40 &
+        # 直接编辑/etc/X11/xorg.conf.d/00-keyboard.conf
+        # Section "InputClass"
+        #         Identifier "system-keyboard"
+        #         MatchIsKeyboard "on"
+        #         Option "XkbOptions" "caps:swapescape"
+        #         Option "XkbOptions" "ctrl:ralt_rctrl"
+        # EndSection
         setxkbmap -option "caps:swapescape,ctrl:ralt_rctrl" &
 
         if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
@@ -115,7 +122,7 @@ else
         done
     }
 
-    settings 1 &
+    # settings 1 &
     daemons 1 &
     while :; do
         sleep 1
