@@ -98,6 +98,7 @@ else
         sleep 2
         Snipaste &
         diodon &
+        plank &
         # parcellite &
         # ~/scripts/app-starter.sh picom &
     }

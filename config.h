@@ -89,7 +89,7 @@ static const Rule rules[] = {
     {"qt5ct",                 "qt5ct",               NULL,          0,          1,        0,        0,        0,       -1,       0 },
     {"uTools",                "utools",              NULL,          0,          1,        0,        0,        0,       -1,       0 },
     {"gdm-settings",          "gdm-settings",        NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"Plank",                 "plank",               NULL,          0,          1,        1,        1,        0,       -1,       0 },
+    {"Plank",                 "plank",               NULL,          0,          1,        1,        1,        1,       -1,       8 },
     {"ksmoothdock",           "ksmoothdock",         NULL,          0,          1,        1,        1,        0,       -1,       0 },
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
@@ -106,7 +106,7 @@ static const Rule rules[] = {
     {"Microsoft-edge-dev",    "microsoft-edge-dev",  NULL,          1 << 3,     0,        0,        0,        0,       -1,       0 },
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"DBeaver",               "DBeaver",             NULL,          1 << 4,     0,        0,        0,        0,       -1,       0 },
+    {"DBeaver Enterprise",    "DBeaver Enterprise",  NULL,          1 << 4,     1,        0,        0,        0,       -1,       0 },
 
     {"jetbrains-idea",        "jetbrains-idea",      NULL,          1 << 5,     0,        0,        0,        0,       -1,       0 },
     {"jetbrains-webstorm",    "jetbrains-webstorm",  NULL,          1 << 6,     0,        0,        0,        0,       -1,       0 },
@@ -122,7 +122,7 @@ static const Rule rules[] = {
     {"baidunetdisk",           NULL,                 NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
     {"qqmusic",               "qqmusic",             NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
     {"listen1",               "listen1",             NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
-    {"Steam",                  NULL,                 NULL,          1 << 9,     1,        0,        1,        0,       -1,       0 },
+    {"steam",                 "steamwebhelper",      NULL,          1 << 9,     1,        0,        1,        0,       -1,       0 },
     {"obs",                   "obs",                "OBS",          1 << 9,     1,        0,        0,        0,       -1,       0 },
     {"Vmplayer",              "vmplayer",            NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
     {"wemeetapp",              NULL,                 NULL,          1 << 9,     1,        0,        1,        0,       -1,       0 },
