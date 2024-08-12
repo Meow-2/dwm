@@ -120,7 +120,7 @@ static const Rule rules[] = {
     {"baidunetdisk",           NULL,                 NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
     {"qqmusic",               "qqmusic",            "歌词",         0,          1,        1,        1,        1,       -1,       8 },
     {"qqmusic",               "qqmusic",             NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
-    // {"listen1",               "listen1",            "listen1",      0,          1,        1,        1,        1,       -1,       8 },
+    {"listen1",               "listen1",            "listen1",      0,          1,        1,        1,        1,       -1,       8 },
     {"listen1",               "listen1",             NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
     {"steam",                 "steamwebhelper",      NULL,          1 << 9,     1,        0,        1,        0,       -1,       0 },
     {"obs",                   "obs",                "OBS",          1 << 9,     1,        0,        0,        0,       -1,       0 },
