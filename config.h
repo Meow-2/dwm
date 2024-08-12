@@ -69,8 +69,6 @@ static const char *tags[] = { "","󰬚","󰝇","󰇩","󰆼","","","�
 
 static const Rule rules[] = {
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"listen1",               "listen1",            "Listen1",      0,          1,        1,        1,        1,       -1,       8 },
-    {"qqmusic",               "qqmusic",            "歌词",         0,          1,        1,        1,        1,       -1,       8 },
     {"mpv",                    NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
     {"PeaZip",                 NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
     {"Snipaste",               NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
@@ -120,7 +118,9 @@ static const Rule rules[] = {
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
     {"baidunetdisk",           NULL,                 NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
+    {"qqmusic",               "qqmusic",            "歌词",         0,          1,        1,        1,        1,       -1,       8 },
     {"qqmusic",               "qqmusic",             NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
+    // {"listen1",               "listen1",            "listen1",      0,          1,        1,        1,        1,       -1,       8 },
     {"listen1",               "listen1",             NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
     {"steam",                 "steamwebhelper",      NULL,          1 << 9,     1,        0,        1,        0,       -1,       0 },
     {"obs",                   "obs",                "OBS",          1 << 9,     1,        0,        0,        0,       -1,       0 },

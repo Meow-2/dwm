@@ -11,6 +11,13 @@ terminal() {
     esac
 }
 
+# 当窗口名称会随时变化时很有用
+# while :
+# do
+# wmctrl -l | awk '{print $1}' | while read id; do
+#     xprop -id $id | grep "WM_NAME"
+# done
+# done | tee > ~/wm_name.log &
 get_window_info() {
     window_info=$(xprop | awk -F'[=,]' '
         /^WM_NAME/ {
@@ -24,7 +31,7 @@ get_window_info() {
             instance=$2
         }
         END {
-            printf("{%s,                 %s,               NULL,          0,          1,        0,        0,        0,       -1,       0 },", class, instance, title)
+            printf("{%s,               %s,               %s,          0,          1,        0,        0,        0,       -1,       0 },", class, instance, title)
         }')
     echo -n "$window_info" | xclip -selection c
     # 这里class要从$2开始赋值
