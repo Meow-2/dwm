@@ -225,7 +225,7 @@ static Key keys[] = {
     { MODKEY,               XK_F5,       quit,             {0} },                               /* super f5           |  配合startdwm实现热重载*/
     { MODKEY,               XK_F11,      fullscreen,       {0} },                               /* super f            |  开启/关闭 全屏 */
     { MODKEY,               XK_F12,      spawn,            SHCMD("killall startdwm") },         /* super ctrl f12     |  退出dwm */
-    { MODKEY,               XK_F2,       spawn,            SHCMD("betterlockscreen -l dim") },  /* super ctrl f12     |  退出dwm */
+    { MODKEY,               XK_F2,       spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh lock") },  /* super ctrl f12     |  退出dwm */
 
     /* spawn + SHCMD 执行对 应命令 */
     { MODKEY|ShiftMask,     XK_q,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh killw") },

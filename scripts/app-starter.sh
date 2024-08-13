@@ -66,6 +66,10 @@ case $1 in
     wemeet) wemeet ;;
     steam) steam ;;
     obsidian) obsidian ;;
+    lock)
+        playerctl -a pause
+        betterlockscreen -l dim
+        ;;
     changewallpaper)
         killall mpv >>/dev/null 2>&1
         killall xwinwrap >>/dev/null 2>&1

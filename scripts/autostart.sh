@@ -41,7 +41,8 @@ else
     # 但是这个文件居然没有cycletime的设置方法，太离谱了，详见https://bbs.archlinux.org/viewtopic.php?id=282146
     # 还是不设置xset s 360 360了，会覆盖xorg keyboard，要设置也应该一起设置xset r rate 210 40
     xset s 360 360 r rate 210 40 &
-    xss-lock -- "playerctl play-pause;betterlockscreen -l dim &" &
+    xss-lock -- ~/.config/dwm/scripts/app-starter.sh lock &
+    LANG=C pactl subscribe | grep --line-buffered "Event 'change' on server" | xargs -L1 playerctl -a pause &
 
     # settings() {
     #     [ $1 ] && sleep $1
