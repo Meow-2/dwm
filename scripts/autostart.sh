@@ -40,45 +40,45 @@ else
     # 屏保时间，本来想全用/etc/X11/xorg.conf.d/10-serverflags.conf设置的
     # 但是这个文件居然没有cycletime的设置方法，太离谱了，详见https://bbs.archlinux.org/viewtopic.php?id=282146
     # 还是不设置xset s 360 360了，会覆盖xorg keyboard，要设置也应该一起设置xset r rate 210 40
-    # xset s 360 360 r rate 210 40 &
+    xset s 360 360 r rate 210 40 &
     xss-lock -- "playerctl play-pause;betterlockscreen -l dim &" &
 
-    settings() {
-        [ $1 ] && sleep $1
-        # picom --experimental-backends >>/dev/null 2>&1 &  # for picom-yaocccc-git
-        # eval "xbacklight = 5" &
-        ~/.config/dwm/scripts/set-touchpad.sh &
-        xset r rate 210 40 &
-        # 直接编辑/etc/X11/xorg.conf.d/00-keyboard.conf
-        # Section "InputClass"
-        #         Identifier "system-keyboard"
-        #         MatchIsKeyboard "on"
-        #         Option "XkbOptions" "caps:swapescape"
-        #         Option "XkbOptions" "ctrl:ralt_rctrl"
-        # EndSection
-        setxkbmap -option "caps:swapescape,ctrl:ralt_rctrl" &
-
-        if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
-            ~/.config/dwm/scripts/set-profile.sh backlight $(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//') &
-            # 转发到服务器
-            # autossh -M 4396 -NR 43970:localhost:43968 zk@119.29.90.39 -p 43968 &
-            # 转发到宿舍
-            source ~/.config/zsh/env.zsh
-            autossh -M 4396 -fCNR 43970:localhost:43968 zk@${SSHD_PORT_FORWARDING_IP} -p 43968 &
-
-            # # 锁屏但不关闭屏幕
-            # ~/.config/dwm/scripts/lock_with_screen_on.sh &
-            # 锁屏并关闭屏幕
-            xset s 360 360 &
-            xset dpms 360 360 360 &
-            xss-lock -- betterlockscreen -l dim &
-        else
-            # 锁屏并关闭屏幕
-            xset s 360 360 &
-            xset dpms 360 360 360 &
-            xss-lock -- betterlockscreen -l dim &
-        fi
-    }
+    # settings() {
+    #     [ $1 ] && sleep $1
+    #     # picom --experimental-backends >>/dev/null 2>&1 &  # for picom-yaocccc-git
+    #     # eval "xbacklight = 5" &
+    #     ~/.config/dwm/scripts/set-touchpad.sh &
+    #     xset r rate 210 40 &
+    #     # 直接编辑/etc/X11/xorg.conf.d/00-keyboard.conf
+    #     # Section "InputClass"
+    #     #         Identifier "system-keyboard"
+    #     #         MatchIsKeyboard "on"
+    #     #         Option "XkbOptions" "caps:swapescape"
+    #     #         Option "XkbOptions" "ctrl:ralt_rctrl"
+    #     # EndSection
+    #     setxkbmap -option "caps:swapescape,ctrl:ralt_rctrl" &
+    #
+    #     if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then
+    #         ~/.config/dwm/scripts/set-profile.sh backlight $(ddcutil getvcp 10 | grep -i 'Brightness' | awk '{print $9}' | sed 's/,$//') &
+    #         # 转发到服务器
+    #         # autossh -M 4396 -NR 43970:localhost:43968 zk@119.29.90.39 -p 43968 &
+    #         # 转发到宿舍
+    #         source ~/.config/zsh/env.zsh
+    #         autossh -M 4396 -fCNR 43970:localhost:43968 zk@${SSHD_PORT_FORWARDING_IP} -p 43968 &
+    #
+    #         # # 锁屏但不关闭屏幕
+    #         # ~/.config/dwm/scripts/lock_with_screen_on.sh &
+    #         # 锁屏并关闭屏幕
+    #         xset s 360 360 &
+    #         xset dpms 360 360 360 &
+    #         xss-lock -- betterlockscreen -l dim &
+    #     else
+    #         # 锁屏并关闭屏幕
+    #         xset s 360 360 &
+    #         xset dpms 360 360 360 &
+    #         xss-lock -- betterlockscreen -l dim &
+    #     fi
+    # }
 
     daemons() {
         [ $1 ] && sleep $1
