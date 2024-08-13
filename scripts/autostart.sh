@@ -37,6 +37,11 @@ else
         betterlockscreen -u ~/Pictures/wallpapers/lock.jpg &
     fi
 
+    # 屏保时间，本来想全用/etc/X11/xorg.conf.d/10-serverflags.conf设置的
+    # 但是这个文件居然没有cycletime的设置方法，太离谱了，详见https://bbs.archlinux.org/viewtopic.php?id=282146
+    xset s 360 360 &
+    xss-lock -- "playerctl play-pause;betterlockscreen -l dim &" &
+
     settings() {
         [ $1 ] && sleep $1
         # picom --experimental-backends >>/dev/null 2>&1 &  # for picom-yaocccc-git
@@ -83,6 +88,7 @@ else
         # fi
         dwmblocks &
         /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+        libinput-gestures-setup autostart start &
         dunst -conf ~/.config/dunst/dwm.conf &
         # snixembed --fork &
         dropbox &
