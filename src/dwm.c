@@ -1024,7 +1024,7 @@ drawbar(Monitor *m)
     int system_w = 0, tasks_w = 0, status_w;
     unsigned int i, occ = 0, n = 0, urg = 0, scm;
     Client *c;
-    int boxw = 2;
+    int boxw = 4;
 
     if (!m->showbar)
         return;
