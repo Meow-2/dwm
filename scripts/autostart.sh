@@ -118,21 +118,25 @@ else
         # ~/scripts/app-starter.sh picom &
     }
 
-    every1s() {
-        [ $1 ] && sleep $1
-        while true; do
-            if [ "$(xdotool search --name 'wemeetapp')" != "" ]; then
-                xset s reset
-            fi
-            ~/.config/dwm/scripts/cal-netspeed.sh
-            ~/.config/dwm/scripts/dwm-status.sh &
-            sleep 1
-        done
-    }
+    # every1s() {
+    #     [ $1 ] && sleep $1
+    #     while true; do
+    #         if [ "$(xdotool search --class 'wemeetapp')" != "" ]; then
+    #             xset s reset
+    #         fi
+    #         ~/.config/dwm/scripts/cal-netspeed.sh
+    #         ~/.config/dwm/scripts/dwm-status.sh &
+    #         sleep 1
+    #     done
+    # }
 
     # settings 1 &
     daemons 1 &
     while :; do
+        # 腾讯会议不休眠
+        if [ "$(xdotool search --class 'wemeetapp')" != "" ]; then
+            xset s reset
+        fi
         sleep 1
     done
 fi
