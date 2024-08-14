@@ -1024,7 +1024,7 @@ drawbar(Monitor *m)
     int system_w = 0, tasks_w = 0, status_w;
     unsigned int i, occ = 0, n = 0, urg = 0, scm;
     Client *c;
-    int boxw = 4;
+    int boxw = 3;
 
     if (!m->showbar)
         return;
@@ -1094,7 +1094,7 @@ drawbar(Monitor *m)
         drw_setscheme(drw, scheme[scm]);
 
         // 绘制TASK
-        w = MIN(TEXTW(c->name), TEXTW("                   "));
+        w = MIN(TEXTW(c->name), TEXTW("                 "));
         empty_w = m->ww - x - status_w - system_w;
         if (w > empty_w) { // 如果当前TASK绘制后长度超过最大宽度
             w = empty_w;
@@ -2497,7 +2497,7 @@ setup(void)
         die("no fonts could be loaded.");
     lrpad = drw->fonts->h;
     // bh = drw->fonts->h + 2;
-    bh = user_bh ? user_bh : drw->fonts->h + 2;
+    bh = user_bh ? user_bh : drw->fonts->h + 10;
     sp = sidepad;
     vp = (topbar == 1) ? vertpad : - vertpad;
     updategeom();
@@ -3204,7 +3204,7 @@ updatesystray(void)
         XMapRaised(dpy, i->win);
         w += systrayspacing;
         i->x = w;
-        XMoveResizeWindow(dpy, i->win, i->x + 3, 0 + 3, MAX(i->w - 6, bh - 6), bh - 6); // 限制过大的图标
+        XMoveResizeWindow(dpy, i->win, i->x + 3, 0 + 3, MAX(i->w - 9, bh - 9), bh - 9); // 限制过大的图标
         w += MAX(i->w, bh);
         if (i->mon != m)
             i->mon = m;
