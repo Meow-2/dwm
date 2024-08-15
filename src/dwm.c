@@ -1094,7 +1094,7 @@ drawbar(Monitor *m)
         drw_setscheme(drw, scheme[scm]);
 
         // 绘制TASK
-        w = MIN(TEXTW(c->name), TEXTW("                 "));
+        w = MIN(TEXTW(c->name), TEXTW("               "));
         empty_w = m->ww - x - status_w - system_w;
         if (w > empty_w) { // 如果当前TASK绘制后长度超过最大宽度
             w = empty_w;
