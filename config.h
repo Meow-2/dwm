@@ -26,7 +26,7 @@ static const unsigned int baralpha        = 0xc0;      /* 状态栏透明度 */
 static const unsigned int borderalpha     = 0xdd;      /* 边框透明度 */
 
 static const char *fonts[] = { "SF Mono:style=Medium:size=12", "JetBrainsMono NF:style=Medium:size=12", 
-                                             "PingFang SC:style=Bold:size=12" };
+                                             "PingFang SC:style=Bold:size=11" };
 
 static const char *colors[][3] = {          /* 颜色设置 ColFg, ColBg, ColBorder */ 
     [SchemeNorm]      = { "#bbbbbb", "#333333", "#444444" },
@@ -106,6 +106,8 @@ static const Rule rules[] = {
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
     {"DBeaver Enterprise",    "DBeaver Enterprise",  NULL,          1 << 4,     1,        0,        0,        0,       -1,       0 },
+    {"navicat",               "navicat","Navicat Premium",          1 << 4,     0,        0,        0,        0,       -1,       0 },
+    {"navicat",               "navicat",             NULL,          1 << 4,     1,        0,        0,        0,       -1,       0 },
 
     {"jetbrains-idea",        "jetbrains-idea",      NULL,          1 << 5,     0,        0,        0,        0,       -1,       0 },
     {"jetbrains-webstorm",    "jetbrains-webstorm",  NULL,          1 << 6,     0,        0,        0,        0,       -1,       0 },
