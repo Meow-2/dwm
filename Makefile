@@ -8,7 +8,6 @@ VERSION = 6.3
 
 # paths
 PREFIX = /usr/local
-MANPREFIX = ${PREFIX}/share/man
 
 X11INC = /usr/include/X11
 X11LIB = /usr/lib/X11
@@ -43,6 +42,7 @@ CC = cc
 SRCDIR = src
 BUILDIR = build
 DOCDIR = docs
+ASSETSDIR = assets
 SRC = ${SRCDIR}/drw.c ${SRCDIR}/dwm.c ${SRCDIR}/util.c
 OBJ = ${BUILDIR}/drw.o ${BUILDIR}/dwm.o ${BUILDIR}/util.o 
 
@@ -68,15 +68,17 @@ clean:
 	rm -rf ${BUILDIR}
 
 install: all
-	sudo mkdir -p ${DESTDIR}${PREFIX}/bin
-	sudo cp -f ${BUILDIR}/bin/dwm ${DESTDIR}${PREFIX}/bin
-	sudo chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
-	sudo mkdir -p ${DESTDIR}${MANPREFIX}/man1
-	sudo sed "s/VERSION/${VERSION}/g" < ${DOCDIR}/dwm.1 | sudo tee ${DESTDIR}${MANPREFIX}/man1/dwm.1 > /dev/null
-	sudo chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
+	@printf "\033[32m"
+	install -m 755 -D ${BUILDIR}/bin/dwm ${DESTDIR}${PREFIX}/bin/dwm
+	install -m 644 -D <(sed "s/VERSION/${VERSION}/g" ${DOCDIR}/dwm.1) ${DESTDIR}${PREFIX}/share/man/man1/dwm.1
+	install -m 755 -D ${ASSETSDIR}/startdwm ${DESTDIR}${PREFIX}/bin/startdwm	
+	install -m 755 -D ${ASSETSDIR}/dwm.desktop ${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop
+	@printf "\033[0m\n"
 
 uninstall:
-	sudo rm -f ${DESTDIR}${PREFIX}/bin/dwm\
-		${DESTDIR}${MANPREFIX}/man1/dwm.1
+	rm -f ${DESTDIR}${PREFIX}/bin/dwm \
+		${DESTDIR}${PREFIX}/share/man/man1/dwm.1 \
+		${DESTDIR}${PREFIX}/bin/startdwm \
+		${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop
 
 .PHONY: all options clean install uninstall
