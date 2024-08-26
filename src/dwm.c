@@ -2498,7 +2498,7 @@ setup(void)
         die("no fonts could be loaded.");
     lrpad = drw->fonts->h;
     // bh = drw->fonts->h + 2;
-    bh = user_bh ? user_bh : drw->fonts->h + 10;
+    bh = user_bh ? user_bh : drw->fonts->h + 9;
     sp = sidepad;
     vp = (topbar == 1) ? vertpad : - vertpad;
     updategeom();
@@ -3205,7 +3205,7 @@ updatesystray(void)
         XMapRaised(dpy, i->win);
         w += systrayspacing;
         i->x = w;
-        XMoveResizeWindow(dpy, i->win, i->x + 3, 0 + 3, MAX(i->w - 9, bh - 9), bh - 9); // 限制过大的图标
+        XMoveResizeWindow(dpy, i->win, i->x , 0 , MAX(i->w , bh ), bh ); // 限制过大的图标
         w += MAX(i->w, bh);
         if (i->mon != m)
             i->mon = m;
