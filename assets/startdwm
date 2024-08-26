@@ -4,5 +4,5 @@ while true; do
     # Log stderr to a file
     # /usr/local/bin/dwm 2>~/.dwm.log
     # No error logging
-    /usr/local/bin/dwm >/dev/null 2>&1
+    dwm >/dev/null 2>&1
 done

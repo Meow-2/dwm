@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Name=Dwm
 Comment=Dynamic Window Manager
-Exec=/usr/local/bin/startdwm
+Exec=startdwm
 Icon=dwm
 Type=XSession
