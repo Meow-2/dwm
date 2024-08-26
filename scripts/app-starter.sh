@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 terminal() {
     case $1 in
