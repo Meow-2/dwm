@@ -21,6 +21,14 @@ else
     # 在这里放置你的脚本内容
     # sh -c 'xrandr --output HDMI-1 --mode 1920x1080 --rate 60.00 --scale 1.5x1.5 --output eDP-1 --mode 2880x1800 --rate 90.01 --scale 1.0x1.0 --primary --right-of HDMI-1' &
     source ~/.profile
+
+    screen_number=$(xrandr | grep -c ' connected ')
+    if [ "$screen_number" -eq 2 ]; then
+        ~/.screenlayout/Monitor_ThinkBook_LenovoVision.sh &
+    else
+        ~/.screenlayout/Monitor_ThinkBook.sh &
+    fi
+
     video_wallpaper="xwinwrap -fs -nf -ov -- \
     mpv -wid WID --loop --no-osc --no-osd-bar \
     --input-vo-keyboard=no --really-quiet \
