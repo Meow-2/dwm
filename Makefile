@@ -46,9 +46,10 @@ ASSETSDIR = assets
 SRC = ${SRCDIR}/drw.c ${SRCDIR}/dwm.c ${SRCDIR}/util.c
 OBJ = ${BUILDIR}/drw.o ${BUILDIR}/dwm.o ${BUILDIR}/util.o 
 
-all: options dwm
+all: dwmblocks options dwm 
 
 options:
+	@printf "\033[32m======================= Build dwm =======================\033[0m\n"
 	@echo dwm build options:
 	@echo "CFLAGS   = ${CFLAGS}"
 	@echo "LDFLAGS  = ${LDFLAGS}"
@@ -64,18 +65,22 @@ dwm: ${OBJ}
 	@mkdir -p ${BUILDIR}/bin
 	${CC} -o ${BUILDIR}/bin/$@ ${OBJ} ${LDFLAGS}
 
+dwmblocks:
+	@printf "\033[32m================= Build Install dwmblocks ===============\033[0m\n"
+	$(MAKE)	-C dwmblocks-async clean install
+
 clean:
 	rm -rf ${BUILDIR}
 
 install: all
-	@printf "\033[32m"
+	@printf "\033[32m===================== Install dwm =======================\033[0m\n"
 	install -m 755 -D ${BUILDIR}/bin/dwm ${DESTDIR}${PREFIX}/bin/dwm
 	install -m 644 -D <(sed "s/VERSION/${VERSION}/g" ${DOCDIR}/dwm.1) ${DESTDIR}${PREFIX}/share/man/man1/dwm.1
 	install -m 755 -D ${ASSETSDIR}/startdwm ${DESTDIR}${PREFIX}/bin/startdwm	
 	install -m 755 -D ${ASSETSDIR}/dwm.desktop ${DESTDIR}${PREFIX}/share/xsessions/dwm.desktop
-	@printf "\033[0m\n"
 
 uninstall:
+	@printf "\033[32m==================== Uninstall dwm ======================\033[0m\n"
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm \
 		${DESTDIR}${PREFIX}/share/man/man1/dwm.1 \
 		${DESTDIR}${PREFIX}/bin/startdwm \
