@@ -5,7 +5,7 @@ static const int user_bh                  = 0;         /* 0 表示自动计算�
 static const int newclientathead          = 0;         /* 定义新窗口在栈顶还是栈底 */
 static const int managetransientwin       = 1;         /* 是否管理临时窗口 */
 static const unsigned int borderpx        = 2;         /* 窗口边框大小 */
-static const unsigned int systraypinning  = 0;         /* 托盘跟随的显示器 0代表不指定显示器,  */
+static const unsigned int systraypinning  = 1;         /* 托盘跟随的显示器 0代表不指定显示器,  */
 static const unsigned int systrayspacing  = 0;         /* 托盘间距 */
 static const unsigned int systrayspadding = 0;         /* 托盘和状态栏的间隙 */
 static int gappi                          = 8;         /* 窗口与窗口 缝隙大小 */
@@ -90,11 +90,13 @@ static const Rule rules[] = {
     {"gdm-settings",          "gdm-settings",        NULL,          0,          1,        0,        0,        0,       -1,       0 },
     {"Plank",                 "plank",               NULL,          0,          1,        1,        1,        1,       -1,       8 },
     {"ksmoothdock",           "ksmoothdock",         NULL,          0,          1,        1,        1,        0,       -1,       0 },
+    {NULL,                     NULL,                "画中画",       0,          1,        1,        0,        1,       -1,       0 },
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {NULL,                     NULL,                "SafeEyes-0",   0,          1,        0,        1,        0,        0,       0 },
+    {NULL,                     NULL,                "SafeEyes-1",   0,          1,        0,        1,        0,        1,       0 },
     {"Safeeyes",              "safeeyes",           "插件设置",     0,          1,        0,        0,        0,       -1,       0 },
     {"Safeeyes",              "safeeyes",           "Safe Eyes",    0,          1,        0,        0,        0,       -1,       0 },
-    {"Safeeyes",               NULL,                 NULL,          0,          1,        0,        1,        0,       -1,       0 },
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
     {"floatkitty",            "floatkitty",          NULL,          0,          1,        0,        0,        0,       -1,       0 },
@@ -121,6 +123,7 @@ static const Rule rules[] = {
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
     {"baidunetdisk",           NULL,                 NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
+    {"Baidunetdisk",           NULL,                 NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
     {"qqmusic",               "qqmusic",            "歌词",         0,          1,        1,        1,        1,       -1,       8 },
     {"qqmusic",               "qqmusic",             NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
     {"listen1",               "listen1",            "listen1",      0,          1,        1,        1,        1,       -1,       8 },
@@ -133,7 +136,7 @@ static const Rule rules[] = {
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
     {"wechat",                "wechat",             "微信",         1 << 10,    0,        0,        1,        0,       -1,       0 },
-    {NULL,                     NULL,                "微信",         1 << 10,    1,        0,        0,        0,       -1,       0 },
+    {NULL,                     NULL,                "微信",         1 << 10,    1,        0,        1,        0,       -1,       0 },
     {"wechat",                "wechat",              NULL,          1 << 10,    1,        0,        0,        0,       -1,       0 },
 
     /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
@@ -226,7 +229,7 @@ static Key keys[] = {
 
     { MODKEY,               XK_F5,       quit,             {0} },                               /* super f5           |  配合startdwm实现热重载*/
     { MODKEY,               XK_F11,      fullscreen,       {0} },                               /* super f            |  开启/关闭 全屏 */
-    { MODKEY,               XK_F12,      spawn,            SHCMD("killall startdwm") },         /* super ctrl f12     |  退出dwm */
+    { MODKEY|ControlMask,   XK_F12,      spawn,            SHCMD("killall startdwm") },         /* super ctrl f12     |  退出dwm */
     { MODKEY,               XK_F2,       spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh lock") },  /* super ctrl f12     |  退出dwm */
 
     /* spawn + SHCMD 执行对 应命令 */
