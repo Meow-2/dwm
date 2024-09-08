@@ -42,7 +42,7 @@ else
         [ -f ~/.xwinwrap ] && (sh ~/.xwinwrap &) || (eval $video_wallpaper)
     fi
     if [ ! -f ~/.cache/betterlockscreen/current/lock_blur.png ]; then
-        betterlockscreen -u ~/Pictures/wallpapers/lock.jpg &
+        betterlockscreen -u ~/Dropbox/Common/Pictures/lock.jpg &
     fi
 
     # 屏保时间，本来想全用/etc/X11/xorg.conf.d/10-serverflags.conf设置的
@@ -101,7 +101,6 @@ else
         libinput-gestures-setup autostart start &
         dunst -conf ~/.config/dunst/dwm.conf &
         # snixembed --fork &
-        dropbox &
         sleep 1
         redshift &
         # blueberry &
@@ -112,6 +111,7 @@ else
         # sleep 6
         fcitx5 &
         sleep 1
+        dropbox &
         # bluemail &
         # safeeyes &
         if [ "$(cat /etc/hostname)" = "Noatomusk" ]; then

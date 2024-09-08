@@ -69,97 +69,106 @@ static const char *tags[] = { "","󰬚","󰝇","󰇩","󰆼","","","�
 /** 越在上面优先度越高 */
 
 static const Rule rules[] = {
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"mpv",                    NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"PeaZip",                 NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"Snipaste",               NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
+    /*class                    instance                 title             tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"mpv",                     NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"PeaZip",                  NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"Snipaste",                NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"Nm-applet",              NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"Nm-connection-editor",   NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"Nm-applet",               NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"Nm-connection-editor",    NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"Parcellite",             NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"Lxappearance",           NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"Blueman",                NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"fcitx5-config-qt",       NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"org.gnome.Nautilus",     NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"feh",                   "feh",                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"qt5ct",                 "qt5ct",               NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"uTools",                "utools",              NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"gdm-settings",          "gdm-settings",        NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"Plank",                 "plank",               NULL,          0,          1,        1,        1,        1,       -1,       8 },
-    {"ksmoothdock",           "ksmoothdock",         NULL,          0,          1,        1,        1,        0,       -1,       0 },
-    {NULL,                     NULL,                "画中画",       0,          1,        1,        0,        1,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"Parcellite",              NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"Lxappearance",            NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"Blueman",                 NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"fcitx5-config-qt",        NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"org.gnome.Nautilus",      NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"feh",                    "feh",                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"qt5ct",                  "qt5ct",                  NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"uTools",                 "utools",                 NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"gdm-settings",           "gdm-settings",           NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"Plank",                  "plank",                  NULL,                0,          1,        1,        1,        1,       -1,       8 },
+    {"ksmoothdock",            "ksmoothdock",            NULL,                0,          1,        1,        1,        0,       -1,       0 },
+    {"Xdg-desktop-portal-gtk", "xdg-desktop-portal-gtk", NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"pavucontrol",            "pavucontrol",            NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"Nwg-look",               "nwg-look",              "nwg-look",           0,          1,        0,        0,        0,       -1,       0 },
+    {"Ventoy2Disk.gtk3",       "Ventoy2Disk.gtk3",      "NULL",               0,          1,        0,        0,        0,       -1,       0 },{"Ventoy2Disk.gtk3",       "Ventoy2Disk.gtk3",           "Ventoy2Disk",     0,          1,        0,        0,        0,       -1,       0 },
+    {NULL,                      NULL,                   "画中画",             0,          1,        1,        0,        1,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {NULL,                     NULL,                "SafeEyes-0",   0,          1,        0,        1,        0,        0,       0 },
-    {NULL,                     NULL,                "SafeEyes-1",   0,          1,        0,        1,        0,        1,       0 },
-    {"Safeeyes",              "safeeyes",           "插件设置",     0,          1,        0,        0,        0,       -1,       0 },
-    {"Safeeyes",              "safeeyes",           "Safe Eyes",    0,          1,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {NULL,                      NULL,                   "SafeEyes-0",         0,          1,        0,        1,        0,        0,       0 },
+    {NULL,                      NULL,                   "SafeEyes-1",         0,          1,        0,        1,        0,        1,       0 },
+    {"Safeeyes",               "safeeyes",              "插件设置",           0,          1,        0,        0,        0,       -1,       0 },
+    {"Safeeyes",               "safeeyes",              "Safe Eyes",          0,          1,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"floatkitty",            "floatkitty",          NULL,          0,          1,        0,        0,        0,       -1,       0 },
-    {"kitty",                 "kitty",               NULL,          0,          0,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"floatkitty",             "floatkitty",             NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"kitty",                  "kitty",                  NULL,                0,          0,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"obsidian",              "obsidian",            NULL,          1 << 2,     0,        0,        0,        0,       -1,       0 },
-    {"Microsoft-edge-dev",    "microsoft-edge-dev",  NULL,          1 << 3,     0,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"obsidian",               "obsidian",               NULL,                1 << 2,     0,        0,        0,        0,       -1,       0 },
+    {"Microsoft-edge-dev",     "microsoft-edge-dev",     NULL,                1 << 3,     0,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"DBeaver Enterprise",    "DBeaver Enterprise",  NULL,          1 << 4,     1,        0,        0,        0,       -1,       0 },
-    {"navicat",               "navicat","Navicat Premium",          1 << 4,     0,        0,        0,        0,       -1,       0 },
-    {"navicat",               "navicat",             NULL,          1 << 4,     1,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"DBeaver Enterprise",     "DBeaver Enterprise",     NULL,                1 << 4,     1,        0,        0,        0,       -1,       0 },
+    {"navicat",                "navicat",               "Navicat Premium",    1 << 4,     0,        0,        0,        0,       -1,       0 },
+    {"navicat",                "navicat",                NULL,                1 << 4,     1,        0,        0,        0,       -1,       0 },
 
-    {"jetbrains-idea",        "jetbrains-idea",      NULL,          1 << 5,     0,        0,        0,        0,       -1,       0 },
-    {"jetbrains-webstorm",    "jetbrains-webstorm",  NULL,          1 << 6,     0,        0,        0,        0,       -1,       0 },
+    {"jetbrains-idea",         "jetbrains-idea",         NULL,                1 << 5,     0,        0,        0,        0,       -1,       0 },
+    {"jetbrains-webstorm",     "jetbrains-webstorm",     NULL,                1 << 6,     0,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"Code",                  "code",                NULL,          1 << 6,     0,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    // {"Code",                   "code",                  "Visual Studio Code", 1 << 6,     1,        0,        0,        0,       -1,       0 },
+    {"Code",                   "code",                   NULL,                1 << 6,     0,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"Vmware-netcfg",         "vmware-netcfg",       NULL,          1 << 7,     0,        0,        0,        0,       -1,       0 },
-    {"Vmware",                "vmware",              NULL,          1 << 7,     0,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"Vmware-netcfg",          "vmware-netcfg",          NULL,                1 << 7,     0,        0,        0,        0,       -1,       0 },
+    {"Vmware",                 "vmware",                 NULL,                1 << 7,     0,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"baidunetdisk",           NULL,                 NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
-    {"Baidunetdisk",           NULL,                 NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
-    {"qqmusic",               "qqmusic",            "歌词",         0,          1,        1,        1,        1,       -1,       8 },
-    {"qqmusic",               "qqmusic",             NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
-    {"listen1",               "listen1",            "listen1",      0,          1,        1,        1,        1,       -1,       8 },
-    {"listen1",               "listen1",             NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
-    {"steam",                 "steamwebhelper",      NULL,          1 << 9,     1,        0,        1,        0,       -1,       0 },
-    {"obs",                   "obs",                "OBS",          1 << 9,     1,        0,        0,        0,       -1,       0 },
-    {"Vmplayer",              "vmplayer",            NULL,          1 << 9,     0,        0,        0,        0,       -1,       0 },
-    {"wemeetapp",              NULL,                 NULL,          1 << 9,     1,        0,        1,        0,       -1,       0 },
-    {"ToDesk",                 NULL,                 NULL,          1 << 9,     1,        0,        1,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"baidunetdisk",            NULL,                    NULL,                1 << 9,     0,        0,        0,        0,       -1,       0 },
+    {"Baidunetdisk",            NULL,                    NULL,                1 << 9,     0,        0,        0,        0,       -1,       0 },
+    {"qqmusic",                "qqmusic",               "歌词",               0,          1,        1,        1,        1,       -1,       8 },
+    {"qqmusic",                "qqmusic",                NULL,                1 << 9,     0,        0,        0,        0,       -1,       0 },
+    {"listen1",                "listen1",               "listen1",            0,          1,        1,        1,        1,       -1,       8 },
+    {"listen1",                "listen1",                NULL,                1 << 9,     0,        0,        0,        0,       -1,       0 },
+    {"steam",                  "steamwebhelper",         NULL,                1 << 9,     1,        0,        1,        0,       -1,       0 },
+    {"obs",                    "obs",                   "OBS",                1 << 9,     1,        0,        0,        0,       -1,       0 },
+    {"Vmplayer",               "vmplayer",               NULL,                1 << 9,     0,        0,        0,        0,       -1,       0 },
+    {"wemeetapp",               NULL,                    NULL,                1 << 9,     1,        0,        1,        0,       -1,       0 },
+    {"ToDesk",                  NULL,                    NULL,                1 << 9,     1,        0,        1,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"wechat",                "wechat",             "微信",         1 << 10,    0,        0,        1,        0,       -1,       0 },
-    {NULL,                     NULL,                "微信",         1 << 10,    1,        0,        1,        0,       -1,       0 },
-    {"wechat",                "wechat",              NULL,          1 << 10,    1,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"wechat",                 "wechat",                "微信",               1 << 10,    0,        0,        1,        0,       -1,       0 },
+    {NULL,                      NULL,                   "微信",               1 << 10,    1,        0,        1,        0,       -1,       0 },
+    {NULL,                      NULL,                   "图片查看",           1 << 10,    1,        0,        0,        0,       -1,       0 },
+    {"wechat",                 "wechat",                 NULL,                1 << 10,    1,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"QQ",                    "qq",                 "QQ",           1 << 11,    0,        0,        0,        0,       -1,       0 },
-    {"QQ",                    "qq",                  NULL,          1 << 11,    1,        0,        0,        0,       -1,       0 },
-    { NULL,                   "tim.exe",             NULL,          1 << 11,    0,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"QQ",                     "qq",                    "QQ",                 1 << 11,    0,        0,        0,        0,       -1,       0 },
+    {"QQ",                     "qq",                     NULL,                1 << 11,    1,        0,        0,        0,       -1,       0 },
+    { NULL,                    "tim.exe",                NULL,                1 << 11,    0,        0,        0,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"wps",                   "wps",                "WPS文字",      1 << 8,     0,        0,        0,        0,       -1,       0 },
-    {"wps",                    NULL,                 NULL,          1 << 8,     1,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"wps",                    "wps",                   "WPS 文字",           1 << 8,     0,        0,        0,        0,       -1,       0 },
+    {"wps",                    "wps",                   "WPS文字",            1 << 8,     0,        0,        0,        0,       -1,       0 },
+    {"wps",                     NULL,                   "wps",                1 << 8,     1,        0,        1,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    // 所有带settings的窗口都应该放在这条规则之上                                                               
-    {"et",                    "et",                 "WPS 表格",     1 << 8,     0,        0,        0,        0,       -1,       0 },
-    {"et",                     NULL,                 NULL,          1 << 8,     1,        0,        0,        0,       -1,       0 },
-    {"wpp",                   "wpp",                "WPS 演示",     1 << 8,     0,        0,        0,        0,       -1,       0 },
-    {"wpp",                    NULL,                 NULL,          1 << 8,     1,        0,        0,        0,       -1,       0 },
-    {"pdf",                   "wpspdf",             "WPS PDF",      1 << 8,     0,        0,        0,        0,       -1,       0 },
-    {"pdf",                   "wpspdf",              NULL,          1 << 8,     1,        0,        1,        0,       -1,       0 },
-    {"qing",                  "wpscloudsvr",         NULL,          1 << 8,     1,        0,        0,        0,       -1,       0 },
+    // 所有带settings的窗口都应该放在这条规则之上                                                                        
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {"et",                     "et",                    "WPS 表格",           1 << 8,     0,        0,        0,        0,       -1,       0 },
+    {"et",                     "et",                    "WPS表格",            1 << 8,     0,        0,        0,        0,       -1,       0 },
+    {"et",                      NULL,                    NULL,                1 << 8,     1,        0,        0,        0,       -1,       0 },
+    {"wpp",                    "wpp",                   "WPS 演示",           1 << 8,     0,        0,        0,        0,       -1,       0 },
+    {"wpp",                    "wpp",                   "WPS演示",            1 << 8,     0,        0,        0,        0,       -1,       0 },
+    {"wpp",                     NULL,                    NULL,                1 << 8,     1,        0,        0,        0,       -1,       0 },
+    {"pdf",                    "wpspdf",                "WPS PDF",            1 << 8,     0,        0,        0,        0,       -1,       0 },
+    {"pdf",                    "wpspdf",                 NULL,                1 << 8,     1,        0,        0,        0,       -1,       0 },
+    {"qing",                   "wpscloudsvr",            NULL,                1 << 8,     1,        0,        1,        0,       -1,       0 },
 
-    /*class                    instance              title      tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {NULL,                     NULL,                 NULL,          0,          1,        0,        0,        0,       -1,       0 },
+    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
+    {NULL,                      NULL,                    NULL,                0,          1,        0,        1,        0,       -1,       0 },
 };
 
 static const char *overviewtag = "LookUp";

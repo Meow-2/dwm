@@ -31,7 +31,7 @@ get_window_info() {
             instance=$2
         }
         END {
-            printf("{%s,               %s,               %s,          0,          1,        0,        0,        0,       -1,       0 },", class, instance, title)
+            printf("{%s,%25s,%24s,     0,          1,        0,        0,        0,       -1,       0 },", class, instance, title)
         }')
     echo -n "$window_info" | xclip -selection c
     # 这里class要从$2开始赋值
@@ -61,10 +61,7 @@ case $1 in
     browser) microsoft-edge-dev --password-store=gnome ;;
     wechat) wechat-universal ;;
     qq) linuxqq ;;
-    Telegram) telegram-desktop ;;
     clipboard) diodon ;;
-    wemeet) wemeet ;;
-    steam) steam ;;
     obsidian) obsidian ;;
     lock)
         playerctl -a pause
