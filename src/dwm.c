@@ -1579,6 +1579,17 @@ hideotherwins(const Arg *arg) {
 void
 showonlyorall(const Arg *arg) {
     Client *c;
+    if (!selmon->sel)
+        return;
+    if (arg && arg->ui){
+        Client *c = (Client*)arg->v;
+        if (c != selmon->sel){
+            if (HIDDEN(c))
+                show(c);
+            focus(c);
+            restack(selmon);
+        }
+    }
     if (issinglewin(NULL) || !selmon->sel) {
         for (c = selmon->clients; c; c = c->next)
             if (ISVISIBLE(c))

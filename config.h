@@ -197,6 +197,8 @@ static Key keys[] = {
 
     { MODKEY,               XK_comma,    setmfact,         {.f = -0.05} },               /* super ,            |  缩小主工作区 */
     { MODKEY,               XK_period,   setmfact,         {.f = +0.05} },               /* super .            |  放大主工作区 */
+    { MODKEY,               XK_Left,     setmfact,         {.f = -0.05} },               /* super ,            |  缩小主工作区 */
+    { MODKEY,               XK_Right,    setmfact,         {.f = +0.05} },               /* super .            |  放大主工作区 */
 
     { MODKEY,               XK_h,        viewtoleft,       {0} },                        /* super h            |  聚焦到左边的tag */
     { MODKEY,               XK_l,        viewtoright,      {0} },                        /* super l            |  聚焦到右边的tag */
@@ -237,7 +239,7 @@ static Key keys[] = {
     { MODKEY,               XK_x,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh getinfo") },
     { MODKEY,               XK_Return,   spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh terminal current") },
     { MODKEY|ControlMask,   XK_Return,   spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh terminal temp") },
-    { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 4, .v = "~/.config/dwm/scripts/app-starter.sh terminal ssh"} },
+    { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 1, .v = "~/.config/dwm/scripts/app-starter.sh terminal ssh"} },
 
     { MODKEY,               XK_e,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh filemanager") },
     { MODKEY,               XK_v,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh clipboard") },
@@ -289,17 +291,17 @@ static Button buttons[] = {
 
     /* 点击窗口标题栏*/
     { ClkWinTitle,         0,          Button1,        togglewin,       {0} },       // 左键       |  点击标题  | 切换窗口显示状态
-    { ClkWinTitle,         0,          Button2,        togglefloating,  {0} },       // 中键       |  点击标题  | 切换是否浮动
-    { ClkWinTitle,         0,          Button3,        killclient,      {0} },       // 右键       |  点击标题  | 关闭窗口
+    { ClkWinTitle,         0,          Button2,        killclient,      {0} },       // 中键       |  点击标题  | 切换是否浮动
+    { ClkWinTitle,         0,          Button3,        showonlyorall,   {0} },       // 右键       |  点击标题  | 关闭窗口
     { ClkWinTitle,         0,          Button4,        focusstack,      {.i = -1, .ui = 1}},  // 鼠标滚轮上 |  点击标题  | 切换聚焦窗口
     { ClkWinTitle,         0,          Button5,        focusstack,      {.i = +1, .ui = 1}},  // 鼠标滚轮下 |  点击标题  | 切换聚焦窗口
 
     /* 点击窗口操作 */
     { ClkClientWin,        MODKEY,     Button1,        movemouse,       {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
-    { ClkClientWin,        0,          Button2,        togglefloating,  {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
+    { ClkClientWin,        0,          Button2,        killclient,      {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
     { ClkClientWin,        MODKEY,     Button3,        resizemouse,     {0} },       // super+右键 |  拖拽窗口  | 改变窗口大小
 
- //    { ClkClientWin,        0,          Button6,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
+    // { ClkClientWin,        0,          Button6,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
     // { ClkClientWin,        0,          Button7,        viewtoright,     {0} },       // 鼠标侧键后 |  tag       | 向后切换tag
     { ClkClientWin,        0,          Button9,        movemouse,       {0} },       // 鼠标侧键前 |  拖拽窗口  | 拖拽窗口    
     { ClkClientWin,        0,          Button8,        resizemouse,     {0} },       // 鼠标侧键后 |  拖拽窗口  | 改变窗口大小
@@ -319,8 +321,8 @@ static Button buttons[] = {
     { ClkStatusText,       0,         Button5,         sigstatusbar,    {.i = 5} },  // 鼠标滚轮下 |  状态栏    | 根据blocks发送信号
 
     /* 点击layout符号 */
-    { ClkLtSymbol,         0,         Button1,         selectlayout,     {.v = &layouts[1]} },
-	{ ClkLtSymbol,         0,         Button3,         selectlayout,     {.v = &layouts[1]} },
+    // { ClkLtSymbol,         0,         Button1,         selectlayout,     {.v = &layouts[1]} },
+    // { ClkLtSymbol,         0,         Button3,         selectlayout,     {.v = &layouts[1]} },
 
     /* 点击bar空白处 */
     // { ClkBarEmpty,         0,         Button6,         viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
