@@ -122,6 +122,7 @@ else
         Snipaste &
         diodon &
         plank &
+        udiskie &
         # parcellite &
         # ~/scripts/app-starter.sh picom &
     }
