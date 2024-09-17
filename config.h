@@ -241,20 +241,20 @@ static Key keys[] = {
     { MODKEY,               XK_F5,       quit,             {0} },                               /* super f5           |  配合startdwm实现热重载*/
     { MODKEY,               XK_F11,      fullscreen,       {0} },                               /* super f            |  开启/关闭 全屏 */
     { MODKEY|ControlMask,   XK_F12,      spawn,            SHCMD("killall startdwm") },         /* super ctrl f12     |  退出dwm */
-    { MODKEY,               XK_F2,       spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh lock") },  /* super ctrl f12     |  退出dwm */
+    { MODKEY,               XK_F2,       spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh lock") },  /* super ctrl f12     |  退出dwm */
 
     /* spawn + SHCMD 执行对 应命令 */
-    { MODKEY|ShiftMask,     XK_q,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh killw") },
-    { MODKEY,               XK_x,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh getinfo") },
-    { MODKEY,               XK_Return,   spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh terminal current") },
-    { MODKEY|ControlMask,   XK_Return,   spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh terminal temp") },
-    { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 1, .v = "~/.config/dwm/scripts/app-starter.sh terminal ssh"} },
+    { MODKEY|ShiftMask,     XK_q,        spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh killw") },
+    { MODKEY,               XK_x,        spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh getinfo") },
+    { MODKEY,               XK_Return,   spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh terminal current") },
+    { MODKEY|ControlMask,   XK_Return,   spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh terminal temp") },
+    { MODKEY|ShiftMask,     XK_Return,   view,             {.ui = 1 << 1, .v = "~/.config/dwm/scripts/lanucher.sh terminal ssh"} },
 
-    { MODKEY,               XK_e,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh filemanager") },
-    { MODKEY,               XK_v,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh clipboard") },
-    { MODKEY,               XK_b,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh changewallpaper") },
-    { MODKEY|ShiftMask,     XK_b,        spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh changevideo") },
-    { ControlMask|ShiftMask,XK_Escape,   spawn,            SHCMD("~/.config/dwm/scripts/app-starter.sh terminal btop") },
+    { MODKEY,               XK_e,        spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh filemanager") },
+    { MODKEY,               XK_v,        spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh clipboard") },
+    { MODKEY,               XK_b,        spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh changewallpaper") },
+    { MODKEY|ShiftMask,     XK_b,        spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh changevideo") },
+    { ControlMask|ShiftMask,XK_Escape,   spawn,            SHCMD("~/.config/dwm/scripts/lanucher.sh terminal btop") },
 
     { 0,                    XF86XK_MonBrightnessUp,        sigstatusbar,    {.i = 4,.ui = 5} }, // i 代表按键，ui 代表对应按钮的信号量
     { 0,                    XF86XK_MonBrightnessDown,      sigstatusbar,    {.i = 5,.ui = 5} },
@@ -276,10 +276,10 @@ static Key keys[] = {
     TAGKEYS(XK_8, 7,  0)
     TAGKEYS(XK_9, 8,  0)
     TAGKEYS(XK_0, 9,  0)
-    TAGKEYS(XK_o , 2  , "~/.config/dwm/scripts/app-starter.sh obsidian")
-    TAGKEYS(XK_c , 3  , "~/.config/dwm/scripts/app-starter.sh browser")
-    TAGKEYS(XK_w , 10 , "~/.config/dwm/scripts/app-starter.sh wechat")
-    TAGKEYS(XK_i , 11 , "~/.config/dwm/scripts/app-starter.sh qq")
+    TAGKEYS(XK_o , 2  , "~/.config/dwm/scripts/lanucher.sh obsidian")
+    TAGKEYS(XK_c , 3  , "~/.config/dwm/scripts/lanucher.sh browser")
+    TAGKEYS(XK_w , 10 , "~/.config/dwm/scripts/lanucher.sh wechat")
+    TAGKEYS(XK_i , 11 , "~/.config/dwm/scripts/lanucher.sh qq")
 };
 
 #define Button6 6

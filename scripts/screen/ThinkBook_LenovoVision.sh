@@ -7,6 +7,6 @@ xrandr --output eDP --mode 2880x1800 --pos 3840x2160 --rotate normal \
     --output DisplayPort-2 --off \
     --output DisplayPort-3 --off \
     --output DisplayPort-4 --off \
-    --output DisplayPort-5 --off &
-feh --no-fehbg --bg-fill "$HOME/.config/dwm/assets/wall.jpg" "$HOME/.config/dwm/assets/wall.jpg" &
-betterlockscreen -u ~/Dropbox/Common/Pictures/lock.jpg &
+    --output DisplayPort-5 --off
+
+"$HOME/.config/dwm/scripts/screen/Wallparper.sh"

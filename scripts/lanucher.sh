@@ -68,18 +68,18 @@ case $1 in
         betterlockscreen -l dim
         ;;
     changewallpaper)
-        killall mpv >>/dev/null 2>&1
-        killall xwinwrap >>/dev/null 2>&1
-        ~/Programs/dwm/scripts/set-profile.sh WALLPAPER_MODE "PIC"
-        feh --randomize --bg-fill ~/Pictures/wallpapers/*.jpg
+        # killall mpv >>/dev/null 2>&1
+        # killall xwinwrap >>/dev/null 2>&1
+        # ~/Programs/dwm/scripts/set-profile.sh WALLPAPER_MODE "PIC"
+        # feh --randomize --bg-fill ~/Pictures/wallpapers/*.jpg
         ;;
     changevideo)
-        killall mpv >>/dev/null 2>&1
-        killall xwinwrap >>/dev/null 2>&1
-        sleep 0.2
-        ~/Programs/dwm/scripts/set-profile.sh WALLPAPER_MODE "VIDEO"
-        mp4="~/Pictures/wallpapers/video/"$(ls ~/Pictures/wallpapers/video/ | sort -R | head -n1)
-        eval xwinwrap -fs -nf -ov -- mpv -wid WID --loop --no-osc --no-osd-bar --input-vo-keyboard=no --really-quiet --stop-screensaver=no --panscan=1.0 $mp4 >>/dev/null 2>&1 &
-        echo -e "#!/bin/sh\neval xwinwrap -fs -nf -ov -- mpv -wid WID --loop --no-osc --no-osd-bar --input-vo-keyboard=no --really-quiet --stop-screensaver=no --panscan=1.0 $mp4 >>/dev/null 2>&1 &" >~/.xwinwrap &
+        # killall mpv >>/dev/null 2>&1
+        # killall xwinwrap >>/dev/null 2>&1
+        # sleep 0.2
+        # ~/Programs/dwm/scripts/set-profile.sh WALLPAPER_MODE "VIDEO"
+        # mp4="~/Pictures/wallpapers/video/"$(ls ~/Pictures/wallpapers/video/ | sort -R | head -n1)
+        # eval xwinwrap -fs -nf -ov -- mpv -wid WID --loop --no-osc --no-osd-bar --input-vo-keyboard=no --really-quiet --stop-screensaver=no --panscan=1.0 $mp4 >>/dev/null 2>&1 &
+        # echo -e "#!/bin/sh\neval xwinwrap -fs -nf -ov -- mpv -wid WID --loop --no-osc --no-osd-bar --input-vo-keyboard=no --really-quiet --stop-screensaver=no --panscan=1.0 $mp4 >>/dev/null 2>&1 &" >~/.xwinwrap &
         ;;
 esac

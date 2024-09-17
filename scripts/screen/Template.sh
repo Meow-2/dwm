@@ -1,5 +1,6 @@
-#!/bin/sh
-xrandr --output eDP --primary --mode 2880x1800 --rate 90.01 --pos 0x0 --rotate normal \
+#!/usr/bin/env bash
+
+xrandr --output eDP --primary --mode 1920x1080 --rate 60.00 --pos 0x0 --rotate normal \
     --output HDMI-A-0 --off \
     --output DisplayPort-0 --off \
     --output DisplayPort-1 --off \
