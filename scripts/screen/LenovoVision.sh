@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rate 60 --pos 0x0 --rotate normal \
     --output eDP --off \
     --output DisplayPort-0 --off \

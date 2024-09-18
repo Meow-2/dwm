@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 xrandr --output eDP --mode 2880x1800 --pos 3840x2160 --rotate normal \
     --output HDMI-A-0 --primary --mode 1920x1080 --pos 0x0 --scale 2x2 --rotate normal \
