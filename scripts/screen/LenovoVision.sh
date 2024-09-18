@@ -9,4 +9,4 @@ xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rate 60 --pos 0x0 --rotate
     --output DisplayPort-4 --off \
     --output DisplayPort-5 --off
 
-"$HOME/.config/dwm/scripts/screen/Wallparper.sh"
+"$HOME/.config/dwm/scripts/screen/common/wallparper.sh"

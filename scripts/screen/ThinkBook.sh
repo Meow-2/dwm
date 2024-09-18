@@ -9,4 +9,4 @@ xrandr --output eDP --primary --mode 2880x1800 --rate 90.01 --pos 0x0 --rotate n
     --output DisplayPort-4 --off \
     --output DisplayPort-5 --off
 
-"$HOME/.config/dwm/scripts/screen/Wallparper.sh"
+"$HOME/.config/dwm/scripts/screen/common/wallparper.sh"
