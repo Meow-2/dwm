@@ -112,8 +112,11 @@ static const Rule rules[] = {
 
     /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
     {"DBeaver Enterprise",     "DBeaver Enterprise",     NULL,                1 << 4,     1,        0,        0,        0,       -1,       0 },
+    {"DBeaver",                "DBeaver",               "DBeaver",            1 << 4,     0,        0,        0,        0,       -1,       0 },
+    {"DBeaver",                "DBeaver",                NULL,                1 << 4,     1,        0,        0,        0,       -1,       0 },
     {"navicat",                "navicat",               "Navicat Premium",    1 << 4,     0,        0,        0,        0,       -1,       0 },
     {"navicat",                "navicat",                NULL,                1 << 4,     1,        0,        0,        0,       -1,       0 },
+    {"jetbrains-datagrip",     "jetbrains-datagrip",     NULL,                1 << 4 ,    0,        0,        0,        0,       -1,       0 },
 
     {"jetbrains-idea",         "jetbrains-idea",         NULL,                1 << 5,     0,        0,        0,        0,       -1,       0 },
     {"jetbrains-webstorm",     "jetbrains-webstorm",     NULL,                1 << 6,     0,        0,        0,        0,       -1,       0 },
@@ -164,7 +167,7 @@ static const Rule rules[] = {
     {"wpp",                    "wpp",                   "WPS演示",            1 << 8,     0,        0,        0,        0,       -1,       0 },
     {"wpp",                     NULL,                    NULL,                1 << 8,     1,        0,        0,        0,       -1,       0 },
     {"pdf",                    "wpspdf",                "WPS PDF",            1 << 8,     0,        0,        0,        0,       -1,       0 },
-    {"pdf",                    "wpspdf",                 NULL,                1 << 8,     1,        0,        0,        0,       -1,       0 },
+    {"pdf",                    "wpspdf",                 NULL,                1 << 8,     1,        0,        1,        0,       -1,       0 },
     {"qing",                   "wpscloudsvr",            NULL,                1 << 8,     1,        0,        1,        0,       -1,       0 },
 
     /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
