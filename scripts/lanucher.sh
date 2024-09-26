@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 terminal() {
+    read -r x y < <(xrandr --current | grep -oP '\d+x\d+' | tr x ' ')
     case $1 in
-        temp) kitty --class floatkitty ;;
+        temp) kitty --class floatkitty -o initial_window_width=$((x / 2)) -o initial_window_height=$((y / 2)) -o remember_window_size=no ;;
         current) kitty ;;
         btop)
-            kitty -o initial_window_width=2560 -o initial_window_height=1440 -o remember_window_size=no --class=floatkitty -e btop
+            kitty -o initial_window_width=$((x * 2 / 3)) -o initial_window_height=$((y * 2 / 3)) -o remember_window_size=no --class=floatkitty -e btop
             ;;
         ssh) wezterm --config-file ~/.config/wezterm/wezterm_tmux.lua start -- ~/Programs/dwm/scripts/set-lemonade.sh ;;
     esac
