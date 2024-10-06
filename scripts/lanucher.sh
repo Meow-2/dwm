@@ -6,7 +6,7 @@ terminal() {
         temp) kitty --class floatkitty -o initial_window_width=$((x / 2)) -o initial_window_height=$((y / 2)) -o remember_window_size=no ;;
         current) kitty ;;
         btop)
-            kitty -o initial_window_width=$((x * 2 / 3)) -o initial_window_height=$((y * 2 / 3)) -o remember_window_size=no --class=floatkitty -e btop
+            kitty -o initial_window_width=$((x * 2 / 3)) -o initial_window_height=$((y * 2 / 3)) -o remember_window_size=no --class=floatkitty -e gotop
             ;;
         ssh) wezterm --config-file ~/.config/wezterm/wezterm_tmux.lua start -- ~/Programs/dwm/scripts/set-lemonade.sh ;;
     esac

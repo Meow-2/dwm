@@ -1,7 +1,7 @@
 #include <X11/XF86keysym.h>
 
 static int showsystray                    = 1;         /* 是否显示托盘栏 */
-static const int extrabh                  = 3;         /* 0 表示自动计算高度，非零表示指定高度 */
+static const int extrabh                  = 10;         /* 0 表示自动计算高度，非零表示指定高度 */
 static const int newclientathead          = 0;         /* 定义新窗口在栈顶还是栈底 */
 static const int managetransientwin       = 1;         /* 是否管理临时窗口 */
 static const unsigned int borderpx        = 2;         /* 窗口边框大小 */
