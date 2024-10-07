@@ -25,7 +25,11 @@ else
     else
         screen_script="$screen_script_dir/$(cat /etc/hostname).sh"
     fi
-    [ -f "$screen_script" ] && eval "$screen_script" >/dev/null 2>&1
+    if [ -f "$screen_script" ]; then
+        eval "$screen_script" >/dev/null 2>&1
+    else
+        eval "$screen_script_dir/common/wallpaper.sh" >/dev/null 2>&1
+    fi
 
     # video_wallpaper="xwinwrap -fs -nf -ov -- \
     # mpv -wid WID --loop --no-osc --no-osd-bar \
