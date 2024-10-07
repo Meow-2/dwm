@@ -9,4 +9,4 @@ xrandr --output eDP --mode 2880x1800 --pos 3840x2160 --rotate normal \
     --output DisplayPort-4 --off \
     --output DisplayPort-5 --off
 
-"$HOME/.config/dwm/scripts/screen/common/wallparper.sh"
+"$HOME/.config/dwm/scripts/screen/common/wallpaper.sh"

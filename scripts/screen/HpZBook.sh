@@ -7,4 +7,4 @@ xrandr --output eDP-1 --mode 2880x1800 --pos 3840x2160 --rotate normal \
     --output DP-3 --off \
     --output DP-4 --off
 
-"$HOME/.config/dwm/scripts/screen/common/wallparper.sh"
+"$HOME/.config/dwm/scripts/screen/common/wallpaper.sh"
