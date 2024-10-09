@@ -83,7 +83,7 @@ static const Rule rules[] = {
     {"Lxappearance",            NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
     {"Blueman",                 NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
     {"fcitx5-config-qt",        NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
-    {"org.gnome.Nautilus",      NULL,                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
+    {"org.gnome.Nautilus",      NULL,                    NULL,                0,          1,        0,        1,        0,       -1,       0 },
     {"feh",                    "feh",                    NULL,                0,          1,        0,        0,        0,       -1,       0 },
     {"qt5ct",                  "qt5ct",                  NULL,                0,          1,        0,        0,        0,       -1,       0 },
     {"uTools",                 "utools",                 NULL,                0,          1,        0,        0,        0,       -1,       0 },
