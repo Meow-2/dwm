@@ -53,6 +53,22 @@ get_window_info() {
     dunstify "$display_info"
 }
 
+autolock() {
+    dontlockfile=/tmp/dontlock.lock
+    case $1 in
+        up)
+            rm -rf "$dontlockfile"
+            ;;
+        down)
+            touch "$dontlockfile"
+            ;;
+    esac
+    while [ -e "$dontlockfile" ]; do
+        xset s reset
+        sleep 1
+    done
+}
+
 case $1 in
     terminal) terminal $2 ;;
     killw) kill -9 $(xprop | grep "_NET_WM_PID(CARDINAL)" | awk '{print $3}') ;;
@@ -67,6 +83,9 @@ case $1 in
     lock)
         playerctl -a pause
         betterlockscreen -l dim
+        ;;
+    autolock)
+        autolock $2
         ;;
     changewallpaper)
         # killall mpv >>/dev/null 2>&1
