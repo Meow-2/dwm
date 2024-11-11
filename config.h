@@ -1,7 +1,7 @@
 #include <X11/XF86keysym.h>
 
 static int showsystray                    = 1;         /* 是否显示托盘栏 */
-static const int extrabh                  = 10;         /* 0 表示自动计算高度，非零表示指定高度 */
+static const int extrabh                  = 3;         /* 0 表示自动计算高度，非零表示指定高度 */
 static const int newclientathead          = 0;         /* 定义新窗口在栈顶还是栈底 */
 static const int managetransientwin       = 1;         /* 是否管理临时窗口 */
 static const unsigned int borderpx        = 2;         /* 窗口边框大小 */
@@ -310,7 +310,7 @@ static Button buttons[] = {
 
     /* 点击窗口操作 */
     { ClkClientWin,        MODKEY,     Button1,        movemouse,       {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
-    { ClkClientWin,        0,          Button2,        killclient,      {0} },       // super+左键 |  拖拽窗口  | 拖拽窗口
+    // { ClkClientWin,        0,          Button2,        killclient,      {0} },       // super+中键 |  关闭窗口  | 关闭窗口
     { ClkClientWin,        MODKEY,     Button3,        resizemouse,     {0} },       // super+右键 |  拖拽窗口  | 改变窗口大小
 
     // { ClkClientWin,        0,          Button6,        viewtoleft,      {0} },       // 鼠标侧键前 |  tag       | 向前切换tag
