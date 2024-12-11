@@ -146,7 +146,7 @@ static const Rule rules[] = {
     {"wechat",                 "wechat",                "微信",               1 << 10,    0,        0,        1,        0,       -1,       0 },
     {NULL,                      NULL,                   "微信",               1 << 10,    1,        0,        1,        0,       -1,       0 },
     {NULL,                      NULL,                   "图片查看",           1 << 10,    1,        0,        0,        0,       -1,       0 },
-    {"wechat",                 "wechat",                 NULL,                1 << 10,    1,        0,        0,        0,       -1,       0 },
+    {"wechat",                 "wechat",                 NULL,                1 << 10,    1,        0,        1,        0,       -1,       0 },
 
     /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
     {"QQ",                     "qq",                    "QQ",                 1 << 11,    0,        0,        0,        0,       -1,       0 },
