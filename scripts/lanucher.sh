@@ -75,7 +75,7 @@ case $1 in
     getinfo) get_window_info ;;
     filemanager) nautilus -w ;;
     blurlock) betterlockscreen --lock dim ;;
-    browser) microsoft-edge-stable --password-store=gnome ;;
+    browser) microsoft-edge-dev --password-store=gnome ;;
     wechat) wechat-universal ;;
     qq) linuxqq ;;
     clipboard) diodon ;;
