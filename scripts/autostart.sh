@@ -98,7 +98,6 @@ else
         sleep 2
         Snipaste &
         diodon &
-        plank &
         udiskie &
     }
 
