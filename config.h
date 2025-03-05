@@ -55,7 +55,7 @@ static const unsigned int alphas[][3] = {          /* 透明度设置 ColFg, Col
 static const char *autostartscript = "~/.config/dwm/scripts/autostart.sh";
 
 /* 自定义tag名称 */
-static const char *tags[] = { "","󰬚","󰝇","󰇩","󰆼","","","󰖳","","","󰘑","󰘅"};
+static const char *tags[] = { "","󰬚","󰇩","","","󰆼","󰝇","󰖳","","","󰘑","󰘅"};
 
 /* 自定义窗口显示规则 */
 /* class instance title 主要用于定位窗口适合哪个规则, 全部匹配则生效, 匹配采用的是子字符串形式匹配*/
@@ -107,24 +107,22 @@ static const Rule rules[] = {
     {"kitty",                  "kitty",                  NULL,                0,          0,        0,        0,        0,       -1,       0 },
 
     /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"obsidian",               "obsidian",               NULL,                1 << 2,     0,        0,        0,        0,       -1,       0 },
-    {"Microsoft-edge",         "microsoft-edge",         NULL,                1 << 3,     0,        0,        0,        0,       -1,       0 },
-    {"Microsoft-edge-dev",     "microsoft-edge-dev",     NULL,                1 << 3,     0,        0,        0,        0,       -1,       0 },
+    {"Microsoft-edge",         "microsoft-edge",         NULL,                1 << 2,     0,        0,        0,        0,       -1,       0 },
+    {"Microsoft-edge-dev",     "microsoft-edge-dev",     NULL,                1 << 2,     0,        0,        0,        0,       -1,       0 },
+
+
+    {"Code",                   "code",                   NULL,                1 << 3,     0,        0,        0,        0,       -1,       0 },
+    {"jetbrains-webstorm",     "jetbrains-webstorm",     NULL,                1 << 3,     0,        0,        0,        0,       -1,       0 },
+    {"jetbrains-idea",         "jetbrains-idea",         NULL,                1 << 4,     0,        0,        0,        0,       -1,       0 },
 
     /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"DBeaver Enterprise",     "DBeaver Enterprise",     NULL,                1 << 4,     1,        0,        0,        0,       -1,       0 },
-    {"DBeaver",                "DBeaver",               "DBeaver",            1 << 4,     0,        0,        0,        0,       -1,       0 },
-    {"DBeaver",                "DBeaver",                NULL,                1 << 4,     1,        0,        0,        0,       -1,       0 },
-    {"navicat",                "navicat",               "Navicat Premium",    1 << 4,     0,        0,        0,        0,       -1,       0 },
-    {"navicat",                "navicat",                NULL,                1 << 4,     1,        0,        0,        0,       -1,       0 },
-    {"jetbrains-datagrip",     "jetbrains-datagrip",     NULL,                1 << 4 ,    0,        0,        0,        0,       -1,       0 },
-
-    {"jetbrains-idea",         "jetbrains-idea",         NULL,                1 << 5,     0,        0,        0,        0,       -1,       0 },
-    {"jetbrains-webstorm",     "jetbrains-webstorm",     NULL,                1 << 6,     0,        0,        0,        0,       -1,       0 },
-
-    /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    // {"Code",                   "code",                  "Visual Studio Code", 1 << 6,     1,        0,        0,        0,       -1,       0 },
-    {"Code",                   "code",                   NULL,                1 << 6,     0,        0,        0,        0,       -1,       0 },
+    {"DBeaver Enterprise",     "DBeaver Enterprise",     NULL,                1 << 5,     1,        0,        0,        0,       -1,       0 },
+    {"DBeaver",                "DBeaver",               "DBeaver",            1 << 5,     0,        0,        0,        0,       -1,       0 },
+    {"DBeaver",                "DBeaver",                NULL,                1 << 5,     1,        0,        0,        0,       -1,       0 },
+    {"navicat",                "navicat",               "Navicat Premium",    1 << 5,     0,        0,        0,        0,       -1,       0 },
+    {"navicat",                "navicat",                NULL,                1 << 5,     1,        0,        0,        0,       -1,       0 },
+    {"jetbrains-datagrip",     "jetbrains-datagrip",     NULL,                1 << 5 ,    0,        0,        0,        0,       -1,       0 },
+    {"obsidian",               "obsidian",               NULL,                1 << 6,     0,        0,        0,        0,       -1,       0 },
 
     /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
     {"Vmware-netcfg",          "vmware-netcfg",          NULL,                1 << 7,     0,        0,        0,        0,       -1,       0 },
@@ -228,8 +226,8 @@ static Key keys[] = {
     { MODKEY,               XK_n,        focusmon,         {.i = +1} },                  /* super n            |  光标移动到另一个显示器 */
     { MODKEY|ShiftMask,     XK_n,        tagmon,           {.i = +1} },                  /* super shift n      |  将聚焦窗口移动到另一个显示器 */
 
-    { MODKEY,               XK_equal,    setgap,           {.i = -15} },                 /* super =            |  窗口增大 */
-    { MODKEY,               XK_minus,    setgap,           {.i = +15} },                 /* super -            |  窗口减小 */
+    { MODKEY|ControlMask,   XK_equal,    setgap,           {.i = -15} },                 /* super =            |  窗口增大 */
+    { MODKEY|ControlMask,   XK_minus,    setgap,           {.i = +15} },                 /* super -            |  窗口减小 */
     { MODKEY,               XK_BackSpace,setgap,           {.i = 0} },                   /* super backspace    |  窗口重置 */
 
     { MODKEY|ControlMask,   XK_k,        resizewin,        {.ui = V_REDUCE} },           /* super ctrl k       |  调整窗口 */
@@ -280,10 +278,12 @@ static Key keys[] = {
     TAGKEYS(XK_8, 7,  0)
     TAGKEYS(XK_9, 8,  0)
     TAGKEYS(XK_0, 9,  0)
-    TAGKEYS(XK_o , 2  , "~/.config/dwm/scripts/lanucher.sh obsidian")
-    TAGKEYS(XK_c , 3  , "~/.config/dwm/scripts/lanucher.sh browser")
-    TAGKEYS(XK_w , 10 , "~/.config/dwm/scripts/lanucher.sh wechat")
-    TAGKEYS(XK_i , 11 , "~/.config/dwm/scripts/lanucher.sh qq")
+    TAGKEYS(XK_o , 6  , "~/.config/dwm/scripts/lanucher.sh obsidian")
+    TAGKEYS(XK_c , 2  , "~/.config/dwm/scripts/lanucher.sh browser")
+    TAGKEYS(XK_w , 3 , "~/.config/dwm/scripts/lanucher.sh webstorm")
+    TAGKEYS(XK_i , 4 , "~/.config/dwm/scripts/lanucher.sh idea")
+    TAGKEYS(XK_minus , 10 , "~/.config/dwm/scripts/lanucher.sh wechat")
+    TAGKEYS(XK_equal , 11 , "~/.config/dwm/scripts/lanucher.sh qq")
 };
 
 #define Button6 6

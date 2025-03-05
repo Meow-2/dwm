@@ -76,6 +76,8 @@ case $1 in
     filemanager) nautilus -w ;;
     blurlock) betterlockscreen --lock dim ;;
     browser) microsoft-edge-dev --password-store=gnome ;;
+    idea) intellij-idea-ultimate-edition ;;
+    webstorm) code ;;
     wechat) wechat-universal ;;
     qq) linuxqq ;;
     clipboard) diodon ;;
