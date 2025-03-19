@@ -107,8 +107,10 @@ static const Rule rules[] = {
     {"kitty",                  "kitty",                  NULL,                0,          0,        0,        0,        0,       -1,       0 },
 
     /*class                     instance                 title            tags mask   isfloating isglobal isnoborder nofocustk monitor floatposition */
-    {"Microsoft-edge",         "microsoft-edge",         NULL,                1 << 2,     0,        0,        0,        0,       -1,       0 },
+    {"Microsoft-edge-dev",     "microsoft-edge-dev",     "DevTools",          1 << 2,     1,        0,        0,        0,       -1,       0 },
     {"Microsoft-edge-dev",     "microsoft-edge-dev",     NULL,                1 << 2,     0,        0,        0,        0,       -1,       0 },
+    {"Microsoft-edge",         "microsoft-edge",         "DevTools",          1 << 2,     1,        0,        0,        0,       -1,       0 },
+    {"Microsoft-edge",         "microsoft-edge",         NULL,                1 << 2,     0,        0,        0,        0,       -1,       0 },
 
 
     {"Code",                   "code",                   NULL,                1 << 3,     0,        0,        0,        0,       -1,       0 },
